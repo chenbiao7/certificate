@@ -1,0 +1,4321 @@
+{
+	"data":[
+		{
+			"stem":"Q1.金融服务公司需要将交易所的每日股票交易数据汇总到数据存储中。该公司要求将数据直接流式传输到数据存储中,但偶尔也允许使用SQL修改数据。该解决方案应集成以最小的延迟运行的复杂的分析查询。该解决方案必须提供一个商业智能仪表。该仪表可以查看导致股票价格异常的主要因素",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用Amazon Kinesis Data Firehose将数据流传输到Amazon S3.使用Amazon Athena 作为AWS QuickSight的数据源来创建商业智能仪表板"
+				},
+				{
+					"option": "B",
+					"content":"使用Amazon Kinese 数据流将数据流式传输到Amazon Redshift。使用Amazon Redshift作为AmazonQuicksight的数据源来创建商业智能仪表板"
+				},
+				{
+					"option": "C",
+					"content":"使用Amazon Kinese Data Firehose将数据流式传输到Amazon Redshift。使用Amazon Redshift作为Amazon Quicksight的数据源来创建商业智能仪表板"
+				},
+				{
+					"option": "D",
+					"content":"使用Amazon Kinesis数据流将数据流式传输到Amazon S3。使用Amazon Athena作为Amazon QuickSight的数据源来创建商业智能仪表板"
+				}
+			]
+		},
+		{
+			"stem":"Q2.一家金融公司在Amazon S3中托管一个数据湖，并在Amazon Redshift集群上托管一个数据仓库。该公司使用Amazon QuickSight构建仪表板，并希望保护从本地Active Directory到Amazon QuickSight的访问，应该如何保护数据？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在企业网络环境中使用Active Directory连接器和单点登入（SSO）"
+				},
+				{
+					"option": "B",
+					"content":"使用VPC终端节点从Amazon QuickSight连接到Amazon S3，并使用IAM角色对Amazon Redshift进行身份验证"
+				},
+				{
+					"option": "C",
+					"content":"通过创建用于连接Amazon QuickSight的S3端点和用于连接到Amazon Redshift的VPC端点来建立安全连接"
+				},
+				{
+					"option": "D",
+					"content":"将Amazon QuickSight和Amazon Redshift放在安全组中，并使用Amazon S3终端节点将Amazon QuickSight连接到S3"
+				}
+			]
+		},
+		{
+			"stem":"Q3.一家房地产公司拥有使用Amazon EMR中的APach HBase的关键任务应用程序。Amazon EMR配置有的那个主节点。该公司在Hadoop分布式文件系统（HDFS）上存储了超过5TB的数据。该公司需要一种经济高效的解决方案，以使其HBase数据高度可用",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"对核心和任务节点使用竞价实例，对EMR主节点使用预留实例。使用多个主节点配置EMR集群，使用Amazon EventBridge安排自动快照"
+				},
+				{
+					"option": "B",
+					"content":"将数据存储在EMR文件系统（EMRFS）而不是HDFS上。启用EMRFS一致视图。创建具有多个主节点的EMR HBase集群。将HBase根目录指向Amazon S3存储桶"
+				},
+				{
+					"option": "C",
+					"content":"将数据存储在EMR文件系统（EMRFS）而不是HDFS上，并启用EMRFS一致视图。在两个不同的可用区中运行两个单独的EMR集群，将两个集群都指向同一个Amazon S3存储桶中的同一个HBase根目录"
+				},
+				{
+					"option": "D",
+					"content":"将数据存储在EMR文件系统（EMRFS）而不是HDFS，并启用EMRFS一致视图。创建具有多个主节点的主EMR HBase集群，在单独的可用区中创建辅助EMR HBase只读副本集群，将两个集群都指向同一个Amazon S3存储桶中的同一HBase根目录"
+				}
+			]
+		},
+		{
+			"stem":"Q4.一家软件公司在AWS上托管应用程序，并且每周都会发布新功能。作为应用程序测试的一部分，必须开发一个解决方案，该解决方案分析每个Amazon EC2实例的日志，以确保应用程序在每次部署后都能按期工作，收集和分析解决方案应具有很高的可用性，并且以最小的延迟显示新信息",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在Amazon EC2上启用详细监控，使用Amazon CloudWatch代理在Amazon S3存储日志，并使用Amazon Athena进行快速的交互式日志分析"
+				},
+				{
+					"option": "B",
+					"content":"使用Amazon EC2上的Amazon Kinesis生产者库（KPL）代理收集并将其发送到Kinesis Data Streams，以将数据进一步推送到Amazon Elasticsearch Service并使用Amazon QuickSight进行可视化"
+				},
+				{
+					"option": "C",
+					"content":"使用Amazon EC2上的Amazon Kinesis生产者库（KPL）代理收集并将其发送到Kinesis Data Firehose，以将数据进一步推送到Amazon Elasticsearch Service和Kibana"
+				},
+				{
+					"option": "D",
+					"content":"使用Amazon Cloudwatch订阅来自访问日志的实时提要，并将日志传递到Amazon Kinesis Data Streams，以将数据进一步推动到Amazon Elasticsearch Service 和 Kibana"
+				}
+			]
+		},
+		{
+			"stem":"Q5.数据分析师正在使用AWS Glue来组织，清理，验证和格式化200GB数据集，数据分析师触发了该作业以标准工作者类型运行3小时后，AWS Glue作业状态仍为RUNNING。作业运行中的日志未显示任何错误代码，数据分析师希望在不过度配置的情况下缩短作业执行时间。数据分析师应采取哪些行动？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在AWS Glue中启用作业书签，以估计数据处理单元（DPU）的数量，根据概要分析分析的指标，增加executor-cores作业参数的值"
+				},
+				{
+					"option": "B",
+					"content":"在AWS Glue中启用作业指标以估计数据处理单元（DPU）的数量，根据配置的指标，增加最大容量作业参数的值"
+				},
+				{
+					"option": "C",
+					"content":"在AWS Glue中启用作业指标以估计数据处理单元（DPU）的数量，根据配置的指标，增加spark.yarn.executor.memoryOverhead作业参数的值"
+				},
+				{
+					"option": "D",
+					"content":"在AWS Glue中启用工作书签，以估计数据处理单元（DPU）的数量，根据概要分析的指标，增加num-executors作业参数的值"
+				}
+			]
+		},
+		{
+			"stem":"Q6.一家公司的业务部门将.csv文件上传到S3存储桶，该公司的数据平台团队已经建立了一个AWS Glue搜寻器，以进行发现以及创建表和模式。AWS Glue作业将已处理的数据从创建的表写入到Amazon Redshift数据库。AWS Glue作业处理列映射并适当的创建Amazon RedShift表。一天中由于任何原因重新运行AWS Glue作业时，重复的记录都会引入到Amazon Redshift中。重新运行作业时，哪种解决方案更新Redshift表而不重复？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"修改AWS Glue作业将行复制到登台表中。添加SQL命令以替换主表中的现有行，作为DynamicFrameWriter类中的后处理"
+				},
+				{
+					"option": "B",
+					"content":"将先插入的数据加载到AWS Glue作业中的MySQL数据库中"
+				},
+				{
+					"option": "C",
+					"content":"使用Apach Spark的DataFrame dropDuplicates（）API消除重复项，然后将数据写入Amazon Redshift"
+				},
+				{
+					"option": "D",
+					"content":"使用AWS Glue ResolveChoice内置转化选择列的最新值"
+				}
+			]
+		},
+		{
+			"stem":"Q7.流应用程序正在从Amazon Kinesis Data Streams读取数据，并每隔10秒立即将数据写入Amazon S3存储桶、该应用程序正在从数百个分片中读取数据。由于单独的要求，不能更改批次间隔。Amazon Athena正在访问数据，随着时间的推移，用户发现查询性能下降。哪个操作可以帮助提高查询性能？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"合并Amazon S3中的文件以形成更大的文件"
+				},
+				{
+					"option": "B",
+					"content":"增加Kinesis数据流中的分片数量"
+				},
+				{
+					"option": "C",
+					"content":"向流式应用程序添加更多的内存和CPU容量"
+				},
+				{
+					"option": "D",
+					"content":"将文件写入多个S3存储桶"
+				}
+			]
+		},
+		{
+			"stem":"Q8.一家公司使用Amazon Elastiosearch Service（Amazon ES）来存储和分析其网站点击流数据．该公司每天使用Amazon Kinesis Data Firehose 摄取1 TB数据，并将一天的数据存储在Amazon ES集群中．该公司在Amazon ES索引上的查询性能非常慢，并且在尝试写入索引时偶尔会从Kinesis Data Firehose中看到错误．Amazon ES集群具有10个运行单个索引的节点和3个专用主节点，每个数据节点都附加了1.5 TB的Amazon EBS存储、并且集群配置了1，000个分片，有时，在群集日志中会发现JVMMemoryPressure 错误哪种解决方案将改善 Amazon ES的性能？",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"增加Amazon ES主节点的内存."
+				},
+				{
+					"option": "B",
+					"content":"减少Amazon ES数据节点的数量"
+				},
+				{
+					"option": "C",
+					"content":"减少索引的Amazon ES分片数量"
+				},
+				{
+					"option": "D",
+					"content":"增加索引的Amazon ES分片数量"
+				}
+			]
+		},
+		{
+			"stem":"Q9.一家制造公司已经在其工厂车间的设备中收集了loT传感器数据已有一年，并将其存储在Amazon Redshift中以进行每日分析．数据分析人员确定，以每天大约2TB的预期摄入率，该群集将在不到4个月的时间内缩小规模，需要长期解决方案．数据分析师表示，大多数查询仅参考最近13个月的数据，但也有季度报告需要查询过去7年中生成的所有数据.首席技术官（CTO）担心长期解决方案的成本，管理工作和性能.数据分析师应使用哪种解决方案来满足这些要求？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在AWS Glue中创建每日作业以将13个月以上的记录卸载到Amazon S3，然后从Amazon Redshift删除这些记录。在Amazon Redshift中创建一个外部表以指向S3位置.使用 Amazon Redshift Spectrum连接到超过13个月的数据."
+				},
+				{
+					"option": "B",
+					"content":"拍摄 Amazon Redshift集群的快照.使用具有附加存储容量的密集存储节点将群集还原到新群集."
+				},
+				{
+					"option": "C",
+					"content":"执行 CREATE TABLE AS SELECT（CTAS）语句，将超过13个月的记录移动到由Amazon S3支持的AmazonRedshift Spectrum中的季度分区数据."
+				},
+				{
+					"option": "D",
+					"content":"使用S3 Intelligent-Tiering 将Amazon Redshift中的所有表卸载到 Amazon S3 存储桶．使用AWS Glue 爬网S3存储桶位置，以在AWS Glue数据目录中创建外部表.使用Auto Scaling 创建 Amazon EMR 集群以满足任何日常分析需求，并使用Amazon Athena 生成季度报告，并且两者均使用相同的AWS Glue数据目录"
+				}
+			]
+		},
+		{
+			"stem":"Q10.一家保险公司拥有JSON格式的原始数据，该数据无需预先定义的时间表即可通过 Amazon Kinesis Data Firehose 交付流发送到Amazon S3存储桶。AWS Glue搜寻器计划每8小时运行一次，以更新S3存储桶中存储的表的数据目录中的果构，数据分析人员使用Amazon EMR上的Apache Spark SQL（使用AWS Glue 数据目录作为元存储库）来分析数据.数据分析人员说，他们偶尔收到的数据是过时的，数据工程师需要提供对最新数据的访问.哪种解决方案滴足这些要求？",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"根据现有Amazon Redshift集群上的AWS Glue数据目录创建外部架构，以使用Amazon Redshift Spectrum 查询Amazon S3中的新数据，"
+				},
+				{
+					"option": "B",
+					"content":"使用带速率（1小时）表达式的Amazon CloudWatch Events每小时执行一次AWS Glue 搜寻器．"
+				},
+				{
+					"option": "C",
+					"content":"使用AWS CLI.将AWS Glue搜寻器的执行时间表从8小时修改为1分钟."
+				},
+				{
+					"option": "D",
+					"content":"从由以下人员触发的AWS Lambda 函数运行AWS Glue 搜寻器S3存储桶上的S3:ObjectCreated:“事件通知"
+				}
+			]
+		},
+		{
+			"stem":"Q11.一家生产网络设备的公司拥有数百万的用户，每小时从设备收集一次数据，井将其存储在Amazon S3数据湖中．该公司对过去24小时的数据流日志进行分析，以进行异常检测以及排除和解决用户问题，该公司还分析了两年前的历史记录，以发现模式并寻找改进机会.数据流日志包含许多指标，例如日期，时间戳，源IP和目标IP.每天大约有100亿个事件。如何存储这些数据以获得最佳性能？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在Apache ORC中按日期划分并按源IP排序"
+				},
+				{
+					"option": "B",
+					"content":"在压缩的.csv中，按日期划分并按源IP排序"
+				},
+				{
+					"option": "C",
+					"content":"在Apache Parquet 中按源IP 划分并按日期排序"
+				},
+				{
+					"option": "D",
+					"content":"在按源IP划分并按日期排序的压缩旅套JSON中"
+				}
+			]
+		},
+		{
+			"stem":"Q12.一家银行公司当前正在使用具有密集存储（DS）节点的Amazon Redshit集群来存储敏感数据．审核发现群集未加密，遵从性要求指出，必须通过具有自动密钥旋转功能的硬件安全模块（HSM）对具有敏感数据的数据库进行加密。要实现合规性，需要哪些步骤组合？（选择两个.）",
+			"answer":["A","C"],
+			"is_multiple": true,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用具有自动密钥旋转功能的客户端和服务器证书，与HSM建立受信任的连接。"
+				},
+				{
+					"option": "B",
+					"content":"使用HSM加密选项和自动密钥旋转来修改集群。"
+				},
+				{
+					"option": "C",
+					"content":"创建一个新的HSM加密的Amazon Redshift集群，并将数据迁移到新集群。"
+				},
+				{
+					"option": "D",
+					"content":"通过AWS CLI通过密钥旋转启用HSM."
+				},
+				{
+					"option": "E",
+					"content":"在HSM中启用桶圆曲线 Diffie-Hellman临时（ECDHE）加密."
+				}
+			]
+		},
+		{
+			"stem":"Q13一家公司计划使用Amazon SageMaker 为其机器3 TB数据仓库中托管的一部分现有本地数据进行机器收入（ML）项目的概念验证，对于项目的一部分，AWS Direct Connect已建立并经过测试为了准备用于ML的数据，数据分析师正在执行数据管理，数据分析人员希望执行多个步骤、包括映射，到除空字段，解决选择和拆分字段，该公司需要最快的解决方案未整理该项目的数据。哪种解决方案满足这要求？",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS DataSync 将数据摄取到Amazon S3中、并使用Apache Spark 算本来管理Amazon EMR群中的数据，将策划的数据存储在Amazon S3中以进行ML处理"
+				},
+				{
+					"option": "B",
+					"content":"在本地创建自定义ETL作业以整理数据，使用AWS DMS将数据提取到Amazon S3中以进行ML处理"
+				},
+				{
+					"option": "C",
+					"content":"使用AWS DMS将数据摄取到Amazon S3.使用AWS Glue 执行数据管理并将数据存储在Amazon 3中以进行ML处理"
+				},
+				{
+					"option": "D",
+					"content":"对数据存储进行完整备份，然后使用AWS Snowbal 运送备份文件、将Snowball 数据上传到Amazon S3 并使用AWS Batch计划数据整理作业以为ML准备数据。"
+				}
+			]
+		},
+		{
+			"stem":"Q14一家位于美国的运动鞋零售公司自动了其全球网站，所有交易数据都存储在Amazon RDS中，策展的历史交易数据存储在us-east-1地区的Amazon Redshift中．商业智能（BI）团国队望通过提供针对运动鞋趋势的仪表板来增强用户体验.BI团队决定使用Amazon QuickSight呈现网站仪表板在开发期间、日本的一个团队在ap-northeast-1中配置了Amazon QuickSight.团队在将 Amazon QuickSight从ap-northeast-1连接到us-east-1中的Amazon Redshitt时遇到困难哪种解决方案可以解决此问题并满足要求？",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在Amazon Redshit控制台中，选择配置跨区域快照并将目标区域设置为ap-northeast-1.从快照还原AmazonRedshitt群集，并连接到在ap-hortheast-1中自动的Amazon QuickSight."
+				},
+				{
+					"option": "B",
+					"content":"创建一个从Amazon QuickSight VPC到Amazon Redshit VPC的VPC终端节点，以便 Amazon QuickSight可以从Amazon Redshint 访何数据"
+				},
+				{
+					"option": "C",
+					"content":"使用字持申中的Region信息创建一个Amazon Redshift端点连接字符串、并在Amazon QuickSight中使用此连接字特申连技到Amazon Redshift"
+				},
+				{
+					"option": "D",
+					"content":"使用入站规则为us-east-1中的Amazon Redshift创建一个新的安全组，该规则授权从ap-northeast-1中的AmazonQuickSight 服务器的相应IP地址范围进行访问"
+				}
+			]
+		},
+		{
+			"stem":"Q15.一家航空公司使用AWS Glue 数据目录将 csv格式的数据存储在Amazon S3中，数据分析人员希望将此数据与存储在Amazon Redshit中的呼叫中心数据结合起来，作为双批处理的一部分Amazon Redshift集群已经承受了沉重的负担，该解决方案必须是托管的，无服务器的，运行良好的，并且必须将现有Amazon Redshift集群的负载降至最低：该解决方案还需要最少的精力和开发活动。哪种解决方案满足这要求？",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS Lambda 函数将呼叫中心数据从 Amazon Redshit部载到Amazon S3.使用AWS Glue ETL 脚本执行联"
+				},
+				{
+					"option": "B",
+					"content":"使用AWS Glue 中的Python Shell从 Amazon Redshint 导出呼叫中心数据.使用AWS Glue ETL脚本执行联接。"
+				},
+				{
+					"option": "C",
+					"content":"使用 Amazon Redshift Spectrum为呼叫中心数据创建一个外部表，并使用Amazon Redshift执行联接"
+				},
+				{
+					"option": "D",
+					"content":"使用 Apache Sqoop 将呼叫中心数据从 Amazon Redshitt 导出到Amazon EMR.使用Apache Hive执行联接"
+				}
+			]
+		},
+		{
+			"stem":"Q16.数据分析师正在使用Amazon QuickSight在应用程序生成的多个数据集中进行数据可视化.每个应用程序将文件存储在单独的Amazon S3存储桶中AWS Glue 数据目录用作Amazon S3中所有应用程序数据的中央目录，一个新的应用程序将其数据存储在单独的S3存储桶中，在更新目录以包括新的应用程序数据源之后，数据分析人员从AmazonAthena表创建了新的Amazon QuickSight数据源，但是导入SPICE失败、数据分析师应如何解决该问题？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在Amazon QuickSight控制台中编辑AWS Glue 数据目录的权限."
+				},
+				{
+					"option": "B",
+					"content":"在Amazon QuickSight控制台中编辑新S3存储桶的权限"
+				},
+				{
+					"option": "C",
+					"content":"在AWS Glue 控制台中编辑 AWS Glue 数据目录的权限、"
+				},
+				{
+					"option": "D",
+					"content":"在S3控制台中编辑新S3存储桶的权限."
+				}
+			]
+		},
+		{
+			"stem":"Q17.一组数据科学家计划分析其公司新投资策略的市场趋势数据.趋势数据来自五个不同的大量数据源，团队希望利用Amazon Kinesis 来支持他们的用例.该团队使用类似SQL的查询来分析趋势，并希望基于趋势中的某些重要模式发送通知此外，数据科学家希望将数据保存到Amazon S3进行存档和历史重处理，并尽可能使用AWS托管服务．该团队希望实施成本最低的解决方案哪种解决方案满足这些要求?",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"将数据发布到一个Kinesis 数据流使用 Kinesis Client Library（KCL）部署自定义应用程序以分析趋势，并使用Amazon SNS 发送通知在Kinesis数据流上配置 Kinesis Data Firehose，以将数据持久保存到S3存储桶"
+				},
+				{
+					"option": "B",
+					"content":"将数据发布到一个Kinesis数据流将Kinesis Data Analytic 部署到流中以分析趋势，并将AWS Lambda 函数配置为输出以使用Amazon SNS发送通知，在Kinesis数据流上配置 Kinesis Data Firehose，以将数据持久保存到S3存储"
+				},
+				{
+					"option": "C",
+					"content":"将数据发布到两个Kinesis数据流将Kinesis Data Analytics部署到用于分析趋势的第一个流中，并将AWS Lambda函数配置为输出以使用Amazon SNS 发送通知。在第二个Kinesis 数据流上配置 Kinesis Data Firehose，以将数据持久保存到S3存储桶．"
+				},
+				{
+					"option": "D",
+					"content":"将数据发布到两个Kinesis 数据流，使用 Kinenis Client Library（KCL）将自定义应用程序部署到第一个流中以分析趋势，并使用Amazon SNS发送通如，在第二个Kinesis数据渡上配置Kinesis Data Firohose，以将数据持久保存到83有微核"
+				}
+			]
+		},
+		{
+			"stem":"Q18.一家公司当前使用Amazon Athona查询其全局数据集.区域数据存储在us-east-1和us-west-2地区的AmazonS3中。数据未加密，为了简化查询过程井进行集中管理，该公司希望在us-west-2中使用Athena从两个地区的AmazonS3中查询数据，解决方案应尽可能降低成本。公司应如何实现这一目标？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS DMS将AWS Gluo 数据目录从us-east-1迁移到us-west-2.在us-west-2中运行Athena 查询．"
+				},
+				{
+					"option": "B",
+					"content":"在us-west-2中运行AWS Glue 搜寻器以对所有区域中的数据集进行分类，抓取数据后，在us-west-2中运行Athena查询"
+				},
+				{
+					"option": "C",
+					"content":"为us-east-1中的S3存储桶启用跨区域复制，以复制us-west-2中的数据，在us-west-2中复制数据后，在此处运行AWS Glue搜寻器以更新 us-west-2中的AWS Glue 数据目录并运行Athena 查询．"
+				},
+				{
+					"option": "D",
+					"content":"更新AWS Glue 资源策略，以提供对 us-oast-1的us-east-1 AWS Glue 数据目录访问．一旦us-wesl-2中的目录可以访问us-east-1中的目录，请在us-west-2中运行Athena 查询．"
+				}
+			]
+		},
+		{
+			"stem":"Q19.一家大型公司全天都会从Amazon EC2中的外部各方接收文件、最终，这些文件将组合成一个文件，压缩成gzip文件，然后上传到Amazon S3.所有文件的总大小每天接近100 GB，将文件上传到Amazon S3之后，AWS Batch程序将执行COPY命令以将文件加载到Amazon Redshift 集群中.哪个程序修改将加速COPY过程？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"蒋单个文件上传到Amazon S3，并在文件可用后立即运行COPY命令"
+				},
+				{
+					"option": "B",
+					"content":"分割文件数，使它们等于Amazon Redshift集群中片数的倍数．Gzip井将文件上传到Amazon S3.在文件上运行COPY命令"
+				},
+				{
+					"option": "C",
+					"content":"分割文件数，使它们等于Amazon Redshift集群中计算节点数的倍数．Gzip并将文件上传到Amazon S3.在文件上运行COPY命令"
+				},
+				{
+					"option": "D",
+					"content":"通过分解文件来应用分片，以便具有相同值的distkey列进入同一文件，Gzip并将分片的文件上传到Amazon S3.在文件上运行COPY命令"
+				}
+			]
+		},
+		{
+			"stem":"Q20.一家大型的乘车共享公司每天在全球拥有成千上万的驾驶员，为数百万唯一的客户提供服务．该公司已决定将现有数据集市迁移到Amazon Redshift.现有模式包括下表.一个旅行事实表，以获取有关已完成游乐设施的信息。驱动程序配置文件的驱动程序尺寸表.包含客户资料信息的客户事实表。该公司按日期和目的地分析旅行详细信息，以检查按地区划分的盈利能力，驱动程序数据很少更改，客户数据经常更改。哪种表设计可提供最佳查询性能？",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用DISTSTYLE KEY（目的地）作为行程表并按日期排序.对驱动程序和客户表使用DISTSTYLE ALL."
+				},
+				{
+					"option": "B",
+					"content":"在行程表中使用DISTSTYLE EVEN，并按日期排序，将DISTSTYLE ALL用于驱动程序表.对客户表使用DISTSTYLE EVEN."
+				},
+				{
+					"option": "C",
+					"content":"使用DISTSTYLE KEY（目的地）作为行程表并按日期排序.将DISTSTYLE ALL用于驱动程序表.对客户表使用 DISTSTYLE EVEN."
+				},
+				{
+					"option": "D",
+					"content":"使用 DISTSTYLE EVEN作为驱动程序表并按日期排序，对两个事实表都使用DISTSTYLE ALL"
+				}
+			]
+		},
+		{
+			"stem":"Q21.三个团队的数据分析人员在带有EMR文件系统（EMRFS）的Amazon EMR集群上使用Apache Hive 来查询存储在每个Amazon S3存储桶中的数据．EMR群集已后用Kerberos，并配置为对公司Active Directory中的用户进行身份验证.数据是高度敏感的，因此访问必须限于每个团队的成员.哪些步骤可以满足安全要求？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"对于EMR集群Amazon EC2实例，创建一个服务角色，该服务角色不授予对Amazon S3的访问权限。创建三个其他IAM角色，每个角色都授予对每个团队的特定存储桶的访问权限，将其他IAM角色添加到EC2信任策略的群集的EMR角色中，为每个团队的其他IAM角色到Active Directory用户组创建安全配置映射."
+				},
+				{
+					"option": "B",
+					"content":"对于EMR集群Amazon EC2实例，创建一个服务角色，该角色不授予对Amazon S3的访问权限．创建三个其他IAM角色，每个角色都授予对每个团队的特定存储桶的访问权限．将EMR群集EC2实例的服务角色添加到其他IAM角色的信任策略中，为每个团队的其他IAM角色到Active Directory用户组创建安全配置映射。"
+				},
+				{
+					"option": "C",
+					"content":"对于EMR集群Amazon EC2实例，创建一个服务角色，授予对Amazon S3的完全访问权限．创建三个其他IAM角色，每个角色都授予对每个团队的特定存储桶的访问权限，将EMR群集EC2实例的服务角色添加到其他IAM角色的信任策略，为每个团队的其他IAM角色到Active Directory用户组创建安全配置映射."
+				},
+				{
+					"option": "D",
+					"content":"对于EMR集群Amazon EC2实例，创建一个服务角色，授予对Amazon S3的完全访问权限．创建三个其他IAM角色，每个角色都授予对每个团队的特定存储桶的访问权限．将EMR群集EC2实例的服务角色添加到基本IAM角色的信任策略中，为每个团队的其他IAM角色到Active Directory用户组创建安全配置映射。"
+				}
+			]
+		},
+		{
+			"stem":"Q22.一家公司计划在Amazon S3中创建一个数据湖.该公司希望基于访问模式和成本目标创建分层存储.该解决方案必须包括对来自旧客户端的JDBC连接的支持，允许联合以进行访问控制的元数据管理以及使用PySpark和Scala操作管理的基于批处理的ETL.哪些组件可以可以满足这些要求?（选择三个）",
+			"answer":["A","C","E"],
+			"is_multiple": true,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"用于元数据管理的AWS Glue 数据日录"
+				},
+				{
+					"option": "B",
+					"content":"Amazon EMR 和 Apache Spark for ETL"
+				},
+				{
+					"option": "C",
+					"content":"基于Scala的ETL的AWS Glue"
+				},
+				{
+					"option": "D",
+					"content":"带有 Apache Hive JDBC 客户端的 Amazon EMR"
+				},
+				{
+					"option": "E",
+					"content":"Amazon Ahena，用于使用JDBC 驱动程序查询Amazon S3中的数据"
+				},
+				{
+					"option": "F",
+					"content":"将 Amazon EMR与Apache Hive 结合使用，并使用具有MySQL 兼容后备元存储的 Amazon RDS"
+				}
+			]
+		},
+		{
+			"stem":"Q23.一家公司希望优化其数据和分析平台的成本该公司正在从各种数据源中提取Amazon S3中的多个.csv和JSON文件，预计每天会有50GB的传入数据．该公司正在使用Amazon Athena 直接查询Amazon S3中的原始数据。大多数查询会汇总过去12个月的数据，并且根少查询5年以上的数据，典型的查询扫描大约500MB的数据，并且预计将在不到1分钟的时间内返回结果，原始数据必须无限期保留以满足合理性要求。哪种解决方案符合公司要求？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS Glue ETL作业将数据压缩，分区并将其同换为列式数据格式。使用Athena查询处理后的数据集。配置生命周期策码，以在对象创建后5年将处理后的数据移入Amazon S3标准不频繁访问（S3 Standard-IA）存储类。配置第二个生会周期策略，以在对象创建后的7天之内将原始数据移至Amazon S3 Glacier 进行长期归档。"
+				},
+				{
+					"option": "B",
+					"content":"使用AWS Glue ETL作业对数据进行分区劳将其特换为基于行的数据格式，使用Athena 查询处理后的数据集配置生会周期策略，以在对象创建5年后将数据核至Amazon S3 Standard-Intrequent Access（S3 Standard-A）存储类配置第二个生命周期策略，以在对象创建后的7天之内每原始数面移至Amazon S3 Glacier 进行长期归档"
+				},
+				{
+					"option": "C",
+					"content":"使用AWS Giue ETL作业将数据床维，分区并将其时换为列式数据格式，使用Athena查询处理后的数据集，配置生合司期策略，以将处理的数据上次访问对象5年后移入Amazon S3标准－不疑繁访问（S3 Standard-IA）存储类配置第二个生命周期策略，以将原始数据从上次访何该对象的日期算起的7天后进行长期存档，以格其移入AmazonS3 Glacier"
+				},
+				{
+					"option": "D",
+					"content":"使用AWS Glue ETL作业对数据进行分区并将其转换为基于行的数据格式，使用Athena 查询处理后的数据集配置生会周期策唱、以在上次请问对象5年后将数据移动到Amazon S3标准不顺繁访问（S3 Standard-A）存储类中配置第二个生金周期策略，以将原始数据从上次请问该对象的日期算起的7天后进行长期存档，以将其移入Amazon S3Glacer"
+				}
+			]
+		},
+		{
+			"stem":"Q24.一家地区性能温公司从连接到建筑物的传感器收集电压数据。为了解决任何已知的危险状况，该公司希望在同一建成物的电压尖峰后10分钟内检测到两个电压简序列时发出警报，重要的是要确保尽快传递所有消息。该系统必须得到全面管理并且高度可用。该公司还需要一种能部自动扩展现模的解决方案，因为它可以利用此监视功能覆盖其他站点。警报系统已订阅Amazon SNS主题进行补数。哪种解决方案满足这经要求?",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"建一个用于Kaha 能群的 Amazon Managed Streaming来接收数据，并在自动维放的Amazon EMR 集群中将Apache Spark 流与 Apache Kaka 使用者API一起使用.使用Spark Streaming 应用程序检测已知事件序列并发通"
+				},
+				{
+					"option": "B",
+					"content":"使用AIWS Lambda 语数省面的 Amazon API Gateway 创建基于REST的Web 服务、使用是第的预配置IOPS（PIOPS）为PostgreSQL 数据库创建 Amazon RDS.在Lambda 函数中，将传入事件存储在ROS数据库中，并查询最新数据以检测已知事件序列并发送SNS消息"
+				},
+				{
+					"option": "C",
+					"content":"创建一个Amazon Kinesis Data Firehose 交付流来描获传入的传感器数据.使用AWS Lambda转换功能来检测已知事件序列并发送SNS消息"
+				},
+				{
+					"option": "D",
+					"content":"创建一个Amazon Kinesis 数据流以捕获传入的传感器数据，并创建另一个警报消息流，在两者上都设置AWS Appication Auto Scaling。创建用于Java 的Kinesis Data Anaytics 应用程序以检测已知事件序列，并将消息添加到消息流。配置 AWS Lambda 函数以轮询消息流并发布到SNS主题"
+				}
+			]
+		},
+		{
+			"stem":"Q25.复体内容公司具有流播放应用程序。该公司希望收集和分析数据，以提供有关回放问题的近实时反馈，公司需要根据服务级别协议（SLA）使用此数据并在30秒内返回结果．公司需要消费者确定回放问题，例如在指定时间范围内的质量。数据将以JSON形式发出，并可能随时间变化架构。哪种解决方案可以使公司在满足这些要求的同时收集数据进行处理？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"将数据发送到Amazon Kinesis Data Firehose，交付给 Amazon S3.配置S3事件触发AWS Lambda 通数以处理数据Lambda 运数将使用数据并对其进行处理以识别潜在的播放问题.将原始数据持久保存到Amazon S3."
+				},
+				{
+					"option": "B",
+					"content":"将数据发送到Kafka 的Amazon Managed Streaming，并将 Amazon Kinesis Analytics for Java 应用程序配置为使用者。该应用程序将使用数据并对其进行处理，以识别潜在的回放问题。将原始数据持久保存到Amazon DynamoDB."
+				},
+				{
+					"option": "C",
+					"content":"将数据发送到Amazon Kinesis Data Firehose，并交付给 Amazon S3.将Amazon S3配置为触发事件以供AWS Lambda 处理.Lambda 函数将使用数据并对其进行处理以识别潜在的播放问题将源始数据持久保存到Amazon DynamoDB"
+				},
+				{
+					"option": "D",
+					"content":"将数据发送到Amazon Knesis Data Streams.并将 Amazon Kinesis Analytics for Java 应用程序配置为使用者，该应用程序将使用数据并对其进行处理，以识别潜在的回放问题，将原始数据持久保存到Amazon S3."
+				}
+			]
+		},
+		{
+			"stem":"Q26.一家电子商务公司将客户购买数据存储在Amazon RDS中.该公司需要一种存储和分析历史数据的解决方案.经常查询最近6个月的数据以获取分析工作负载，此数据是几个TB.每月必须一次访问过去5年的历史数据，并将其与最新数据结合在一起，该公司希望优化性能和成本.哪种存储解决方案可以满足这些要求？",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"创建RDS数据库的只读副本，以存储最近6个月的数据，将历史数据复制到Amazon S3.创建Amazon S3和Amazon RDS中数据的AWS Glue 数据目录.使用Amazon Athena 运行历史查询."
+				},
+				{
+					"option": "B",
+					"content":"使用ETL工具将最近6个月的数据增量加载到Amazon Redshift 集群中.针对该群集运行更频繁的查询，创建RDS数据库的只读副本，以对历史数据运行查询."
+				},
+				{
+					"option": "C",
+					"content":"将数据从Amazon RDS增量复制到Amazon S3.创建Amazon S3中数据的AWS Glue 数据目录.使用Amazon Athena 查询数据."
+				},
+				{
+					"option": "D",
+					"content":"增量地将数据从Amazon RDS 复制到 Amazon S3.在Amazon Redshift中加载和存储最近6个月的数据.配置Amazon Redshift Spectrum表以连接到所有历史数据."
+				}
+			]
+		},
+		{
+			"stem":"Q27.一家公司利用Amazon Athena对存储在Amazon S3中的数据进行临时查询.该公司希望实施其他控件，以在同－AWS账户中运行的用户，团队或应用程序之间分隔查询执行和查询历史记录，以符合内部安全策略。哪种解决方案满足这些要求？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"为每个给定用例创建一个S3存储桶，创建一个S3存储桶策略，该策略向适当的单个IAM用户授予权限．并将S3存储桶策略应用于S3存储桶、"
+				},
+				{
+					"option": "B",
+					"content":"为每个给定用例创建一个Athena工作组，将标签应用于工作组，并使用这些标签创建IAM策略，以将适当的权限应用于工作组"
+				},
+				{
+					"option": "C",
+					"content":"为每个给定的用例创建一个IAM角色，为给定用例的角色分配适当的权限，并添加该角色以将该角色与Athena 关联"
+				},
+				{
+					"option": "D",
+					"content":"为每个给定用侧创建一个AWS Glue数据目录资源策略，以向适当的单个IAM用户授予权限，并将该资源策略应用于Athena 使用的特定表."
+				}
+			]
+		},
+		{
+			"stem":"Q28.一家公司希望使用自动机器学习（ML）随机砍伐森林（RCF）算法来可视化复杂的实词场景，例如检测季节性和趋势，排除外部因素以及估算缺失值.从事此项目的团队是非技术人员，正在寻找一种现成的解决方案，该解决方案将需要最少的管理开销。哪种解决方案可以满足这些要求？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS Glue ML转换创建预测，然后使用 Amazon QuickSight可视化数据."
+				},
+				{
+					"option": "B",
+					"content":"使用 Amazon QuickSight可视化数据，然后使用基于ML的预测来预测关键业务指标。"
+				},
+				{
+					"option": "C",
+					"content":"使用来自AWS Marketplace的预构建ML AMI创建预测，然后使用Amazon QuickSight可视化数据."
+				},
+				{
+					"option": "D",
+					"content":"使用计算所得的字段创建新的预测，然后使用Amazon QuickSight可视化数据."
+				}
+			]
+		},
+		{
+			"stem":"Q29.一家零售公司的数据分析团队最近使用Amazon QuickSight为每个产品的平均销售价格创建了多个产品销售分新收表版，仪表板是根据上传到Amazon S3的．csv文件创建的.团队现在计划通过在Amazon QuickSight中创建个人用户，与各自的外部产品所有者共享仪表板。出于合规性和治理原因，限制访问是一项关键要求，产品负责人应仅在仪表板报告中查看其各自的产品分析。数据分析团队应采用哪种方法来允许产品所有者仅在仪表板中查看其产品？",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"按产品分开数据、并使用S3存储精策略进行授权"
+				},
+				{
+					"option": "B",
+					"content":"按产品分开数据，并使用IAM策略进行授权"
+				},
+				{
+					"option": "C",
+					"content":"创建具有行级安全性的清单文件"
+				},
+				{
+					"option": "D",
+					"content":"创建具有行级安全性的数据集规则."
+				}
+			]
+		},
+		{
+			"stem":"Q30.一家公司开发了Apache Hive 脚本来批处理Amazon S3中的数据，该脚本需要每天运行一次，并将输出存储在Amazon S3中。该公司对该脚本进行了测试，并在30分钟内在一个小型本地三节点群集上完成。对于计划和执行脚本，MOST哪种解决方案最划算？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"创建一个AWS Lambda函数，以通过Hive 执行步骤启动一个Amazon EMR集群.将KeepJobFlowAliveWhenNoSteps 设置为false 并禁用终止保护标志.使用 Amazon CloudWatch Events 安排 Lambda函数每天运行、"
+				},
+				{
+					"option": "B",
+					"content":"使用AWS管理控制合通过Python Hue 启动Amazon EMR集群.Hive和Apache Oozie.将终止保护标志设置为true，并将竞价型实侧用于群集的核心节点，在群集中配置Oozie 工作流程以每天调用Hive 脚本."
+				},
+				{
+					"option": "C",
+					"content":"使用Hive 脾本创建一个AWS Glue 作业以执行批处理操作、使用基于时间的计划将作业配置为每天运行一次。"
+				},
+				{
+					"option": "D",
+					"content":"使用 AWS Lambda 层并将 Hive 运行时加载到AWS Lambda 并复制 Hive 脚本 通过使用AWS Step Functions 创建工作流、安排 Lambda 函数每天运行."
+				}
+			]
+		},
+		{
+			"stem":"Q31.一家公司希望缩短销售数据仪表板的数据加载时间。数据已作为．csv文件收集并存储在按日期划分的Amazon S3存储桶中，然后将数据加载到Amazon Redshift 数据仓库以进行频繁分析．每天的数据量高达500 GB.哪种解决方案将改善数据加载性能?",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"压缩，csV文件并使用INSERT 语句将数据提取到Amazon Redshift中，"
+				},
+				{
+					"option": "B",
+					"content":"拆分大型.csv文件，然后使用COPY命令将数据加载到Amazon Redshift."
+				},
+				{
+					"option": "C",
+					"content":"使用 Amazon Kinesis Data Firehose 将数据提取到Amazon Redshift中."
+				},
+				{
+					"option": "D",
+					"content":"以未排序的键顺序加载.csv文件，并清理Amazon Redshift中的表"
+				}
+			]
+		},
+		{
+			"stem":"Q32.一家公司在Amazon Redshift中拥有一个大约500TB的数据仓库，每隔几个小时就会导入一次新数据，并且白天和晚上都会运行只读查询，工作量特别重，每天早上几个工作日内没有任何写入。在那几个小时内，一些查询排队，并且需要很长时间才能执行.公司需要优化查询执行并避免停机.什么是最具成本效益的解决方案？",
+			"answer":["A"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"在工作负载管理（WLM）队列中启用并发缩放."
+				},
+				{
+					"option": "B",
+					"content":"在高峰时段使用AWS管理控制台添加更多节点，将分发样式设置为ALL."
+				},
+				{
+					"option": "C",
+					"content":"使用弹性调整大小在高峰时间快速添加节点，不需要节点时，将其删除。"
+				},
+				{
+					"option": "D",
+					"content":"使用快照，还原和调整大小操作，切换到新的目标群集"
+				}
+			]
+		},
+		{
+			"stem":"Q33.一家公司在Amazon Redshift数据仓库中分析其数据，该仓库当前具有三个密集存储节点的集群．由于最近的一项业务收购，该公司需要将额外的4TB用户数据加载到 Amazon Redshift中．工程团队将合并所有用户数据，并应用需要I/O大量资源的复杂计算.公司需要调整集群的容量以支持分析和存储需求的变化.哪种解决方案满足这些要求?",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用具有密集计算节点的弹性调整大小来调整群集的大小."
+				},
+				{
+					"option": "B",
+					"content":"使用具有密集计算节点的经典调整大小来调整集群大小."
+				},
+				{
+					"option": "C",
+					"content":"使用具有密集存储节点的弹性调整大小来调整群集的大小."
+				},
+				{
+					"option": "D",
+					"content":"使用具有密集存储节点的经典调整大小来调整集群大小."
+				}
+			]
+		},
+		{
+			"stem":"Q34.公司将其销售和营销数据（包括个人身份信息（PII））存储在Amazon S3中．该公司允许其分析师启动自己的Amazon EMR 集群并使用数据运行分析报告.为了满足合规性要求，公司必须确保在此过程中不能公开访问数据.数据工程师已经保护了Amazon S3.但必须确保分析师创建的单个EMR集群不会暴露于公共互联网中，数据工程师应尽量减少哪种解决方案来满足此合规性要求？",
+			"answer":["C"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"创建一个EMR安全配置，并确保安全配置在创建EMR群集时已与它们关联。"
+				},
+				{
+					"option": "B",
+					"content":"定期检查EMR群集的安全组，以确保它不允许来自IPv4 0.0.0.0/0或IPv6:/0的入站流量，"
+				},
+				{
+					"option": "C",
+					"content":"在创建任何EMR集群之前，在账户级别启用Amazon EMR的阻止公共访问设置."
+				},
+				{
+					"option": "D",
+					"content":"使用AWS WAF全面禁止对EMR群集的公共 Intermet 访问."
+				}
+			]
+		},
+		{
+			"stem":"Q35.一家金融公司将Amazon S3用作其数据湖，并已使用多节点Amazon Redshift集群建立了数据仓库，数据湖中的数据文件根据每个数据文件的数据源组织在文件夹中.对于每个数据文件位置，使用单独的COPY命令将所有数据文件加载到Amazon Redshift集群中的一个表.通过这种方法，将所有数据文件加载到Amazon Redshift 需要很长时间才能完成．用户希望在保持S3数据湖中的数据文件隔离的同时，又不增加或仅增加成本的更快解决方案。哪种解决方案满足这些要求？",
+			"answer":["D"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用Amazon EMR将所有数据文件复制到一个文件夹中，然后发出COPY命令以将数据加载到 Amazon Redshift中."
+				},
+				{
+					"option": "B",
+					"content":"并行加载所有数据文件到Amazon Aurora，然后运行AWS Glue 作业将数据加载到Amazon Redshift."
+				},
+				{
+					"option": "C",
+					"content":"使用AWS Glue 作业将所有数据文件复制到一个文件夹中，并发出COPY命令以将数据加载到Amazon Redshift."
+				},
+				{
+					"option": "D",
+					"content":"创建一个包含数据文件位置的清单文件，并发出COPY 命令以将数据加载到 Amazon Redshift."
+				}
+			]
+		},
+		{
+			"stem":"Q36.公司的营销团队已根据以下要求寻求帮助，以为其数据确定高性能的长期存储服务：未压缩的数据大小约为32 TB.每天单行刀片的数量报少,每天都有大量的聚合查询,执行多个复杂的联接。查询通常涉及表中列的一小部分，哪种存储服务将提供MOST性能解决方案？",
+			"answer":["B"],
+			"is_multiple": false,
+      "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"Amazon Aurora MySQL"
+				},
+				{
+					"option": "B",
+					"content":"亚马逊 Redshift"
+				},
+				{
+					"option": "C",
+					"content":"亚马逊海王星"
+				},
+				{
+					"option": "D",
+					"content":"亚马逊弹性搜索"
+				}
+			]
+		},
+    {
+			"stem":"Q37.一家技术公司正在常见一个仪表板，该仪表板将可视化和分析对时间敏感的数据。数据将通过黄油间隔设置为60秒的Amazon Kinesis Data Firehose传入。仪表板必须支持近实时数据。那种可视化解决方案可以满足这些要求",
+			"answer":["A"],
+			"is_multiple": false,
+            "is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"选择Amazon Elasticsearch Service（Amazon ES）作为Kinesis Data Firehose的终端节点，使用Amazon ES中的数据以及所需的分析和可视化设置Kinana仪表板"
+				},
+				{
+					"option": "B",
+					"content":"选择Amazon S3作为Kinesis Data Firehose的终端节点。将数据读取到Amazon SegaMaker Jupyter笔记本中，并执行所需的分析和可视化。"
+				},
+				{
+					"option": "C",
+					"content":"选择Amazon Redshift作为Kinesis Data Firehose的终端节点，将带有SPICE的Amazon QuickSight连接到Amazon Redshift。以创建所需的分析和可视化"
+				},
+				{
+					"option": "D",
+					"content":"选择Amazon S3作为Kinesis Data Firehose的终端节点，使用AWS Glue对数据进行分类，并使用Amazon Athena对其进行查询。将带有SPICE的Amazon Quicksight连接到Athena，以创建所需的分析和可视化"
+				}
+			]
+		},
+    {
+			"stem":"Q38.一家金融公司在Amazon EMR上使用Apache Hive 进行临时查询，用户抱怨性能不住。数据分析师指出以下内容：市场开放1小时后，大约90％的查询被提交。Hadoop分布式文件系统（HDFS）利用率水远不会超过10％．哪种解决方案有助于解决性能问题？",
+			"answer":["D"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"为核心和任务节点创建实例队列配置，创建自动扩项策略以根据 Amazon CloudWatch CapacityRemainingGB 指标扩服实例组，创建一个自动扩版策略，以账据CloudWatch CapacityRemainingGB指标在实例队何中进行扩展。"
+				},
+				{
+					"option": "B",
+					"content":"为核心和任务节点创建实例队列配置，创建一个自动扩展销略以根据 Amazon CloudWatch YARNMamorAvalabiePercentage指标扩展实例组。创建一个自动扩展策略，以根据 CoudWatch YARNMamoryAvailablePercentage 指标在实例队列中进行扩展"
+				},
+				{
+					"option": "C",
+					"content":"为核心和任务节点创建实例组配置，创建自动扩展策略以感觉Amazon CloudWatch CapacityRemainingGB指标扩展实例组，创建一个自动扩展策略以根据CloudWatch CapacityRemainingGB指标在实例组中进行扩展 "
+				},
+				{
+					"option": "D",
+					"content":"为核心和任务节点创建实例组配置，创建一个自动扩展策略以根据Amazon CloudWatch YARNMamorAvalabiePercentage指标扩展实例组。创建一个自动扩展策略，以根据CloudWatch YARNMamorAvalabiePercentage指标在实例组中进行扩展"
+				}
+			]
+		},
+    {
+			"stem":"Q39.一家媒体公司一直在对其应用程序生成的日志数据进行分析，最近运行的井发分析作业数量有所增加，并且随着影作业数量的增加，现有作业的整体性能正在下降，分区的数据存储在Amazon S3一区不频繁访问（S3 One Zone-IA）中，并且使用启用了一致视图的EMR文件系统（EMRFS）在AmazonEMR集群上执行分析处理，数据分析师已确定，EMR任务节点在Amazon S3中列出对象所花费的时间更长。最有可验采取哪种行动来提高访问Amazon S3中的日志数据的性能？",
+			"answer":["C"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用哈希通数创建随机字符串，然后在将日志数据存储在Amazon S3中时将其添加到对象前缀的开头"
+				},
+				{
+					"option": "B",
+					"content":"使用生命周期策略将日志数据的S3存储类更改为S3标准。"
+				},
+				{
+					"option": "C",
+					"content":"增加共享的Amazon DynamoDB表的读取容量单位（RCU），"
+				},
+				{
+					"option": "D",
+					"content":"移运行缓慢的EMR群集重新部署到其他可用区"
+				}
+			]
+		},
+    {
+			"stem":"Q40.一家公司开发了多个AWS Glue作业，以每天一次验证和转换来自Amazon S3的数据并将其分批加载到MySQL.的Amazon RDS中．ETL作业使用 DynamicFrame 读取S3数据.当前，随着AWS Glue作业在每次运行中处理所有S3输入数据，ETL开发人员在每次运行仅处理增量数据时都遇到了挑战。哪种方法可以使开发人员以最少的编码工作来解决问题？",
+			"answer":["B"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"让ETL作业使用 DataFrame从Amazon S3读取数据."
+				},
+				{
+					"option": "B",
+					"content":"在AWS Glue作业上启用作业书签"
+				},
+				{
+					"option": "C",
+					"content":"在ETL作业上创建自定义逻辑以跟踪已处理的S3对象。"
+				},
+				{
+					"option": "D",
+					"content":"每次运行后，让ETL作业从Amazon S3删除已处理的对象或数据。"
+				}
+			]
+		},
+    {
+			"stem":"Q41.抵押公司具有接受付款的微服务，此微服务在将数据写入DynamoDB之前，将Amazon DynamoDB加密客户端与AWS KMS 托管密钥结合使用来加密敏感数据.财务团队应该能够将此数据加载到Amazon Redshift中，并在敏感字段内汇总值.Amazon Redshift集群与来自不同业务部门的其他数据分析师共享.数据分析师应采取哪些步骤有效，安全地完成此任务？",
+			"answer":["B"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"创建一个AWS Lambda 函数来处理 DynamoDB流.使用相同的KMS密钥解密敏感数据.将输出保存到财务团队的受限S3存储桶中．在Amazon Redshift中创建一个财务表，该表只能由财务团队访问．使用COPY命令将数据从Amazon S3加载到财务表."
+				},
+				{
+					"option": "B",
+					"content":"创建一个AWS Lambda函数来处理DynamoDB流.将输出保存到财务团队的受限S3存储桶中.在Amazon Redshift中创建一个财务表，该表只能由财务团队访问.将COPY命令与有权访问KMS密钥的IAM角色一起使用，以将数据从S3加载到财务表．"
+				},
+				{
+					"option": "C",
+					"content":"创建一个具有EMR_EC2_DefaultRole角色的Amazon EMR集群，该角色有权访问KMS密钥．创建引用存储在DynamoDB中的数据和Amazon Redshift 中的 Finance表的 Apache Hive表.在Hive中，从DynamoDB中选择数据，然后将输出插入 Amazon Redshift中的Finance表."
+				},
+				{
+					"option": "D",
+					"content":"创建一个Amazon EMR集群.创建引用存储在DynamoDB中的数据的Apache Hive表.将输出插入财务团队的受限制的Amazon S3存储桶．将COPY 命令与有权访问KMS密钥的IAM角色一起使用，以将数据从 Amazon S3加载到Amazon Redshift中的财务表．"
+				}
+			]
+		},
+    {
+			"stem":"Q42.公司正在建立一个数据湖，需要从具有时间序列数据的关系数据库中提取数据．该公司希望使用托管服务来完成此任务.该过程需要每天进行计划，并且仅将增量数据从源中带入 Amazon S3.最符合这些要求的最具成本效益的方法是什么?",
+			"answer":["A"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS Glue 通过JDBC 驱动程序连接到数据源，仅使用作业书签摄取增量记录."
+				},
+				{
+					"option": "B",
+					"content":"使用AWS Glue 通过JDBC 驱动程序连接到数据源.将最后更新的密钥存储在Amazon DynamoDB表中，并使用更新的密钥作为过滤器来摄取数据."
+				},
+				{
+					"option": "C",
+					"content":"使用AWS Glue 通过JDBC驱动程序连接到数据源，并提取整个数据集.使用适当的Apache Spark库比较数据集并找到增量."
+				},
+				{
+					"option": "D",
+					"content":"使用AWS Glue 通过JDBC驱动程序连接到数据源，并提取完整数据.使用AWS DataSync 确保仅将增量写入 Amazon S3."
+				}
+			]
+		},
+    {
+			"stem":"Q43.Amazon Redshift数据库包含敏感的用户数据.为了满足合规性要求，必须进行日志记录．日志必须包含数据库身份验证尝试，连接和断开连接.日志还必须包含针对数据库运行的每个查询，并记录哪个数据库用户运行了每个查询。哪些步骤将创建所需的日志?",
+			"answer":["C"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"启用Amazon Redshift 增强VPC路由.启用VPC流日志以监视流量."
+				},
+				{
+					"option": "B",
+					"content":"仅允许使用AWS IAM 访问Amazon Redshift 数据库.使用AWS CloudTrail 进行日志访问."
+				},
+				{
+					"option": "C",
+					"content":"使用AWS管理控制台或AWS CLI为Amazon Redshift 启用审核日志记录."
+				},
+				{
+					"option": "D",
+					"content":"从AWS Artifact启用和下载审核报告."
+				}
+			]
+		},
+    {
+			"stem":"Q44.一家从远程施工现场监视天气状况的公司正在建立解决方案，以从以下两个气象站收集温度数据．站点A，具有10个传感器B站，有五个传感器这些气象站由现场主题专家放置.每个传感器都有唯一的ID.从每个传感器收集的数据将使用Amazon Kinesis Data Streams 收集.根据总的传入和传出数据吞吐量，创建具有两个分片的单个Amazon Kinesis数据流.根据工作站名称创建两个分区键.在测试过程中，来自站点A的数据存在瓶颈，而来自站点B的数据则存在瓶颈.通过检查，可以确认总流吞吐量仍小于分配的Kinesis数据流吞吐量.在保持数据收集质量要求的同时，如何解决该瓶颈而又不增加解决方案的总体成本和复杂性？",
+			"answer":["C"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"增加Kinesis数据流中的分片数量，以提高并行度."
+				},
+				{
+					"option": "B",
+					"content":"为工作站A创建带有两个分片的单独的Kinesis数据流，并将工作站A传感器数据流传输到新的流."
+				},
+				{
+					"option": "C",
+					"content":"修改分区键以使用传感器ID代替工作站名称."
+				},
+				{
+					"option": "D",
+					"content":"将工作站A中的传感器数量从10个减少到5个."
+				}
+			]
+		},
+    {
+			"stem":"Q45.每月一次，一家公司会收到一个100MB的．csv文件，该文件使用gzip压缩．该文件包含50，000个属性列表记录，并存储在Amazon S3 Glacier中．该公司需要其数据分析师来查询特定供应商的数据子集.什么是最具成本效益的解决方案?",
+			"answer":["A"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"将数据加载到Amazon S3中，然后使用 Amazon S3 Select 查询．"
+				},
+				{
+					"option": "B",
+					"content":"直接使用Amazon Glacier Select从Amazon S3 Glacier 查询数据."
+				},
+				{
+					"option": "C",
+					"content":"将数据加载到Amazon S3并使用 Amazon Athena 查询."
+				},
+				{
+					"option": "D",
+					"content":"将数据加载到Amazon S3 并使用 Amazon Redshift Spectrum 查询."
+				}
+			]
+		},
+    {
+			"stem":"Q46.一家零售公司正在使用Amazon Redshift 构建其数据仓库解决方案.作为这项工作的一部分，该公司正在将数百个文件加载到在其 Amazon Redshift集群中创建的事实表中，该公司希望该解决方案能够在将数据加载到公司的事实表中时实现最高的吞吐量并优化使用群集资源.公司应如何满足这些要求？",
+			"answer":["D"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用多个COPY命令将数据加载到Amazon Redshift集群中."
+				},
+				{
+					"option": "B",
+					"content":"使用S3DistCp将多个文件加线到Hadoop分布式文件系统（HDFS）中，并使用HDFS连接器将数据摄取到Amazon Redshift 集群中."
+				},
+				{
+					"option": "C",
+					"content":"使用等于Amazon Redshift集群节点数量的LOAD命令，并将数据并行加载到每个节点中."
+				},
+				{
+					"option": "D",
+					"content":"使用单个COPY命令将数据加载到Amazon Redshift集群中."
+				}
+			]
+		},
+    {
+			"stem":"Q47.数据分析师正在设计一种解决方案，以使用JDBC 连接以SQL交互式查询数据集．用户将以Apache ORC 格式存储在Amazon S3中的数据与存储在Amazon Elasticsearch Service（Amazon ES）和Amazon Aurora MySQL中的数据结合在一起.哪种解决方案可以提供最新的MOST结果？",
+			"answer":["D"],
+			"is_multiple": false,
+			"is_confirm": true,
+			"choices":[
+				{
+					"option": "A",
+					"content":"使用AWS Glue 作业将ETL数据从Amazon ES和Aurora MySQL 传输到 Amazon S3.使用 Amazon Athena 查询数据."
+				},
+				{
+					"option": "B",
+					"content":"使用Amazon DMS将数据从Amazon ES和Aurora MySQL 流传输到 Amazon Redshift.使用 Amazon Redshift 查询数据."
+				},
+				{
+					"option": "C",
+					"content":"使用在AWS Glue开发人员终端节点上运行的Apache Spark SQL查询到位的所有数据集."
+				},
+				{
+					"option": "D",
+					"content":"使用在Amazon EMR上运行的Apache Presto查询到位的所有数据集."
+				}
+			]
+		},{
+	      "stem": "Q48.一家公司开发了一个新的选举报告网站，该网站使用Amazon Kinesis Data Firehose将完整的日志从AWS WAF传递到Amazon S3存储桶．该公司现在正在寻求一种低成本的选择，以最少的开发工作来通过日志可视化来执行这种不频繁的数据分析.哪种解决方案可使公司满足这些要求？",
+	      "choices": [{
+	        "option": "A",
+	        "content": "使用AWS Clue搜寻器从日志创建和更新Glue数据目录中的表。使用Athena进行临时分析，并使用Amazon QuickSight开发数据可视化"
+	      }, {
+	        "option": "B",
+	        "content": "创建第二个Kinesis Data Firehose传递流，以将日志文件传递到Amazon Elasticache Service（Amazon ES）.使用Amazon ES 对日志执行基于文本的搜索以进行临时分析，并使用Kibana进行数据可视化"
+	      }, {
+	        "option": "C",
+	        "content": "创建一个AWS Lambda函数以将日志转换为.CSV格式。然后将该功能添加到Kinesis Data Firehose转换配置，使用Amazon Redshift使用SQL查询执行日志的临时分析，并使用Amazon QuickSight开发数据可视化"
+	      }, {
+	        "option": "D",
+	        "content": "创建一个Amazon EMR集群并将Amazon S3的用作数据源，创建一个Apache Spark作业以执行临时分析，并使用Amazon QuickSight开发数据可视化"
+	      }],
+	      "answer": ["A"],
+	      "is_multiple": false,
+	      "is_confirm": true
+    },{
+      "stem": "Q49.一家大公司有一个中央数据湖，可以在不同部门之间运行分析，每个部门使用一个单独的AWS账户并将数据存储在该账户的Amazon S3存储桶中。每个AWS账户均使用AWS Glue数据目录作为棋数据目录。根据角色，有不同的数据湖访问要求，准分析师应对其部门数据具有读取权限，高级数据分析师可以访问包括其部门在内的多个部门，但只能访问一部分列。哪种解决方案可以实现这些所需的访问模式，以最大程度的降低成本和管理任务？",
+      "choices": [{
+        "option": "A",
+        "content": "将所有AWS账户合并为一个账户。为每个部门创建不同的S3存储桶，并将所有数据从每个账户移至中央数据湖账户。将单个数据目录迁移到中央数据目录中，并应用细粒度权限，以向每个用户提供对AWS Glue作业，以每天一次验证和转换来自Amazon S3中表和数据库的所需访问权限。"
+      }, {
+        "option": "B",
+        "content": "在每个账户上保留账户结构和单独的AWS Glue目录。添加一个中央数据湖账户，并使用AWS Glue对来自各种账号的数据分类。为AWS Glue搜寻器配置跨账户访问，以扫描每个部门S3存储桶中的数据，以识别架构并填充目录。将高级数据分析师添加到中央账户中，并在数据目录和Amazon S3中应用高度详细的访问控制"
+      }, {
+        "option": "C",
+        "content": "为中央数据湖设置一个单独的AWS账户。使用AWS Lake Formation来对交叉账户位置进行分类。在每个单独的S3存储桶上，修改存储桶策略，以将S3权限授予Lake形成服务衔接角色，使用Lake Formation权限添加细粒度的访问控制，以允许高级分析师查看特定的表和列"
+      }, {
+        "option": "D",
+        "content": "为中央数据湖设置一个单独的AWS账户，并配置一个中央S3存储桶，使用AWS Lake Formation 蓝图将数据从各个存储桶移至中央S3存储桶，在每个单独的存储桶上，修改存储桶策略，以将S3权限授予Lake 形成服务链接角色。使用湖形成权限为准分析师和高级分析师添加细粒度的访问控制，以查看特定的表和列。"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    },{
+      "stem": "Q50.一家公司希望通过向其推荐引擎添加更多功能来提高其智能家居系统的用户满意度.每个传感器使用Java中的Kinesis 生产者库（KPL）异步将其嵌套的JSON数据推送到Amazon Kinesis 数据流中.一组故障传感器的统计数据表明，当传感器发生故障时，其记录的数据并不总是发送到云中.该公司需要一种解决方案，该解决方案需要对来自最新传感器的数据进行近实时分析.哪种解决方案可使公司满足这些要求",
+      "choices": [{
+        "option": "A",
+        "content": "将KPL的RecordMaxBufferedTime属性设置为“－1”以禁用传感器侧的缓冲．使用 Kinesis Data Analytics 基于公司开发的异常检测SQL脚本来丰富数据.将丰富的数据推送到Kinesis数据流中，并启用数据转换功能以展平JSON文件.实例化密集存储 Amazon Redshift集群，并将其用作 Kinesis Data Firehose 交付流的目标"
+      }, {
+        "option": "B",
+        "content": "更新传感器代码，以将 Kinesis Data Streams API中的 PutRecord/PutRecords 调用与适用于Java的AWS开发工具包一起使用，使用Kinesis Data Analytics基于公司开发的异常检测SQL脚本来丰富数据.将KDA应用程序的输出定向到Kinesis Data Firehose交付流，启用数据转换功能以展平JSON文件，并将 Kinesis Data Firehose 目标设置为Amazon Elasticsearch Service 集群"
+      }, {
+        "option": "C",
+        "content": "将KPL的RecordMaxBufferedTime属性设置为“0”以禁用传感器侧的缓冲．为每个流连接专用的Kinesis Data Firehose交付流，并启用数据转换功能以将JSON文件展平，然后再将其发送到Amazon S3存储桶．将S3数据加载到Amazon Redshift集群中"
+      }, {
+        "option": "D",
+        "content": "更新传感器代码，以将 Kinesis Data Streams API中的 PutRecord/PutRecords 调用与适用于Java的AWS开发工具包一起使用.使用AWS Glue，通过 Kinesis Client Library（KCL）从流中获取和处理数据.实例化AmazonElasticsearch Service 集群，然后使用AWS Lambda 直接将数据推送到其中"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q51.一家跨国公司有不同的子组织，每个子组织在各个国家／地区销售其产品和服务.该公司的高级领导层希望快速确定哪个子组织在每个国家/地区中表现最出色.所有销售数据均以Parquet格式存储在Amazon S3中.哪种方法可以最轻松地提供高层领导要求的视觉效果?",
+      "choices": [{
+        "option": "A",
+        "content": "将 Amazon QuickSight与Amazon Athena 用作数据源.使用热图作为可视类型."
+      }, {
+        "option": "B",
+        "content": "将 Amazon QuickSight和Amazon S3用作数据源.使用热图作为可视类型."
+      }, {
+        "option": "C",
+        "content": "将 Amazon QuickSight与Amazon Athena用作数据源.使用数据透视表作为可视类型."
+      }, {
+        "option": "D",
+        "content": "将 Amazon QuickSight和Amazon S3用作数据源.使用数据透视表作为可视类型。"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q52.一家公司有100万个扫描文档作为图像文件存储在Amazon S3中.这些文件包含打字的申请表，其中包括申请人的名字，申请人的姓氏，申请日期，申请类型和申请文本.该公司开发了一种机器学习算法，可以从扫描的文档中提取元数据值.该公司希望允许内部数据分析师使用申请人名称，申请日期或申请文本来分析和查找申请.原始图像也应该可以下载.成本控制仅次于查询性能.哪种解决方案可以组织图像和元数据以在满足需求的同时推动见解？",
+      "choices": [{
+        "option": "A",
+        "content": "对于每个图像，使用对象标签添加元数据．使用Amazon S3 Select根据申请人名称和申请日期检索文件"
+      }, {
+        "option": "B",
+        "content": "在Amazon Elasticsearch Service 中为图像文件的元数据和Amazon S3位置建立索引.允许数据分析人员使用Kibana将查询提交到Elasticsearch集群"
+      }, {
+        "option": "C",
+        "content": "将元数据和图像文件的Amazon S3位置存储在Amazon Redshift表中.允许数据分析人员在表上运行临时查询"
+      }, {
+        "option": "D",
+        "content": "将元数据和图像文件的Amazon S3位置存储在Amazon S3的Apache Parquet 文件中，并在AWS Glue 数据目录中定义一个表.允许数据分析师使用Amazon Athena 提交自定义查询"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q53.一家移动游戏公司希望从其游戏应用程序中捕获数据，并立即将其用于分析．数据记录的大小约为20KB.该公司担心从每个设备获得最佳吞吐量.此外，该公司还希望开发一种具有针对每个消费者的专用吞吐量的数据流处理应用程 序.哪种解决方案可以实现此目标？",
+      "choices": [{
+        "option": "A",
+        "content": "让应用程序调用 PutRecords API将数据发送到Amazon Kinesis Data Streams.在使用数据时使用增强的扇出功能"
+      }, {
+        "option": "B",
+        "content": "让应用程序调用PutRecordBatch API将数据发送到Amazon Kinesis Data Firehose.提交支持案例以启用账户的专 用吞吐量."
+      }, {
+        "option": "C",
+        "content": "让应用程序使用Amazon Kinesis Producer库（KPL）将数据发送到Kinesis Data Firehose.在使用数据时使用增强的扇出功能."
+      }, {
+        "option": "D",
+        "content": "让应用程序调用 PutRecords API将数据发送到Amazon Kinesis Data Streams.通过 Auto Scaling 在Amazon EC2上托管流处理应用程序."
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q54.一家营销公司希望改善其报告和商业智能功能。在计划阶段，该公司采取了相关利益相关者，并发现: 运营团队的报告按小时运行，以获取当月的数据.销售团队希望使用多个 Amazon QuickSight仪表板来显示最近30个的滚动视图天根据几个类别.销售团队还希望在到达报表后端后立即查看数据.财务小组的报告每天运行一次，以获取上个月的数据，财务报告的最后24个月每月运行一次数据.当前，系统中有400 TB的数据，预计每月会增加100 TB.该公司正在寻找一种尽可能具有成本效益的解决方案.哪种解决方案符合公司要求?",
+      "choices": [{
+        "option": "A",
+        "content": "将最近24个月的数据存储在Amazon Redshift中.使用 Amazon Redshift 作为数据源配置 Amazon QuickSight."
+      }, {
+        "option": "B",
+        "content": "将最近两个月的数据存储在Amazon Redshift中，并将其余几个月的数据存储在Amazon S3中．为Amazon RedshiftSpectrum 设置外部架构和表.使用Amazon Redshift 作为数据源配置 Amazon QuickSight."
+      }, {
+        "option": "C",
+        "content": "将最近24个月的数据存储在Amazon S3中，并使用Amazon Redshift Spectrum 查询．使用Amazon RedshiftSpectrum 作为数据源配置 Amazon QuickSight."
+      }, {
+        "option": "D",
+        "content": "将最近两个月的数据存储在Amazon Redshift中，并将其余几个月的数据存储在Amazon S3中．结合使用长期运行的Amazon EMR和 Apache Spark集群，以根据需要查询数据，使用Amazon EMR作为数据源配置AmazonQuickSight."
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q55.一家媒体公司希望对驻留在其Amazon S3数据湖中的数据执行机器学习和分析，有两个数据转换要求，这些要求使公司内的消费者可以创建报告:按计划将每天转换300GB的具有不同文件格式的数据到Amazon S3中时间驻留在S3数据湖中的TB归档数据的一次性转换。哪种解决方案组合可以经济高效地满足公司对数据转换的要求?（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": "对于每日传入的数据，请使用AWS Glue搜寻器来扫描和识别架构"
+      }, {
+        "option": "B",
+        "content": ".对于每日传入的数据，请使用Amazon Athena 扫描并识别架构"
+      }, {
+        "option": "C",
+        "content": ".对于每日传入的数据，请使用 Amazon Redshift 执行转"
+      }, {
+        "option": "D",
+        "content": "对于每日传入的数据，请结合使用AWS Glue 工作流和AWS Glue作业来执行转"
+      }, {
+        "option": "E",
+        "content": "对于存档的数据，请使用 Amazon EMR 执行数据转换"
+      },{
+        "option": "F",
+        "content": "对于存档的数据，请使用 Amazon SageMaker 进行数据转"
+      }],
+      "answer": ["A", "D", "E"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q56.医院使用可穿戴式医疗传感器设备从患者那里收集数据.医院正在设计一种近乎实时的解决方案，该解决方案可以大规模安全地提取数据，该解决方案还应该能够从流数据中删除患者受保护的健康信息（PHI），并将数据存储在持久存储中。哪种解决方案可以以最低的运营成本满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用Amazon Kinesis Data Streams 提取数据，Amazon Kinesis Data Streams 使用Kinesis Client Library（KCL）调用AWS Lambda函数以副除所有PHI.将数据写入Amazon S3.蚊花露"
+      }, {
+        "option": "B",
+        "content": "使用Amazon Kinesis Data Firehose 提取数据以将数据写入 Amazon S3.让Amazon S3触发AWS Lambda函数，该函数解析传感器数据以删除 Amazon S3中的所有PHI"
+      }, {
+        "option": "C",
+        "content": "使用Amazon Kinesis Data Streams 提取数据以将数据写入Amazon S3.让数据流启动AWS Lambda函数，该函数解析传感器数据并删除Amazon S3中的所有PHI"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 提取数据以将数据写入Amazon S3.实现转换AWS Lambda函数，该函数分析传感器数据以删除所有PHI"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q57.一家公司正在将其现有的本地ETL作业迁移到Amazon EMR.该代码包含一系列用Java编写的作业.公司需要在不更改基础代码的情况下减少系统管理员的开销，由于数据的敏感性，合规性要求公司在群集中的所有节点上使用根设备卷加密，公司标准要求在可能的情况下通过AWS CloudFormation 调配环境.哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "在具有加密的根设备卷的Amazon EC2实例上安装开源 Hadoop.在CloudFormation 模板中配置集"
+      }, {
+        "option": "B",
+        "content": "使用 CloudFormation 模板启动EMR集群.在群集的配置部分中，定义引导操作以启用TLS"
+      }, {
+        "option": "C",
+        "content": "使用加密的根设备卷创建一个自定义AMI.使用CloudFormation 模板中的CustomAmild属性将 Amazon EMR配置为使用自定义AMI"
+      }, {
+        "option": "D",
+        "content": "使用CloudFormation 模板启动EMR集群.在集群的配置部分中，定义引导操作以加密每个节点的根设备卷"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q58.一家运输公司使用附着在卡车上的loT传感器收集其全球运输车队的车辆数据，该公司目前将传感器数据以．csv小文件格式发送到Amazon S3.然后将文件加载到10节点的Amazon Redshift集群中，每个节点有两个片，并使用Amazon Athena 和Amazon Redshift进行查询.该公司希望优化文件以降低查询成本，并提高数据加载到Amazon Redshift集群的速度。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用AWS Glue将所有文件从.csv转换为单个大型 Apache Parquet文件.将文件复制到Amazon Redshift中，然后使用Amazon S3中的Athena 查询文件"
+      }, {
+        "option": "B",
+        "content": "使用Amazon EMR将每个.csv文件转换为Apache Avro.将文件复制到Amazon Redshift中，并使用Amazon S3中的Athena查询文件"
+      }, {
+        "option": "C",
+        "content": "使用AWS Glue将文件从.csv转换为单个大型 Apache ORC文件.将文件复制到Amazon Redshift中，然后使用Amazon S3中的Athena 查询文件"
+      }, {
+        "option": "D",
+        "content": "使用AWS Glue将文件从.csv转换为Apache Parquet，以创建20个Parquet 文件．将文件复制到 Amazon Redshift中，然后从Amazon S3中使用Athena 查询文件"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q59.一家在全球拥有数百万用户的在线零售公司希望提高其电子商务分析能力。当前，点击流数据作为压缩文件直接上传到Amazon S3.每天在Amazon EC2上运行的一个应用程序会几次处理数据，并使搜索选项和报告可供编辑人员和营销人员查看，该公司希望在几分钟内将网站点击次数和汇总数据提供给编辑和营销人员，使他们能够更有效地与用户联系.哪些选项将以最有效的方式帮助满足这些要求？（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Firehose 将压缩的和批处理的点击流记录上传到Amazon Elasticsearch Service."
+      }, 
+      {
+        "option": "B",
+        "content": "将点击流记录作为压缩文件上传到Amazon S3.然后使用AWS Lambda从Amazon S3将数据发送到Amazon Elasticsearch Service"
+      },
+      {
+        "option": "C",
+        "content": "使用部署在Amazon EC2上的Amazon Elasticsearch Service 聚合，过滤和处理数据。几乎实时刷新内容性能仪表"
+      }, {
+        "option": "D",
+        "content": "使用Kibana聚合，过滤和可视化存储在Amazon Elasticsearch Service中的数据，几乎实时刷新内容性能仪表板。"
+      }, {
+        "option": "E",
+        "content": "将点击流记录从Amazon S3上传到 Amazon Kinesis Data Streams，并使用Kinesis Data Streams 使用者将记录发送到 Amazon Elasticsearch Service"
+      }],
+      "answer": ["A", "D"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q60.一家公司正在将其大批量账单数据（100MBps）流式传输到Amazon Kinesis Data Streams.数据分析人员对account_id上的数据进行了分区，以确保属于一个账户的所有记录部进入相同的Kinesis分片并保持顺序.在使用Kinesis Java SDK构建自定义使用者时，数据分析师注意到，有时，消息对于account_id的接收是乱序的，经过进一步调查，数据分析人员发现对于同一account_id，乱序的消息似乎来自不同的分片，并且在调整流大小时可以看到这些消息。什么是此行为的解决方案？",
+      "choices": [{
+        "option": "A",
+        "content": ".流中有多个分片，需要在分片中维护顺序，数据分析人员需要确保流中只有一个分片，并且没有运行流调整大"
+      }, {
+        "option": "B",
+        "content": ".记录的哈希键生成过程无法正常工作，数据分析人员应在生产者端生成一个是式哈希键，以便将记录准确地定向到适当的分片国际认证大师 邮箱:itpassqq.com 微信:ANYPASS 00:06国际认证大师 邮箱:itpass@qq.com 微信:ANYPAS"
+      }, {
+        "option": "C",
+        "content": ".记录未按顺序由Kinesis Data Streams 接收.生产者应该使用 PutRecords API 调用而不是带有 SequenceNumberForOrdering参数的PutRecord API 调用"
+      }, {
+        "option": "D",
+        "content": "在调整流大小后，使用者在处理子分片之前没有完全处理父分片，数据分析人员应先完全处理父分片，然后再处理子分"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q61.一家媒体分析公司使用一系列社交媒体帖子，这些帖子将发送到在user_id上分区的Amazon Kinesis数据流，在将帖子加载到Amazon Elasticsearch集群之前，AWS Lambda 函数会检索记录并验证内容，验证过程需要按照给定用户的接收顺序接收它们，一位数据分析师注意到，在高峰时段，社交媒体平台上的帖子需要一个多小时才能出现在Elasticsearch 集群中.数据分析师应如何减少这种延迟？",
+      "choices": [{
+        "option": "A",
+        "content": "将验证过程迁移到Amazon Kinesis Data Firehose"
+      }, {
+        "option": "B",
+        "content": "将Lambda 使用者从标准数据流选代器迁移到HTTP/2流使用"
+      }, {
+        "option": "C",
+        "content": "增加流中分片的数量"
+      }, {
+        "option": "D",
+        "content": "配置多个Lambda函数来处理流"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q62.一家公司推出了一项服务，该服务每天产生数百万条消息，并将 Amazon Kinesis Data Streams用作流服务.该公司使用Kinesis SDK将数据写入Kinesis Data Streams.发布后的几个月，一位数据分析师发现写入性能大大降低。数据分析师调查了指标，并确定Kinesis正在限制写请求，数据分析师希望在不对体系结构进行重大更改的情况下解决此问题.数据分析师应采取哪些指施解决此问题？（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": "增加 Kinesis Data Streams 保留期限以减少限制"
+      }, {
+        "option": "B",
+        "content": "用 Kinesis Agent 替换基于Kinesis API的数据摄取机制"
+      }, {
+        "option": "C",
+        "content": "使用 UpdateShardCount API增加流中的分片数"
+      }, {
+        "option": "D",
+        "content": "选择分区键，使分区之间的记录分布均匀。"
+      }, {
+        "option": "E",
+        "content": "定制应用程序代码以包括重试逻辑以提高性能"
+      }],
+      "answer": ["C", "D"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q63.一家智能家居自动化公司必须有效地摄取和处理来自各种连接的设备和传感器的消息.这些消息中的大多数由大量的小文件组成.这些消息使用Amazon Kinesis Data Streams 提取，并使用 Kinesis Data Stream Consumer应用程序发送到Amazon S3.然后，Amazon S3消息数据通过运行预定 PySpark作业的Amazon EMR构建的处理管道传递。数据平台团队管理数据处理，并关注下游数据处理的效率和成本，他们想继续使用PySpark.哪种解决方案可提高数据处理作业的效率并设计合理？",
+      "choices": [{
+        "option": "A",
+        "content": "将传感器和设备数据直接发送到Kinesis Data Firehose交付流，以在启用Apache Parquet 记录格式转换的情况下将数据发送到Amazon S3.使用运行 PySpark的Amazon EMR处理 Amazon S3中的数据"
+      }, {
+        "option": "B",
+        "content": ".使用Python运行时环境设置AWS Lambda 函数，使用Lambda处理来自连接的设备和传感器的各个Kinesis 数据流消"
+      }, {
+        "option": "C",
+        "content": ".启动 Amazon Redshift集群，将收集的数据从Amazon S3复制到Amazon Redshift，并将数据处理作业从AmazonEMR 移动到Amazon Redshift"
+      }, {
+        "option": "D",
+        "content": ".设置AWS Glue Python作业，以将Amazon S3中的小型数据文件合井为较大的文件，并将其转换为ApacheParquet 格式.将下游 PySpark作业从Amazon EMR迁移到AWS Glue"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q64.一家大型金融公司正在运行其ETL流程，此过程的一部分是将数据从Amazon S3移到 Amazon Redshift集群中该公司希望使用最具成本效益的方法将数据集加载到 Amazon Redshift中.哪些步骤组合可以满足这些要求？（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": "使用清单文件的COPY命令将数据加载到Amazon Redshift"
+      }, {
+        "option": "B",
+        "content": ".使用S3DistCp将文件加载到Amazon Redshif"
+      }, {
+        "option": "C",
+        "content": "在加载过程中使用临时登台表"
+      }, {
+        "option": "D",
+        "content": ".使用UNLOAD命令将数据上传到Amazon Redshift"
+      }, {
+        "option": "E",
+        "content": ".使用Amazon Redshift Spectrum从Amazon S3查询文件"
+      }],
+      "answer": ["A", "C"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q65.一所大学打算使用 Amazon Kinesis Data Firehose 在Amazon S3中收集JSON格式的水质读数批次.读数来自散布在本地湖泊中的50个传感器，学生将使用Amazon Athena查询存储的数据，以观察捕获的指标随时间的变化，例如水温或酸度，对这项研究的兴趣日益浓厚，促使大学重新考虑如何存储数据。MOST将使用哪种数据格式和分区选择来显着降低成本？（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": ".使用Snappy 压缩以Apache Avro格式存储数据"
+      }, {
+        "option": "B",
+        "content": "按年，月和日对数据进行分区"
+      }, {
+        "option": "C",
+        "content": ".以不压缩的Apache ORC格式存储数据"
+      }, {
+        "option": "D",
+        "content": "使用Snappy 压缩以Apache Parquet格式存储数据"
+      }, {
+        "option": "E",
+        "content": ".按传感器，年，月和日对数据进行分区"
+      }],
+      "answer": ["B", "D"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q66.一家医疗保健公司使用AWS数据和分析工具来收集，摄取和存储有关其患者的电子健康记录（EHR）数据，原始EHR数据以JSON格式存储在Amazon S3中，并按小时，天和年划分，并每小时更新一次.该公司希望在AWS Glue数据目录中维护数据目录和元数据，以便能够使用Amazon Athena 或Amazon Redshift Spectrum 进行数据访问以进行分析.在数据目录中定义表时，公司具有以下要求:选择目录表名称，不要依赖目录表算法名称；保持表格式更新，并在相应的S3存储桶前缀中加载了新分区；哪种解决方案可以轻松地满足这些要求?",
+      "choices": [{
+        "option": "A",
+        "content": ".运行连接到一个或多个数据存储，确定数据结构并在数据目录中写入表的AWS Glue 搜寻"
+      }, {
+        "option": "B",
+        "content": ".使用AWS Glue控制台在数据目录中手动创建一个表，并安排一个AWS Lambda 函数每小时更新一次表分区。"
+      }, {
+        "option": "C",
+        "content": "使用 AWS Glue API Create Table 操作在数据目录中创建一个表.创建一个AWS Glue搜寻器，并将表指定为源"
+      }, {
+        "option": "D",
+        "content": "在Amazon E3中使用Amazon S3中的表架构定义剑建一个Apache Hive目录，并使用计划的作业更新表分区，将Hive日录迁移到“数据日录”"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q67.一所大型大学的战略目标是增加在校学生的多样性，数据分析团队正在创建一个具有数据可视化的仪表板，以使利益相关者能够查看历史趋势.必须使用Microsoft Active Directory对所有访问进行身份验证，所有传输中和静止的数据都必须加密.哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": ".Amazon QuickSight标准版配置为使用SAML20执行身份联合，和默认的加密设"
+      }, {
+        "option": "B",
+        "content": "Amazon QuickSight Enterprise版本配置为使用SAML 2.0和默认加密设置执行身份联"
+      }, {
+        "option": "C",
+        "content": ".使用AD连接器通过Active Directory 进行身份验证的Amazon QuckSight标准版，配置 Amazon QuickSight 以使用导入到AWS KMS的客户提供的密钥国际认证大师邮箱:itpass@qq.com 微信:ANYPASS国际认证大师 邮箱:itpass@qq.com 微信:ANYPAS"
+      }, {
+        "option": "D",
+        "content": ".使用AD连接器通过Active Directory 进行身份验证的 Amazon QuickSight Enterprise 版本.配置 AmazonQuickSight以使用导入到AWS KMS的客户提供的密钥"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q68.一家航空公司一直在收集航班活动的指标以进行分析.最近完成的概念验证证明了该公司如何向数据分析师提供见解，以改善准时离场．概念证明使用Amazon S3中的对象（其中包含．csv格式的指标），并使用Amazon Athena来查询数据.随着数据量的增加，数据分析人员希望优化存储解决方案以提高查询性能.随着数据湖的增长，数据分析师应使用哪些选项来提高性能？（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": ".在S3的键的开头添加一个随机字符串，以获取更多的分区吞吐量"
+      }, {
+        "option": "B",
+        "content": ".在与Athena相同的账户中使用S3存储桶"
+      }, {
+        "option": "C",
+        "content": "压缩对象以减少数据传输I/O"
+      }, {
+        "option": "D",
+        "content": "在与雅典娜相同的区域中使用S3存储桶"
+      }, {
+        "option": "E",
+        "content": "将.csv数据预处理为JSON,以通过仅获取查询所需的文档秘钥来减少"
+      },{
+        "option": "F",
+        "content": ".将.csv数据预处理到Apache Parquet，以通过仅提取谓词所需的数据块来减少I/O"
+      }],
+      "answer": ["C", "D", "F"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q69.一家公司使用Amazon Kinesis SDK 将数据写入 Kinesis Data Streams.遵从性要求指出，必须使用可旋转的密钥在静止状态下对数据进行加密，该公司希望以最少的编码工作来满足这种加密要求。如何满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": ".在AWS KMS中创建一个客户主密钥（CMK），为CMK分配一个别名.使用AWS Encryption SDK，为其提供密钥别名以加密和解密数据"
+      }, {
+        "option": "B",
+        "content": ".在AWS KMS中创建一个客户主密钥（CMK）为CMK分配一个别名.使用CMK别名作为KMS主密钥，对Kinesis 数据流启用服务器端加密"
+      }, {
+        "option": "C",
+        "content": ".在AWS KMS中创建一个客户主密钥（CMK），创建一个AWS Lambda通数以加密和解密数据，在函数的环境变量中设置KMS 密钥ID"
+      }, {
+        "option": "D",
+        "content": ".使用 Kinesis Data Streams的默认KMS密钥在Kinesis数据流上启用服务器端加密"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q70.一家公司希望近乎实时地丰富应用程序日志，并将丰富的数据集用于进一步分析．该应用程序在跨多个可用区的Amazon EC2实例上运行，并使用Amazon CloudWatch Logs存储其日志．扩充源存储在Amazon DynamoDB表中.哪种解决方案符合事件收集和充实的要求?",
+      "choices": [{
+        "option": "A",
+        "content": "使用CloudWatch Logs 订阅将数据发送到Amazon Kinesis Data Firehose.使用AWS Lambda 转换 Kinesis Data Firehose交付流中的数据，并用DynamoDB表中的数据丰富它．将Amazon S3配置为Kinesis Data Firehose 交付目的地"
+      }, {
+        "option": "B",
+        "content": ".使用AWS CLI每小时将原始日志导出到Amazon S3.使用AWS Glue 搜寻器对日志进行分类，为DynamoDB表设置AWS Glue连接，井设置AWS Glue ETL作业以丰富数据．将丰富的数据存储在Amazon S3中"
+      }, {
+        "option": "C",
+        "content": "配置应用程序以在本地写入日志，然后使用Amazon Kinesis Agent将数据发送到Amazon Kinesis Data Streams.使用Kinesis 数据流作为源配置 Kinesis Data Analytics SQL应用程序.将SQL应用程序输入流与DynamoDB 记录联接起来，然后使用Amazon Kinesis Data Firehose将丰富的输出流存储在Amazon S3中."
+      }, {
+        "option": "D",
+        "content": "使用AWS CLI每小时将原始日志导出到Amazon S3.在Amazon EMR 上使用 Apache Spark SQL 从 AmazonS3读取日志，并使用DynamoDB的数据丰富记录．将丰富的数据存储在Amazon S3中."
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q71.一家银行公司希望使用 Amazon Kinesis Data Streams 收集大量交易数据以进行实时分析.该公司使用PutRecord 将数据发送到Amazon Kinesis，并在一天中的某些时间观察到网络中断.该公司希望获得整个处理流程的精确语义.公司应该怎么做才能获得这些特征？",
+      "choices": [{
+        "option": "A",
+        "content": "设计应用程序，以便在处理过程中将唯一的ID嵌入每个记录中，从而到除重复项"
+      }, {
+        "option": "B",
+        "content": ".依靠 Amazon Kinesis Data Analytics的处理语义来避免重复处理事件"
+      }, {
+        "option": "C",
+        "content": ".设计数据生成器，以使事件不会多次吸收到Kinesis Data Streams中"
+      }, {
+        "option": "D",
+        "content": ".依靠Amazon EMR中包含的Apache Flink和Apache Spark Streaming的一种处理语义"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q72.一家营销公司正在将 Amazon EMR集群用于其工作负载.该公司通过登录到主节点，在群集上手动安装第三方库,数据分析师需要创建一个自动化解决方案来代替手动过程。哪些选项可以满足这些要求？（选择两个.）",
+      "choices": [{
+        "option": "A",
+        "content": "将所需的安装脚本放在Amazon S3中，并使用自定义引导操作执行它"
+      }, {
+        "option": "B",
+        "content": "将所需的安装脚本放在Amazon S3中，并通过 Amazon EMR中的Apache Spark执行它们"
+      }, {
+        "option": "C",
+        "content": "在现有的EMR主节点中安装所雷的第三方岸，在该主节点之外创建一个AMI.然后使用该自定义AMI重新创建EMR群"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon DynamoDB表存储所需应用程序的列表.使用DynamoDB Streams触发 AWS Lambda函数以安装软件"
+      }, {
+        "option": "E",
+        "content": "使用Amazon Linux启动Amazon EC2实例，并在实例上安装所需的第三方库，创建一个AMI并使用该AMI创建EMR集群"
+      }],
+      "answer": ["A","E"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q73．一家公司希望通过分析过去3个月的用户活动来研究用户的营业额，每天有数百万的用户产生1.5TB的未压缩数据．需要30个节点的Amazon Redshift群集，每个节点具有2.56TB的固态驱动器（SSD）存储，才能满足查询性能目标，该公司希望对一年的历史数据进行额外的分析，以检查指示哪些功能最受欢迎的趋势，该分析将每周进行一次。什么是最具成本效益的解决方案？",
+      "choices":[{
+      	"option": "A",
+      	"content": "将 Amazon Redshift群集的大小增加到120个节点，以便它有足够的存储容量来容纳1年的数据．然后使用AmazonRedshift进行其他分析."
+      },{
+      	"option": "B",
+      	"content": "将最近90天内的数据保存在Amazon Redshift中，将超过90天的数据移至Amazon S3并以按日期划分的ApacheParquet格式存储.然后使用Amazon Redshif Spectrum 进行其他分析 "
+      },{
+      	"option":"C",
+      	"content":"将过去90天内的数据保存在Amazon Redshift中．将超过90天的数据移至Amazon S3并以按日期划分的ApacheParquet格式存储.然后配置一个持久性 Amazon EMR集群，井使用Apache Presto 进行其他分析"
+      },{
+      	"option": "D",
+      	"content": "将集群节点类型的大小调整为密集存储节点类型（DS2），以在Amazon Redshift集群中的每个单个节点上增加16 TB的存储容量，然后使用 Amazon Redshift进行其他分析．"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q74．一家公司使用Amazon Redshift作为其数据仓库，一个新表具有包含敏感数据的列，该表中的数据最终将由每天运行多次的几个现有查询引用，数据分析师需要将1000亿行数据加载到新表中，在这样做之前，数据分析师必须确保只有审核组的成员才能读取包含敏感数据的列.数据分析师如何以最低的维护开销满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将所有数据加载到新表中，并授予审核组从表中读取的权限，将除包含敏感数据的列之外的所有数据加载到第二个表中，向适当的用户授予对第二个表的只读权限"
+      }, {
+        "option": "B",
+        "content": "将所有数据加载到新表中，并授予审核组从表中读取的权限，使用GRANT SQL命令允许适当的用户对列的子集进行只读访"
+      }, {
+        "option": "C",
+        "content": "将所有数据加载到新表中，并向所有用户授予对非敏感列的只读权限，通过对敏感数据列的显式ALLOW访问，将IAM策略附加到审核组"
+      }, {
+        "option": "D",
+        "content": "将所有数据加载到新表中，并授于审核组从表中读取的权限.创建一个新表的视图，其中包含除视为敏感列之外的所有列，并为适当的用户授予对该表的只读权限"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q75.公司的数据分析师需要确保出于成本控制的目的，在Amazon Athena中执行的查询不能扫描超过规定数量的数据.超过规定阈值的查询必须立即取消.数据分析师应该怎么做才能做到这一点？",
+      "choices": [{
+        "option": "A",
+        "content": "将 Athena配置为调用AWS Lambda函数，该函数将在超过规定的阈值时终止查询"
+      }, {
+        "option": "B",
+        "content": "对于每个工作组，将每个查询的控制限制设置为规定的阈值"
+      }, {
+        "option": "C",
+        "content": "对所有Amazon S3存储桶策略强制执行规定的阈"
+      }, {
+        "option": "D",
+        "content": "对于每个工作组，将工作组范围的数据使用控制限制设置为规定的阈"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q76.共享工作区公司中的数据工程团队希望为空间预订系统生成的所有Web日志构建集中式日志记录系统，该公司拥有大量的Amazon EC2实例，可在其网站上处理共享空间预订的请求，数据工程团队希望将所有Web日志纳入一项服务，该服务将提供近乎实时的搜索引擎，该团队不想管理日志系统的维护和操作，哪种解决方案可使数据工程团队有效地在AWS内设置Web日志记录系统？",
+      "choices": [{
+        "option": "A",
+        "content": "设置 Amazon CloudWatch 代理以将Web日志流式传输到CloudWatch日志，井将Amazon Kinesis数据流订阅到CloudWatch.选择 Amazon Elasticsearch Service作为Weblog的最终目标，"
+      }, {
+        "option": "B",
+        "content": "设置 Amazon CloudWatch代理以将Web日志流式传输到CloudWatch日志，并将Amazon Kinesis Data Firehose交付流订阅到CloudWatch.选择 Amazon Elasticsearch Service 作为Weblog的最终目标"
+      }, {
+        "option": "C",
+        "content": "设置 Amazon CloudWatch 代理以将Web日志流式传输到CloudWatch日志，并将 Amazon Kinesis 数据流订阅到CloudWatch.将Splunk配置为Weblog的最终目标。"
+      }, {
+        "option": "D",
+        "content": "D.设置 Amazon CloudWatch代理以将Web日志流式传输到CloudWatch日志，并将 Amazon Kinesis Firehose 交付流订阅到CloudWatch.将Amazon DynamoDB配置为Weblog的最终目标。"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    },{
+      "stem": "Q77.银行在规范的环境中运作，银行运营所在国家／地区的合规性要求规定，每个州的客户数据只能由位于同一州的银行员工访问，处于一种状态的银行员工不能访问已提供另一种状态的家庭住址的客户的数据。该银行的营销团队已经聘请了一位数据分析师，以从客户数据中收集见识，以开展在某些州开展的新活动，当前，将每个客户账户链接到其原始状态的数据存储在私有S3存储桶中单个Amazon S3文件夹内的表格．csv文件中.S3文件夹的总大小为2GB（未压缩），由于国家／地区的合规性要求，营销团队无法访问此文件夹。数据分析师负责确保营销团队能够在其活动遵循的所有合规性要求和控制措施的前提下，获得针对其营销活动分析项目的客户数据的一次性访问权.数据分析人员应通过最少的设置工作来实施哪种解决方案以满足所需的需求？",
+      "choices": [{
+        "option": "A",
+        "content": "在Amazon S3中重新排列数据，以将有关每个州的客户数据存储在同一存储桶中的不同S3文件夹中，设置S3存储桶策略，以便在合规性控制下为市场营销员工提供适当的数据访问权限。在项目之后删除存储桶策略"
+      }, {
+        "option": "B",
+        "content": "使用s3DistCp将表格数据从Amazon S3加载到 Amazon EMR集群.在Hadoop分布式文件系统（HDFS）上实施基于Hadoop的自定义行级安全解决方案，以在合规性控制下为市场营销员工提供适当的数据访问权限，项目结束后终止EMR集群"
+      }, {
+        "option": "C",
+        "content": "使用COPY命令将表格数据从Amazon S3加载到 Amazon Redshift.使用 Amazon Redshift中内置的行级安全功能，可以在合规性控制下为市场营销员工提供适当的数据访问权限，在项 日之后删除 Amazon Redshift表"
+      }, {
+        "option": "D",
+        "content": "通过直接将表格数据作为数据源导入，将表格数据从Amazon S3加载到Amazon QuickSight Enterprise 版．使用Amazon QuickSight中的内置行级安全功能，可以在合规性控制下为市场营销员工提供适当的数据访问权限，项目完 成后，删除 Amazon QuickSight数据源"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q78.一家公司从Amazon S3上接收来自外部提供商的数据集，来自不同提供者的数据集相互依赖，数据集将在不同的时间到达，并且没有特定的顺序，数据架构师需要设计一种解决方案，以使公司能够执行以下操作:数据一经获取，即可快速执行跨数据集分析有空管理在不同时间到达的数据集之间的依赖性哪种架构策略提供了可满足这些要求的可扩展且经济高效的解决方案？",
+      "choices": [{
+        "option": "A",
+        "content": ".在Amazon RDS for MySQL 中维护数据依赖项信息.使用AWS Data Pipeline 作业基于Amazon S3中的任务依赖性和事件通知触发器来加载 Amazon EMR Hive 表"
+      }, {
+        "option": "B",
+        "content": ".在Amazon DynamoDB表中维护数据依赖项信息.使用Amazon SNS和事件通知将数据发布到Amazon EC2工作人员团队解决任务依赖关系后，请使用Amazon EMR处理数"
+      }, {
+        "option": "C",
+        "content": ".在Amazon ElastiCache Redis集群中维护数据依赖项信息使用Amazon S3事件通知来触发将S3对象映射到Redis的AWS Lambda函数解决任务依赖关系后，请使用AmazonEMR 处理数"
+      }, {
+        "option": "D",
+        "content": ".在Amazon DynamoDB表中维护数据依赖项信息.使用Amazon S3 事件通知来触发 AWS Lambda 通数，该函数将S3对象映射到 DynamoDB中与其关联的任务，解决所有任务依赖关系后，请使用Amazon EMR处理数"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q79.一家媒体广告公司实时处理来自200多个网站的大量实时消息，处理延迟必须保持较低．根据计算，即使流量高峰，60片的Amazon Kinesis流也足以应付最大数据吞吐量，该公司还使用在由Auto Scaling组管理的Amazon ElasticCompute Cloud（EC2）上运行的Amazon Kinesis Cllent Library（KCL）应用程序 AmazonCloudWatch 指示所有正在运行的服务器上平均有25％的CPU和中等水平的网络流量。该公司报告在高峰时间处理来自 Amazon Kinesis的消息的延迟增加了150％至200％，没有网站发布到AmazonKinesis的延退报告.解决延迟的合适解决方案是什么？",
+      "choices": [
+		{
+		"option":"A",
+		"content":"将Amazon Kinesis流中的分片数量增加到80.以获得更大的并发性。"
+		},{
+        "option": "B",
+        "content": "增加Amazon EC2实例的大小以增加网络吞吐量"
+      }, {
+        "option": "C",
+        "content": "增加Auto Scaling 组中的最小实例数"
+      }, {
+        "option": "D",
+        "content": "增加检查点表上的Amazon DynamoDB吞吐量"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q80.Redshift数据仓库具有不同的用户团队，需要用非常不同的查询类型来查询同一张表，这些用户团队的表现很差.在这种情况下，哪个操作可以提高用户团队的绩效？",
+      "choices": [{
+        "option": "A",
+        "content": "创建自定义表视图"
+      }, {
+        "option": "B",
+        "content": "为每个团队添加交错的排序键"
+      }, {
+        "option": "C",
+        "content": "维护表的特定于团队的副本"
+      }, {
+        "option": "D",
+        "content": "添加对工作负载管理队列跳跃的支持"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q81.一家公司经营一个AWS区域内的国际业务，该公司希望扩展到一个新的国家，该国家／地区的监管机构要求数据架构师在产品交易后24小时内维护该国家/地区的金融交易日志，生产应用程序对延迟不敏感，新国家／地区包含另一个AWS 区域.满足此要求的最经济有效的方法是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 CloudFormation将生产应用程序复制到新区域"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon CloudFront 在该国本地提供应用程序内容：Amazon CloudFront日志将满足要求。"
+      }, {
+        "option": "C",
+        "content": "在使用Amazon Kinesis将交易数据流向监管机构的同时，继续为现有地区的客户提供服务。"
+      }, {
+        "option": "D",
+        "content": "使用Amazon S3跨区域复制将生产交易日志复制并保存到新国家/地区的存储桶中。"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    },{
+      "stem": "Q82.管理员需要为来自移动设备的事件设计事件日志存储体系结构，归档之前，Amazon EMR集群将每天处理事件数据，以进行汇总报告和分析。管理员应该如何建议存储日志数据？",
+      "choices": [{
+        "option": "A",
+        "content": "创建一个Amazon S3存储桶，然后按照设备将日志数据写入文件夹，在设备文件夹上执行EMR作业"
+      }, {
+        "option": "B",
+        "content": "创建一个在设备上分区并按日期排序的Amazon DynamoDB表，将日志数据写入表。在Amazon DynamoDB表上执行EMR作业"
+      }, {
+        "option": "C",
+        "content": "创建一个Amazon S3存储桶，然后按日将数据写入文件夹，在每日文件夹上执行EMR作业"
+      }, {
+        "option": "D",
+        "content": "创建一个EventID上分区的Amazon DynamoDB表，将日志数据写入表"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q83.数据工程师想要为应用程序使用 Amazon Elastic Map Reduce.数据工程师需要确保其符合法规要求，审核员必须能够随时确认正在运行的服务器以及已部署的网络访问控件。数据工程师应采取什么行动来满足此要求？",
+      "choices": [{
+        "option": "A",
+        "content": ".为审核员IAM账户提供附加到其组的SecurityAudit 策略"
+      }, {
+        "option": "B",
+        "content": ".向审核员提供SSH密钥以访问Amazon EMR集群"
+      }, {
+        "option": "C",
+        "content": ".向审核员提供CloudFormation 模板"
+      }, {
+        "option": "D",
+        "content": ".为审核员提供对AWS DirectConnect的访问权限，以使用其现有工具"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q84.社交媒体客户拥有来自不同数据源的数据，包括运行MySQL的RDS，Redshift和EMR上的Hive.为了支持更好的分析，客户需要能够分析来自不同数据源的数据并合并结果满足这些要求的最经济有效的解决方案是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "将所有数据从不同的数据库/仓库加载到S3.使用 Redshift COPY 金令将数据复制到Redshift进行分析"
+      }, {
+        "option": "B",
+        "content": "在Hive所在的EMR群集上安装Presto.配置 MySQL和PostgreSQL 连接器以在单个查询中从不同的数据源中进行"
+      }, {
+        "option": "C",
+        "content": "启动一个Elasticsearch集群，从所有三个数据源加载数据并使用Kibana进行分析"
+      }, {
+        "option": "D",
+        "content": "编写在单独的EC2实例上运行的程序，以对三个不同的系统运行查询。从所有三个系统获得响应后汇总结果"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q85.使用EMRFS的Amazon EMR集群可以访问来自多个唯一数据源的Amazon S3上的PB数据.客户需要查询账数据集中的公共字段，以便能够执行交互式联接，然后快速显示结果。哪种技术最适合启用此功能？",
+      "choices": [{
+        "option": "A",
+        "content": "Presto"
+      }, {
+        "option": "B",
+        "content": "MicroStrategy"
+      }, {
+        "option": "C",
+        "content": "Pig"
+      }, {
+        "option": "D",
+        "content": "R Studio"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q86.游戏公司需要适当地扩展由DynamoDB支持的游戏应用程序 Amazon Redshift具有过去两年的历史数据，全年的游戏流量会因季节，电影发行和假期等各种因素而异，管理员需要提前计算每周应为DynamoDB表设置多少读写吞吐量管理员应如何完成此任务？",
+      "choices": [{
+        "option": "A",
+        "content": "将数据输入到Amazon Machine Learning 中并建立回归模型"
+      }, {
+        "option": "B",
+        "content": "将数据输入Spark Mib并构建一个适度的随机森林"
+      }, {
+        "option": "C",
+        "content": "将数据输入Apache Mahout并建立一个多分类模型"
+      }, {
+        "option": "D",
+        "content": "将数据输入到Amazon Machine Leaming中井建立一个二进制分类模型"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q87.数据工程师将对Amazon Redshift集群中包含的DDL执行主要升级，以支持新的数据仓库应用程序，升级脚本将包括用户权限更新，视图和表结构更改以及其他加载和数据处理任务.发生问题时，数据工程师必须能够将数据库还原到其现有状态。在执行此升级任务之前应采取什么措施？",
+      "choices": [{
+        "option": "A",
+        "content": "对仓库中的所有数据运行一个UNLOAD命令，并将其保存到S3"
+      }, {
+        "option": "B",
+        "content": "创建 Amazon Redshift集群的手动快照"
+      }, {
+        "option": "C",
+        "content": "在Amazon Redshift集群上制作自动快照的副"
+      }, {
+        "option": "D",
+        "content": "从AWS CLI或AWS开发工具包调用 waitForSnapshotAvailable 令"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q88.大型石油和天然气公司需要在管道系统中超过峰值阈值时提供近乎实时的警报，该公司开发了一种系统，可使用数百万个传感器来描获管道指标，例如流量，压力和温度.传感器可交付给 AWS IoT在管道指标上提供近实时警报的一种经济有效的方法是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "创建一个AWS IoT规则以生成Amazon SNS通知"
+      }, {
+        "option": "B",
+        "content": "将数据点存储在Amazon DynamoDB表中，井查询是否有来自Amazon EC2应用程序的峰值指标数据C.创建一个Amazon Machine Learming 模型并使用AWS Lambda 调用"
+      }, {
+        "option": "C",
+        "content": "创建一个Amazon Machine Learming 模型并使用AWS Lambda 调用它"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Streams 和部署在AWS Elastic Beanstalk上的基于KCL的应用程序答案:A解析"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q89.一家公司正在将Amazon Machine Learming用作医疗软件应用程序的一部分，当无法获得血型知识时，该应用程序将基于各种其他临床测试来预测患者最可能的血型，解决此问题的合适模型选择和目标属性是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "具有分类目标属性的多类分类模型"
+      }, {
+        "option": "B",
+        "content": "具有数字目标属性的回归模型"
+      }, {
+        "option": "C",
+        "content": "具有分类目标属性的二进制分类"
+      }, {
+        "option": "D",
+        "content": "具有最近分类属性的K最近邻模型"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q90.数据工程师正在SaaS服务的25节点Redshift群集上运行DWH.数据工程师需要建立一个仪表板，供客户使用。五个大客户代表了80％的使用率，而且数十个小客户的尾巴也很长，数据工程师选择了仪表板工具数据工程师应如何确保较大的客户工作负载不会干扰较小的客户工作负载？",
+      "choices": [{
+        "option": "A",
+        "content": "应用基于用户不能更改的客户ID的查询过滤器，并在客户ID上应用分发密钢"
+      }, {
+        "option": "B",
+        "content": "将最大的客户放入具有专用查询队列的单个用户组中，并将其余的客户放入不同的查询队列"
+      }, {
+        "option": "C",
+        "content": "将聚合推送到Aurora实例的RDS中.将仪表板应用程序连接到Aurora面不是Redshift以获得更快的查"
+      }, {
+        "option": "D",
+        "content": "将最大的客户路由到专用的Redshift集群，提高多租户Redshift集群的并发性，以容纳其余客户"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q91.一家在线游戏公司正在使用以Kinesis数据流为源的Amazon Kinesis Data Analytics SQL应用程序，源将三个 空字段发送到应用程序:player_id，score和us_5_digit_zip_code.数据分析师拥有一个.csv映射文件，该文件将少量us_5_digit_zip_code值映射到地区代码，数据分析人员需要将地区代码（如果存在）包括在内，作为Kinesis Data Analytics应用程序的附加输出数据分析师应如何在最小化成本的同时满足此要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将映射文件的内容存储在Amazon DynamoDB表中，使用AWS Lambda数对记录到达 Kinesis Data Analytics应用程序时进行预处理，该通数会获取映射并对每条记录进行补充以包括地区代码（如果存在）在应用程序中更改SQL查询，以在SELECT语句中包括新字段"
+      }, {
+        "option": "B",
+        "content": "将映射文件存储在Amazon S3存储桶中，并在Kinesis Data Analytics应用程序中为．csv文件配置参考数据列标题在应用程序中更改SQL查询，以包括对文件 S3 Amazon Resource Name（ARN）的联接，并将地区代码字段添加 到SELECT"
+      }, {
+        "option": "C",
+        "content": "将映射文件存储在Amazon S3存储桶中，并将其配置为Kinesis Data Analytics应用程序的参考数据源，在应用程序中更改SQL查询，以包括到参考表的联接，然后将地区代码字段添加到SELECT列"
+      }, {
+        "option": "D",
+        "content": "将映射文件的内容存储在Amazon DynamoDB表中，更改Kinesis Data Analytics应用程序，以将其输出发送到AWSLambda函数，该函数将获取映射并补充每条记录以包括地区代码（如果存在）将记录从Lambda通数转发到原始应用程序目"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q92.一家公司在过去24个月中收集了超过100TB的日志文件，这些文件作为原始文本存储在专用的Amazon S3存储桶中，每个对象都有一个格式为year-month-day_log_HHmmss.bt的键，其中HHmmss代表最初创建日志文件的时间，在Amazon Athena中创建了一个表，该表指向S3存储桶，一小时几次对表中的列子集运行一次查询。数据分析师必须进行更改以减少运行这些查询的成本，管理层希望以最小的维护开销提供解决方案.数据分析师应采取哪些步骤组合才能满足这些要求？（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": "将日志文件转换为Apace Avro格式"
+      }, {
+        "option": "B",
+        "content": "将格式为date＝year-month-day/的键前缀添加到S3对象以对数据进行分"
+      }, {
+        "option": "C",
+        "content": "将日志文件转换为Apache Parquet 格式"
+      }, {
+        "option": "D",
+        "content": "将格式为year-month-day/的键前缀添加到S3对象以对数据进行分区"
+      },{
+        "option": "E",
+        "content": "删除并使用 PARTITIONED BY子句重新创建表.运行ALTER TABLE ADD PARTITION语句"
+      }, {
+        "option": "F",
+        "content": "删除并使用 PARTITIONED BY子句重新创建表.运行MSCK REPAIR TABLE 语句"
+      }],
+      "answer": ["B", "C", "F"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q93.公司有一个提取流数据的应用程序.该公司需要在5分钟的时间范围内对此流进行分析，以评估该流是否存在随机砍伐森林（RCF）异常，并汇总当前状态码计数，源数据和摘要数据应保留下来，以备将来使用，哪种方法可以在保持数据持久性成本较低的同时实现预期的结果？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Streams 提取数据流.让AWS Lambda 使用者评估流，收集数字状态代码，并根据先前训练有素的RCF模型评估数据.将源和结果作为时间序列持久保存到Amazon DynamoDB"
+      }, {
+        "option": "B",
+        "content": "使用Amazon Kinesis Data Streams提取数据流让:Kinesis Data Analytics应用程序使用RCF功能在5分钟内评估流，并汇总状态代码的计数，通过将输出交付到Kinesis Data Firehouse，将源和结果持久化到Amazon S3"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Firehose 在Amazon S3中以1分钟或1MB的交付频率接收数据流，确保Amazon S3触发事件以调用AWS Lambda使用者，该使用者评估批数据，收集数字状态码并根据先前训练过的RCF模型评估数据.将源和结果作为时间序列持久保存到Amazon DynamoDB"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 将数据流以5分钟或1MB的交付频率导入Amazon S3.让Kinesis DataAnalytics 应用程序使用RCF功能在1分钟的窗口内评估流，并汇总状态代码的计数，通过Kinesis Data Anatytics 输出到AWS Lambda集成，将结果持久化到Amazon S3"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q94.在线零售商需要部署产品销售报告解决方案，源数据是从外部联机事务处理（OLTP）系统导出的，以进行报告。每天都会为前几天的活动计算汇总数据，报告系统具有以下要求；拥有1年的每日汇总数据一年后，存档每日汇总数据，以偶尔但立即访问，存储在报告系统中的源数据导出必须保留5年，仅在重新评估时才需要查询访问权限，这可能会在前90天内发生，哪种操作组合可以满足这些要求，同时将存储成本降至最低？（选择两个.）",
+      "choices": [{
+        "option": "A",
+        "content": "最初将源数据存储在Amazon S3 Standard-Infrequent Access（S3 Standard-IA）存储类中，应川生命周期配置，在创建90天后将存储类更改为Amazon S3 Glacier Deep Archive，然后在创建5年后剧除数据"
+      }, {
+        "option": "B",
+        "content": "最初将源数据存储在Amazon S3 Glacier存储类中.应用生命周期配置，将创建后90天的存储类从Amazon S3Glacior更改为Amazon S3 Glacier Deep Archive，然后在创建5年后副除数"
+      }, {
+        "option": "C",
+        "content": "最初将每日汇总数据存储在Amazon S3 Standard存储类中，创建数据后一年，应用生命周期配置将存债类别更改为 Amazon S3 Glacior Deep Archive"
+      }, {
+        "option": "D",
+        "content": "最初将每日汇总数据存储在Amazon S3 Standard存储类中，在创建数据后的一年内，应用生命周期配置将存储类别 更改为Amazon S3 Standard-Infrequent Access（S3 Standard-IA）"
+      }, {
+        "option": "E",
+        "content": "最初将每日汇总数据存储在Amazon S3 Standard-Infrequent Access（S3 Standard-IA）存储类中，创建数据后一年。应用生命周期配置将存储类别更改为Amazon S3 Glacier.国际认证大师 邮箱:itpass@qq.com 微信:ANYPASS 00:07国际认证大师 邮箱:itpass@qq.com 微信:ANYPAS"
+      }],
+      "answer": ["A", "D"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q95.公司需要以JSON格式存储包合日志数据的对象，这些对象由在AWS中运行的八个应用程序生成，其中六个应用程序每秒总共产生500KiB数据，面两个应用程序每秒最多可以产生2MB数据，数据工程师想要实施可扩展的解决方案，以在Amazon S3存储桶中捕获和存储使用情况数据，使用率数据对象需要重新格式化，转换为．csv格式，然后进行压缩，然后再存储在Amazon S3中，该公司要求该解决方案包含尽可能少的自定文代码，并已授权数据工程师根据需要请求增加服务配额哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "为每个应用程序配置 Amazon Kinosis Data Firehose交付流编写AWS Lambda的数以从每个应用程序的流中读取日志数据对象，使该函数执行重新格式化和.csv转换，对所有传送流启用压缩"
+      }, {
+        "option": "B",
+        "content": "为每个应用程序配置一个分片的Amazon Kinesis数据流，编写一个AWS Lambda函数以从分片读取使用情况数据对象，使该函数执行数据的．csv转换，重新格式化和压缩，使功能将输出存储在Amazon S3"
+      }, {
+        "option": "C",
+        "content": "为每个应用程序配置一个Amazon Kinesis数据流，编写一个AWS Lambda函数，以从流中读取每个应用程序的使用情况数据对象，使该函数执行数据的．csv转换，重新格式化和压缩，使功能将输出在在AmazonS3"
+      }, {
+        "option": "D",
+        "content": "将使用情况数据对象存储在Amazon DynamoDB表中.配置 DynamoDB流以将对象复制到S3存储桶，配置将对象写入S3存储桶时触发的AWS Lambda通数．使通数将对象转换为.csv格式数花露"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q96.数据分析专家正在使用AWS Glue 构建自动ETL提取管理，以提取已上传到Amazon S3存储桶的压缩文件，接收管通应支持增量数据处理。数据分析专家应使用哪种AWS Glue 功能来满足此要求？",
+      "choices": [{
+        "option": "A",
+        "content": "工作流"
+      }, {
+        "option": "B",
+        "content": "触发器"
+      }, {
+        "option": "C",
+        "content": "工作书签"
+      }, {
+        "option": "D",
+        "content": "分类器"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q97.一家电信公司正在寻找一种异常检测解决方案，以识别欺诈性呼叫，该公司当前使用Amazon Kinesis 将JSON格式的语音呼叫记录从其本地数据库流式传输到Amazon S3.现有数据集包含200列的语音呼叫记录，为了检测欺诈性呼叫．该解决方案仅需要查看这些列中的5个即可，该公司对使用AWS的经济高效解决方案感兴趣，该解决方案需要最少的工作量和异常检测算法方面的经验。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用AWS Glue 作业将数据从JSON转换为Apache Parquet.使用 AWS Glue搜寻器发现架构并构建 AWS Glue数据目录.使用Amazon Athena 创建带有列子集的表.使用Amazon QuickSight可视化数据，然后使用AmazonQuickSight基于机器学习的异常检测蚊花露"
+      }, {
+        "option": "B",
+        "content": "使用 Kinesis Data Firehose 通过运行SQL查询来检测 Kinesis数据流上的异常，SQL查询可计算所有调用的异常评分并将输出存储在Amazon RDS中.使用Amazon Athena 构建数据集，并使用Amazon QuickSight可视化结"
+      }, {
+        "option": "C",
+        "content": "使用AWS Glue 作业将数据从JSON转换为Apache Parquet.使用AWS Glue搜显器发现架构并构建 AWS Glue数据目录．使用Amazon SageMaker 构建异常检测模型，该异常检测模型可以通过从Amazon S3提取数据来检测欺诈性呼叫"
+      }, {
+        "option": "D",
+        "content": "使用 Kinesis Data Analytics 通过运行SQL查询来检测来自 Kinesis的数据流异常，SQL查询可计算所有调用的异 常分数.将Amazon QuickSight 连接到 Kinesis Data Analytics以可视化异常分"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q98.一家在线零售商正在重建其库存管理系统和库存重新订购系统，以使用Amazon Kinesis Data Streams 自动对产品重新订购，库存管理系统使用Kinesis生产者库（KPL）将数据发布到流中，库存重新订购系统使用Kinesis 客户端库（KCL）可以使用流中的数据，该已配置为根据需要缩放，在即将进行生产部署之前，零售商发现库存重新排序系统正在接收重复的数据哪些因素可能导致数据重复？（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": "生产者具有与网络相关的超时"
+      }, {
+        "option": "B",
+        "content": "IteratorAgeMiliseconds指标的流值太高"
+      }, {
+        "option": "C",
+        "content": "分片，记录处理器或两者的数量都有变化"
+      }, {
+        "option": "D",
+        "content": "AggregationEnabled配置属性设置为true"
+      }, {
+        "option": "E",
+        "content": "max_records配置属性设置为一个太大的数字"
+      }],
+      "answer": ["A", "C"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q99.一家大型零售商已成功迁移到Amazon S3数据湖架构，该公司的营销团队正在使用Amazon Redshift 和AmazonQuickSight可以分析数据，并获得和可视化见解，为了确保营销团队拥有最新的可操作信息，数据分析师使用前一天的TB级更新来每晚执行Amazon Redshift的刷新.每晚进行第一次刷新后，用户报告在刷新之前运行正常的最受欢迎的仪表板中有一半现在运行得慢得多.AmazonCloudWatch不显示任何警报MOST可能导致性能下降的原因是什么？",
+      "choices": [{
+        "option": "A",
+        "content": ".仪表板受到效率低下的SQL查询的困"
+      }, {
+        "option": "B",
+        "content": ".对于仪表板正在运行的查询，群集的大小不"
+      }, {
+        "option": "C",
+        "content": ".每晚的数据刷新会导致持续的事务，由于用户工作量不断增加，Amazon Redshift无法自动关闭该事务。"
+      }, {
+        "option": "D",
+        "content": ".每晚数据刷新使仪表板表需要进行真空操作，由于用户工作量不断增加，Amazon Redshift无法自动执行该操作"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q100.一家营销公司正在将其活动响应数据存储在Amazon S3中，一致的一组来源已为每个广告系列生成了数据．数据以.csv文件形式保存到Amazon S3中.业务分析师将使用Amazon Athena分析每个活动的数据，该公司需要使用Athena进行正在进行的数据分析的成本要降到最低.数据分析专家应采取哪些行动组合才能满足这些要求？（选择两个.）",
+      "choices": [{
+        "option": "A",
+        "content": "将.csv文件转换为Apache Parquet"
+      }, {
+        "option": "B",
+        "content": "将.csv文件转换为Apache Avro"
+      }, {
+        "option": "C",
+        "content": "按营销活动对数据进行分区"
+      }, {
+        "option": "D",
+        "content": "按来源对数据进行分区"
+      }, {
+        "option": "E",
+        "content": "压缩.csv文件"
+      }],
+      "answer": ["A", "C"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q101.一家在线零售公司正在将其报告系统迁移到AWS.该公司的遗留系统使用一系列复杂的嵌套Apache Hive 查询对在线交易进行数据处理，每天几次将交易数据从联机系统导出到报告系统，文件之间的架构在两次更新之间是稳定 的.数据分析师希望将数据处理快速迁移到AWS，因此应将任何代码更改减至最少，为了保持较低的存储成本，数据分析师决定将数据存储在Amazon S3中．至关重要的是，基于Amazon S3中的数据，报告和相关分析中的数据必须是最新的.哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "创建一个AWS Glue数据目录以管理Hive元数据，在刷新数据时运行的Amazon S3上创建一个AWS Glue搜寻器．以确保更新数据更改，创建一个Amazon EMR集群，并使用AWS Glue 数据日录中的元数据在Amazon EMR中运行Hive 处理查询"
+      }, {
+        "option": "B",
+        "content": "创建一个AWS Glue 数据目录以管理Hive元数据.创建启用了一致视图的Amazon EMR集群，在每个分析步骤之前运行 emrfs sync，以确保更新数据更改创建一个EMR集群，并使用AWS Glue 数据目录中的元数据在Amazon EMR中运行Hive 处理查询"
+      }, {
+        "option": "C",
+        "content": "使用 CREATE TABLE AS SELECT（CTAS）创建一个Amazon Athena表，以确保从针对原始数据集的基础查询中刷新数据.创建一个AWS Glue数据日录以通过CTAS表管理Hive元数据.创建一个Amazon EMR集群，并使用AWS Glue数据日录中的元数据在Amazon EMR中运行Hive 处理查询"
+      }, {
+        "option": "D",
+        "content": "使用S3 Select 查询来确保正确更新了数据，创建一个AWS Glue数据目录以通过S3 Select表管理Hive元数据，创建一个Amazon EMR集群，并使用AWS Glue 数据目录中的元数据在Amazon EMR中运行Hive处理查询"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q102一家媒体公司正在使用Amazon QuickSight仪表板来可视化其国家销售数据，仪表板正在使用具有以下字段的数据集:ID.日期，时区，城市，州，国家／地区，经度，纬度，sales_volume和number_of_items.为了修改正在进行的广告活动，该公司希望以互动和直观的可视化方式显示全国哪个州的销售量比全国平均水平低得多公司QuickSight仪表板中的哪些新增组件将满足此要求？",
+      "choices": [{
+        "option": "A",
+        "content": "全国销售量数据的地理空间颜色编码图表"
+      }, {
+        "option": "B",
+        "content": "在州一级汇总的销量数据的数据透视"
+      }, {
+        "option": "C",
+        "content": "用于状态级别的销售量数据的向下钻取层"
+      }, {
+        "option": "D",
+        "content": "钻取到其他包含状态级别的销售量数据的仪表板"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q103.一家公司托管一个本地PostgreSQL数据库，该数据库包含历史数据．内部旧版应用程序将数据库用于只读活动.该公司的业务团队希望将数据尽快移至Amazon S3中的数据湖，并丰富数据以进行分析．该公司已在其VPC与本地网络之间建立了AWS Direct Connect连接.数据分析专家必须设计一种解决方案，以最小的运营开销实现业务团队的目标哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "通过使用自定义的批量上传过程，将数据从本地 PostgreSQL 数据库上传到Amazon S3.使用AWS Glue搜寻器对Amazon S3中的数据进行分类.使用AWS Glue作业将结果丰富并以Apache Parquet格式存储在单独的S3存储桶中.使用Amazon Athena 查询数据"
+      }, {
+        "option": "B",
+        "content": "为PostgreSQL 数据库创建 Amazon RDS，然后使用AWS Database Migration Service（AWS DMS）将数据迁移到Amazon RDS.使用 AWS Data Pipeline 从 Amazon RDS for PostgreSQL表复制和充实数据，然后将数据移至 Amazon S3.使用 Amazon Athena 查询数据"
+      }, {
+        "option": "C",
+        "content": "配置一个AWS Glue搜寻器以使用JDBC连接对本地数据库中的数据进行分类.使用AWS Glue 作业来丰富数据并将结果以Apache Parquet格式保存到Amazon S3.创建一个Amazon Redshift集群，然后使用Amazon RedshiftSpectrum 查询数据"
+      }, {
+        "option": "D",
+        "content": "配置一个AWS Glue搜寻器以使用JDBC连接对本地数据库中的数据进行分类.使用AWS Glue 作业来丰富数据并 将结果以Apache Parquet格式保存到Amazon S3.使用Amazon Athena 查询数据"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q104.一家医疗公司拥有一个带有传感器设备的系统，该传感器设备可以读取指标并将其实时发送到Amazon Kinesis数据流.Kinesis数据流具有多个分片.该公司需要每秒计算一次数字指标的平均值，并在该值高于一个阈值或低于另一个阈值时设置警报．警报必须在30秒内发送到Amazon Simple Notification Service（Amazon SNS）．哪种架构满足这些要求?",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Firehose 交付流通过 AWS Lambda 转换函数从Kinesis数据流中读取数据，该函数计算每秒的平均值并将警报发送到Amazon SNS"
+      }, {
+        "option": "B",
+        "content": "使用AWS Lambda 函数从 Kinesis数据流中读取数据以计算每秒平均值，然后将警报发送到Amazon SNS"
+      }, {
+        "option": "C",
+        "content": "使用Amazon Kinesis Data Firehose 交付流从 Kinesis数据流读取数据并将其存储在Amazon S3上.让Amazon S3触发AWS Lambda函数，该函数计算每秒平均值，并将警报发送到Amazon SNS"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Analytics 应用程序从Kinesis数据流中读取并计算每秒的平均值.将结果发送到AWSLambda函数，该函数将警报发送到Amazon SNS"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q105.一家物联网公司希望发布一种新设备，该设备将收集数据以跟踪智能床垫上的过夜睡眠，传感器将发送将上传到Amazon S3存储桶的数据．每晚每张床产生大约2MB的数据.必须为每个用户处理和汇总数据，并且需要尽快获得结果．该过程的一部分包括时间窗和其他功能.根据使用Python脚本进行的测试，每次运行将需要大约1GB的内存，并且会在几分钟之内完成哪种解决方案将以最具成本效益的方式运行脚本？",
+      "choices": [{
+        "option": "A",
+        "content": "带有Python脚本的AWS Lambda"
+      }, {
+        "option": "B",
+        "content": "具有Scala作业的AWS Glue"
+      }, {
+        "option": "C",
+        "content": "带有 Apache Spark 脚本的Amazon EMR"
+      }, {
+        "option": "D",
+        "content": "具有PySpark 作业的AWS Glue"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q106.一家公司希望为其数据分析师提供对其Amazon Redshift集群中的数据的不间断访问.所有数据都将通过Amazon Kinesis Data Firehose 流式传输到Amazon S3存储桶.计划每5分钟运行一次的AWS Glue作业会发出COPY命令，以将数据移至Amazon Redshift整天交付的数据量不平衡，并且在某些时期群集利用率很高.COPY命令通常在几秒钟内完成，但是，当出现负载峰值时，锁可能存在并且数据可能会丢失，当前，AWS Glue作业配置为不重试即可运行，超时时间为5分钟，并发时间为1.0数据分析专家应如何配置AWS Glue作业以优化容错能力并提高Amazon Redshift集群中的数据可用性？",
+      "choices": [{
+        "option": "A",
+        "content": "增加重试次数.减少超时值.增加作业并发性"
+      }, {
+        "option": "B",
+        "content": "保持重试次数为0.减小超时值.增加作业并发性"
+      }, {
+        "option": "C",
+        "content": "将重试次数保持为0.减小超时值.保持工作并发为1"
+      }, {
+        "option": "D",
+        "content": "保持重试次数为0.增加超时值，保持工作并发为1"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q107.一家零售公司利用Amazon Athena对AWS Glue 数据目录进行临时查询，数据分析团队为公司管理数据目录和数据访问.数据分析团队希望分离查询，并管理不同工作负载和团队的运行这些查询的成本，理想情况下，数据分析人员希望将一组中不同用户运行的查询进行分组，将查询结果存储在特定于每个团队的单个Amazon S3存储桶中，并对针对数据目录的查询实施成本约束，哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "为公司内的每个团队创建IAM组和资源标签，设置IAM策略，以控制用户对数据目录资源的访问和操"
+      }, {
+        "option": "B",
+        "content": "为公司内的每个团队创建Athena资源组，并将用户分配给这些组。将S3存储桶名称和其他查询配置添加到资源组的属性列表中"
+      }, {
+        "option": "C",
+        "content": "为公司内的每个团队创建Athena 工作组.设置IAM工作组策略，以控制用户访问和对工作组资源的操作"
+      }, {
+        "option": "D",
+        "content": "为公司内的每个团队创建Athena查询组，并将用户分配给这些组"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q108.一家制造公司使用Amazon S3来存储其数据.该公司希望使用AWS Lake Formation来为这些数据资产提供粒度级的安全性.数据采用Apache Parquet格式.该公司为顾问建立数据湖设定了最后期限，顾问应如何创建最符合这些要求的最具成本效益的解决方案？",
+      "choices": [{
+        "option": "A",
+        "content": "运行Lake Formation蓝图，将数据移至Lake Formation.一旦有湖泊形成数据，就对湖泊形成应用权"
+      }, {
+        "option": "B",
+        "content": "要创建数据目录，请在现有Parquet数据上运行AWS Glue搜寻器．注册Amazon S3路径，然后通过Lake Formation应用权限以提供详细级别的安全性"
+      }, {
+        "option": "C",
+        "content": "在Amazon EC2实例上安装 Apache Ranger井与Amazon EMR集成.使用Ranger策略，为Amazon S3中的现有数据资产创建基于角色的访问控制。"
+      }, {
+        "option": "D",
+        "content": "为不同的用户和组创建多个IAM角色，将IAM角色分配给Amazon S3中的不同数据资产，以创建基于表和基于列的访问控制"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q109.一家公司拥有一个使用 Amazon Kinesis Client Library（KCL）来从Kinesis数据流读取记录的应用程序．在成功的营销活动之后，该应用程序的使用率显着增加，结果，数据分析师不得不拆分数据流中的一些碎片.分片拆分后，应用程序开始偶尔抛出 ExpiredlteratorExceptions 错误.数据分析师应采取什么措施解决此问题？",
+      "choices": [{
+        "option": "A",
+        "content": "增加处理流记录的线程数"
+      }, {
+        "option": "B",
+        "content": "增加分配给流Amazon DynamoDB表的预配置读取容量单位"
+      }, {
+        "option": "C",
+        "content": "增加分配给流Amazon DynamoDB表的预配置写容量单位"
+      }, {
+        "option": "D",
+        "content": "减少分配给流Amazon DynamoDB表的预配置写容量单位"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q110.一家公司正在建立一项服务来监视车队，该公司从每辆车中的设备收集物联网数据，并将数据加载到亚马逊近乎实时的红移，车队所有者在一整天的不同时间将包含车辆参考数据的，csv文件上传到Amazon S3.每晚都会将车辆参考数据从Amazon S3加载到Amazon Redshift.该公司将来自设备的物联网数据和车辆参考数据连接到电源报告和仪表板，等待一天的仪表盘更新使车队所有者感到沮丧，在将参考数据上传到Amazon S3和显示在所有者仪表板中的更改之间，哪种解决方案会提供最短的延迟？",
+      "choices": [{
+        "option": "A",
+        "content": "使用S3事件通知来触发AWS Lambda函数，以在参考数据上载到Amazon S3后立即将车辆参考数据复制到 Amazon Redshift中"
+      }, {
+        "option": "B",
+        "content": "创建并计划一个AWS Glue Spark作业每5分钟运行一次.该作业会将参考数据插入 Amazon Redshift"
+      }, {
+        "option": "C",
+        "content": "将参考数据发送到 Amazon Kinesis Data Streams.配置 Kinesis数据流以将参考数据直接直接实时实时加载到Amazon Redshift中"
+      }, {
+        "option": "D",
+        "content": "将参考数据发送到Amazon Kinesis Data Firehose交付流，以60秒的缓冲时间间隔配置Kinesis，并将数据直接加 载到Amazon Redshift"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q111.一家公司正在从本地 Apache Hadoop 集群迁移到Amazon EMR集群.群集仅在工作时间内运行，由于公司要求避免日内群集故障，因此EMR群集必须具有高可用性，当群集在每个工作日结束时终止时，数据必须保留。哪些配置可以使EMR群集满足这些要求？（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": "用于存储的EMR文件系统(EMRFS)"
+      }, {
+        "option": "B",
+        "content": "用于存储的Hadoop分布式文件系统(HDFS)"
+      }, {
+        "option": "C",
+        "content": "AWS Glue 数据目录作为Apache Hive的元存储"
+      }, {
+        "option": "D",
+        "content": "主节点上的MySQL数据库作为Apache Hive的元存"
+      }, {
+        "option": "E",
+        "content": "单个可用区中的多个主节"
+      },{
+        "option": "F",
+        "content": "多个可用区中的多个主节"
+      }],
+      "answer": ["A", "C", "E"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q112.一家零售公司希望使用Amazon QuickSight生成用于网络和店内销售的仪表板，一组50名商业智能专业人员将开发和使用仪表板，准备就绪后，仪表板将与一组1，000个用户共享．销售数据来自不同的商店，每24小时上传到Amazon S3.数据按年和月划分，并存储在Apache中实木复合地板格式.该公司正在使用AWS Glue数据目录作为其主要数据目录，并使用Amazon Athena 进行查询.仪表板从任何位置查询的未压缩数据的总大小为200 GB.哪种配置将提供可满足这些要求的MOST高性价比解决方案?",
+      "choices": [{
+        "option": "A",
+        "content": "使用COPY命令将数据加载到Amazon Redshift集群中.配置50个作者用户和1，000个读者用户．使用QuickSight企业版.使用直接查询选项配置 Amazon Redshift数据源"
+      }, {
+        "option": "B",
+        "content": "使用QuickSight标准版.配置50个作者用户和1，000个读者用户．使用直接查询选项配置Athena 数据源."
+      }, {
+        "option": "C",
+        "content": "使用QuickSight企业版.配置50个作者用户和1，000个读者用户．配置Athena数据源井将数据导入SPICE.每24小时自动刷新一次"
+      }, {
+        "option": "D",
+        "content": "使用QuickSight企业版.配置1个管理员和1，000个阅读器用户，配置一个S3数据源并将数据导入SPICE.每24小时自动刷新一次.答案:C解析"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q113.一个中央政府组织正在使用适用于Apache Kafka的Amazon Managed Streaming（Amazon MSK）从各种内部应用程序收集事件.该组织已为每个应用程序配置了单独的Kafka主题，以分离数据，出于安全原因，Kafka群集已配置为仅允许TLS加密的数据，并且对静态数据进行加密。最近的应用程序更新显示，其中一个应用程序配置不正确，导致将数据写入属于另一个应用程序的Kafka主题，由于来自不同应用程序的数据出现在同一主题上，因此导致分析管道中出现多个错误，发生此事件后，组织希望防止应用程序写出与其应写的主题不同的主题，哪种解决方案可以用最少的精力满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "为每个应用程序创建一个不同的Amazon EC2安全组.配置每个安全组以访问Amazon MSK集群中的特定主题，根据应用程序应读取和写入的主题，将安全组附加到每个应用程序"
+      }, {
+        "option": "B",
+        "content": "在每个应用程序实例上安装Kafka Connect，并将每个Kafka Connect实例配置为仅写入特定主题"
+      }, {
+        "option": "C",
+        "content": "使用Kafka ACL并为每个主题配置读写权限，使用客户端TLS证书的专有名称作为ACL的主体"
+      }, {
+        "option": "D",
+        "content": "为每个应用程序创建一个不同的Amazon EC2安全组.为每个应用程序创建一个Amazon MSK集群和Kaka主题.配置每个安全组以有权访问特定的群集"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q114.公司希望近实时地收集和处理来自不同部门的事件数据，在将数据存储到Amazon S3中之前，该公司需要通过标准化address和timestamp列的格式来清理数据.数据的大小根据每个特定时间点的总体负载而变化，单个数据记录 可以是 100 KB-10 MB.数据分析专家应如何设计数据提取解决方案?",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis 数据流.配置原始数据流.使用 Kinesis Agent将数据写入流.创建一个Amazon Kinesis DataAnalytics应用程序，该应用程序从原始流中读取数据，清除数据，然后将输出存储到Amazon S3"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Kinesis Data Firehose.使用预处理AWS Lambda 通数配置Firehose 交付流以进行数据清理，使用Kinesis 代理将数据写入传送流．配置 Kinesis Data Firehose 以将数据传递到Amazon S3."
+      }, {
+        "option": "C",
+        "content": "对Apache Kafka 使用 Amazon Managed Streaming.配置原始数据的主题.使用Kafka生产者将数据写入该主题.在Amazon EC2上创建一个应用程序，该应用程序使用Apache Kafka 使用者API从主题读取数据，清除数据，然后写入 Amazon S3"
+      }, {
+        "option": "D",
+        "content": "使用Amazon Simple Queue Service（Amazon SQS）.配置 AWS Lambda 函数以从SQS队列读取事件并将事件上传到Amazon S3"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q115.运营团队注意到，给定ETL应用程序的一些AWS Glue 作业失败．AWS Glue 作业从Amazon S3存储桶，并将数据写入 Apache Parquet格式的其他S3存储桶中，而无需进行重大转换，进行初步调查后，数据工程师会在AWS Glue控制台的“历史记录”选项卡中注意到以下错误消息；命令失败，并带有退出代码1.经过进一步调查，数据工程师注意到失败作业的驱动程序内存配置文件已超过安全阈值迅速达到50％的使用率，并在不久后达到95％＊90.所有执行器的平均内存使用率仍低于4％．数据工程师在检查相关的Amazon CloudWatch Logs时也注意到以下错误＃ java.lang.OutOfMemoryError:Java heap space＃-XX: OnOutofMemoryError=＂kill －9 ＆p＂＃Executing/bin/sh －c ＂kill －9 12039＂..数据工程师应采取什么措施以最有效的方式解决故障？",
+      "choices": [{
+        "option": "A",
+        "content": "将工作程序类型从标准更改为G.2X"
+      }, {
+        "option": "B",
+        "content": "修改 AWS Glue ETL代码以使用－groupFiles:－inPartition功能"
+      }, {
+        "option": "C",
+        "content": "使用AWS Glue 动态框架增加获取大小设置"
+      }, {
+        "option": "D",
+        "content": "修改最大容量以增加所使用的最大数据处理单元（DPU）总数"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q116.一家运输公司希望通过捕获地理位置记录来跟踪车辆的运动，记录的大小为10B，每秒最多補获10，000条记录考虑到不可靠的网络条件，几分钟的数据传输延迟是可以接受的运输公司决定使用 Amazon Kinesis Data Streams提取数据.该公司正在寻找一种可靠的机制来将数据发送到Kinesis Data Streams，同时最大程度地提高Kinesis分片的吞吐效率。哪种解决方案可以满足公司的要求",
+      "choices": [{
+        "option": "A",
+        "content": "运动代理"
+      }, {
+        "option": "B",
+        "content": "Kinesis 生产者图书馆（KPL）"
+      }, {
+        "option": "C",
+        "content": "Kinesis Data Firehose"
+      }, {
+        "option": "D",
+        "content": "Kinesis SDK"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    },{
+      "stem": "Q117.一家航运公司使用集装箱中的传感器来跟踪温度、位置和倾斜，传感器产生的小文件存储在amazons3的桶中，每批中要处理的文件的估计数量约为30000到40000，正在使用的AWS Glue ETL作业遇到驱动程序内存不足（OOM）异常错误.什么样的解决方案可以纠正这个问题？",
+      "choices": [{
+        "option": "A",
+        "content": "使用基于S3事件的AWS Lambda函数，并根据文件创建日期聚合小文件，然后将聚合的数据传递给Glue 进行处"
+      }, {
+        "option": "B",
+        "content": "使用 Kinesis Producer 库（KPL）执行聚合，然后将数据传递给s3进行粘合处理"
+      }, {
+        "option": "C",
+        "content": "为数据目录中的表启用文件分组"
+      }, {
+        "option": "D",
+        "content": "请求增加每个账户的粘合函数数的服务限制"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q118.某制药公司将其临床试验数据存储在amazons3中，并希望使用amazonemr集群成批处理详细的数据文件，并将汇总的数据输出回S3.公司不希望集群在没有数据处理的情况下运行，数据分析师如何配置集群以满足需 求？",
+      "choices": [{
+        "option": "A",
+        "content": "为EMR群集启用自动终止"
+      }, {
+        "option": "B",
+        "content": "配置AWS Trusted Advisor 以关闭空闲的EMR群集"
+      }, {
+        "option": "C",
+        "content": "配置s3event通知以在存储汇总数据时关闭EMR集群"
+      }, {
+        "option": "D",
+        "content": "使用EC2 spot块创建EMR集群"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q119.一位数据工程师正在AmazonEMR上使用ApacheSpark开发一个数据处理解决方案，该数据工程师正在一个小型但具有代表性的数据子集上测试数据处理应用程序，数据工程师如何访问Hadoop日志以调试作业、任务和任务尝试的处理？",
+      "choices": [{
+        "option": "A",
+        "content": "SSH到核心节点并将日志下载到amazons3存储桶中"
+      }, {
+        "option": "B",
+        "content": "在CloudWatch日志中查看日志"
+      }, {
+        "option": "C",
+        "content": "修改集群以将日志写入 Amazon Elasticsearch 集"
+      }, {
+        "option": "D",
+        "content": "配置一个新集群，将日志文件归档到amazons3存储桶中"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q120.一家公司正在使用amazonemr集群来处理连续的数据流，长寿命群集是使用默认设置创建的，该公司希望通过消除单点故障来提高集群的恢复能力，哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用更高容量的主节点重新创建集群"
+      }, {
+        "option": "B",
+        "content": "集群的两倍大小"
+      }, {
+        "option": "C",
+        "content": "将核心节点分布到多个可用性区域"
+      }, {
+        "option": "D",
+        "content": "用另外两个主节点重新创建集群"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q121.一家公司正在亚马进S3上存储他们的系统操作数据，数据工程师需要提供一个解决方案，用最少的开发和管理工作来编目和查询数据。以下哪项符合这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "在amazonemr集群上使用Hive定义一个外部表，并使用hiveql 进行查询"
+      }, {
+        "option": "B",
+        "content": "使用AWS Glue 爬虫来提取模式并将元数据存储在Glue目录中，使用amazonathena查询数据"
+      }, {
+        "option": "C",
+        "content": "使用Amazon Aurora MySQL 数据库定义和存储外部配置单元元存储，使用Amazon EMR集群上的配置单元Q1査询数据"
+      }, {
+        "option": "D",
+        "content": "使用 amazonredshift在S3中定义和查询外部表"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q122.数据分析师负责确定Amazon Elasticsearch域的大小，域将存储100 GB的数据使用2个复制品．以下哪项是满足最低要求的最低EBS存储量?",
+      "choices": [{
+        "option": "A",
+        "content": "150 GB"
+      }, {
+        "option": "B",
+        "content": "250 GB"
+      }, {
+        "option": "C",
+        "content": "350 GB"
+      }, {
+        "option": "D",
+        "content": "450 GB"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q123.数据工程师的任务是为amazonrds中存储的数据提供丰富的交互式数据可视化和分析功能公司领导层希望使用其遗留的基于web的应用程序来运行分析，并希重任何新的报告都能集成到该应用程序中，数据工程师希望以最小的定制开发提供解决方案。哪种解决方案符合要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将web应用程序配置为从API调用API网关（调用AWS Lambda通数查询数据库）获得的数据生成可视化效果。"
+      },{
+        "option": "B",
+        "content": "在Amazon QuickSight中开发交互式仪表板井将其嵌入到web应用程序"
+      }, {
+        "option": "C",
+        "content": "提供一个启用了Jupyter笔记本的Amazon EMR集群，并确保集群可以访问RDS.将笔记本嵌入到web应用程序 "
+      }, {
+        "option": "D",
+        "content": ".将数据加载到Amazon Elasticsearch集群中，并将 Kibana 仪表板嵌入到web 应用程序"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q124.公司需要接收来自移动应用程序的消息，这些消息有时可能会被多次和延迟接收，此数据用于计费，因此必须确保没有重复数据，并且所有数据（无论何时到达）都将被记账，它必须是可能的重播信息长达30天，该公司还希望在数据中的某些模式匹配时得到提醒。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "为Kafka集群创建Amazon管理的流媒体，创建一个AWS Lambda通数来读取和验证数据，配置的数以将记录存储在amazondynamiodb中（如果它还不存在），将DynamoDB表配置为在数据匹配时发出警报"
+      }, {
+        "option": "B",
+        "content": "创建 Amazon Kinesis 数据流.创建一个Amazon Kinesis Firehose来使用Kinesis的记录并将其传递到AmazonElasticsearch域，创建一个AWS Lambda通数来检查流中的重复项并检测无序记录将Kibana配置为在数据匹配时发出警"
+      }, {
+        "option": "C",
+        "content": "创建 Amazon Kinesis 数据流.创建一个AWS Lambda函数，用于评估和持久化来自Kinesis的记录，将该函数配置为检查重复记录，检测无序记录并将记录存储在Amazon DynamoDB中将另一个Lambda通数配置为每5分钟查询DynamoDB一次，并在数据匹配时发出警"
+      }, {
+        "option": "D",
+        "content": "为Kafka 集群创建 Amazon 管理的流媒体.创建一个AWS Lambda函数来读取和验证数据.配置函数以将消息存储在Amazon Elasticsearch中（如果该消息尚不存在）.配置 Elasticsearch域以在数据匹配时发出警报"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q125.数据分析师正在测试一个处理来自Kinesis数据流的监控数据的应用程序，在模拟生产负载时，Kinesis客户端库（KCL）正在接收 ProvisionedThroughputExceededException 错误:数据分析员应该采取什么步骤来解决这个问题?",
+      "choices": [{
+        "option": "A",
+        "content": "增加Kinesis数据流的碎片数"
+      }, {
+        "option": "B",
+        "content": "增加与KCL相关联的DynamoDB表的吞吐"
+      }, {
+        "option": "C",
+        "content": "将用于在流中生成数据的API调用从GetRecords 切换到 GetRecord"
+      }, {
+        "option": "D",
+        "content": "禁用对Kinesis流的限"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q126.数据分析师需要部署一个解决方案来收集数据.近实时搜索和可视化系统日志什么样的解决方案可以满足要求（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": "使用Kibana仪表板可视化日志"
+      }, {
+        "option": "B",
+        "content": "使用 amazonemr上运行的Hue可视化日志"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon CloudWatch 仪表盘可视化日志"
+      }, {
+        "option": "D",
+        "content": "将数据发送到以Amazon Elasticsearch域为目标的Amazon Kinesis Firehose 交付流"
+      }, {
+        "option": "E",
+        "content": "将数据发送到Amazon Kinesis数据流在amazonemr上使用 apachesparkstreaming加载数据，并使用sparksql进行搜"
+      }],
+      "answer": ["B", "C"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q127.一家公司的生产环境有一个AWS账户，分析团队有一个单独的账户，分析团队正在运行一个Amazon Redshift集群，它需要访问生产账户中的S3 bucket.在遵循最小特权原则的同时，有什么解决方案？",
+      "choices": [{
+        "option": "A",
+        "content": ".在生产账户中创建一个bucket策略，允许访问分析用"
+      }, {
+        "option": "B",
+        "content": ".在生产账户中创建IAM策略并将其授予分析用"
+      }, {
+        "option": "C",
+        "content": ".使用允许访问bucket的权限策略和分析账户的信任策略在生产账户中创建角色.在analytics账户中，创建一个服务角色以承担生产角色，并将该角色分配给红移集群"
+      }, {
+        "option": "D",
+        "content": ".在具有bucket访问权限的analytics账户中创建角色在analytics账户中，创建一个服务角色以承担该角色，并将该角色分配给红移群集"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q128.数据工程师创建了一个自定义的AWS Lambda函数来准备和转换amazonfirehose交付流中传入的原始数据。数据工程师发现转换总是失败的.为了避免转换失败，数据工程师应该验证和纠正什么？",
+      "choices": [{
+        "option": "A",
+        "content": "转换后的数据有效负载的base-32编码"
+      }, {
+        "option": "B",
+        "content": "转换数据有效负载的utf-8编码"
+      }, {
+        "option": "C",
+        "content": "已转换数据有效负载的引用可打印编码"
+      }, {
+        "option": "D",
+        "content": "转换后的数据有效负载的base-64编码"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q129.一家公司正在构建一个基于amazons3的数据湖，其中一个数据源包括以大约每小时2000个日志文件的速率接收的应用程序日志数据工程师正在使用AWS胶水进行清理，将数据集规范化和丰富化为日常批处理作业AWS胶水作业失败，数据工程师需要调查根本原因，数据工程师应该采取哪些措施来解决问题？",
+      "choices": [{
+        "option": "A",
+        "content": "配置 Amazon CloudWatch 事件规则，以便在出现状态为FAILED的“Glue Job State Change”事件时向SNS主题发送通"
+      }, {
+        "option": "B",
+        "content": "修改作业以将性能度量输出到AWS Lambda函数配置该函数以将度量写入Amazon CloudWatch日"
+      }, {
+        "option": "C",
+        "content": "在CloudTrall 日志中搜索“Glue Job State Change”事件类型和FALED响"
+      }, {
+        "option": "D",
+        "content": "在AWS粘合作业定义中启用作业度量选项，运行作业并在AWS Glue控制台的History选项卡上的错误日志中搜 索 Erro"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q130.一家医疗保健公司正在开发一种心率监测系统，该设备将产生流数据，需要对异常进行近实时分析，在记录被摄取之后，它们必须被保存起来，以便进行长期的历史分析。哪种方法能满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": ".配置设备将数据写入amazonsqs FIFO队列.创建一个AWS Lambda函数来分析队列中的数据井将其存储在 amazonredshift 集群中"
+      }, {
+        "option": "B",
+        "content": ".将设备配置为将数据流传输到Amazon Kinesis 数据 Firehose 传递流，该传递流将数据写入 Amazon S3存储桶使用 Amazon Kinesis 数据分析应用程序分析流中的数据"
+      }, {
+        "option": "C",
+        "content": ".配置设备将数据放入 amazons3 bucket，使用multi-partupload 使用S3event 通知触发 AWS Lambda 函数进行分 "
+      }, {
+        "option": "D",
+        "content": ".将设备配置为将数据发布到amazonapi网关，创建一个AWS Lambda函数来分析接收到的数据并存储在 amazons3存储桶"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q131一家设备制造公司正在收集安装在每台机器上的传感器的数据，传感器数据通过Amazon Kinesis Firehose 收集并存储在Amazon 53中，作为一个平均对象大小为10MB的微型批处理这些物体大约每10分钟从数百个传感器到达一次53前缀用于根据日期对数据进行分区AWS Glue用于对数据分析人员在使用Athena运行查询时遇到的性能缓慢的问题进行分类，数据分析专家应该推荐哪种解决方案来提高性能？",
+      "choices": [{
+        "option": "A",
+        "content": "使用列式数据格式将对象存储在Amazon53上更快的磁盘（SSD）上"
+      }, {
+        "option": "B",
+        "content": "在amazonemr 作业上使用S3DistCP实用程序，每天为每个域将所有对象合并到一个对象"
+      }, {
+        "option": "C",
+        "content": "在内存优化的Amazon EC2实例上运行Athena"
+      }, {
+        "option": "D",
+        "content": "使用 Athena 工作组在用户组和应用程序之间分离工作负"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q132.一家零售公司在美国6个城市拥有15家门店，每月一次，销售团队要求在Amazon QuickSight 中进行可视化，以便能够轻松识别不同城市和商店的收入趋势，可视化还有助于识别需要通过进一步分析进行检查的异常值QuickSight 中的哪种视觉类型符合销售团队的要求？",
+      "choices": [{
+        "option": "A",
+        "content": "地理空间"
+      }, {
+        "option": "B",
+        "content": "折线图"
+      }, {
+        "option": "C",
+        "content": "热图"
+      }, {
+        "option": "D",
+        "content": "树状图"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q133.一家营销公司在Salesforce.MySQL和Amazon S3 中拥有数据，该公司希望使用来自这三个位置的数据并为其用户创建移动仪表板，该公司不确定它应该如何创建仪表板，并且需要一个具有最少定制和编码的解决方案。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Athena 联合查询加入数据源，使用 Amazon QuickSight 生成移动控制面"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Lake Formation 将数据源迁移到 Amazon S3.使用 Amazon QuickSight 生成移动控制面"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Redshift 联合查询加入数据源.使用 Amazon QuickSight 生成移动控制面"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon QuickSight 连接到数据源并生成移动控制面板"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q134.一家公司使用 Amazon Rodshift 来满足其数据仓库需求，ETL 作业每晚运行以加载数据、应用业务规赠并创建用于报告的聚合表，公司的数据分析、数据科学和商业管能团队在正常工作时间使用数据仓库工作负载管理设置为自动，每个团队都存在单独的队列，优先级设置为 NORMAL最近，数据分析团队的读取查询突然激增，每天至少发生两次，查询排队等待集群资源，该公司需要一种解决方案，使数据分析团队能够在不影响延迟和其他团队的查询时间的情况下避免查询排队。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将数据分析队列的查询优先级提高到 HIGHES"
+      }, {
+        "option": "B",
+        "content": "配置数据分析队列，开启并发扩展"
+      }, {
+        "option": "C",
+        "content": "创建查询监控规则，在查询等待资源时为数据分析队列增加更多的集群容量"
+      }, {
+        "option": "D",
+        "content": "使用工作负载管理查询队列院跃将查询路由到下一个匹配队"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q135.一家公司拥有在世界各地安装物联网设备的设施，该公司正在使用 Amazon Kinesis Data Streams 将数据从设备流式传输到 Amazon S3.该公司的运营团队希望从IoT 数据中获得制察力，以监控报取时的数据质量，需要近子实时地获得制察，并且必须将输出记录到 Amazon DynamoDB 以供进一步分析哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "连接 Amazon Kinesis Data Analytics 以分析流数据，使用 Kineais Data Analytics 的默认输出将输出保存到DynamoDB"
+      }, {
+        "option": "B",
+        "content": "连接 Amazon Kinesis Data Analytics 以分析流数据.使用 AWS Lambda 语数将输出保存到 DynamoD"
+      }, {
+        "option": "C",
+        "content": "连接 Amazon Kinesis Data Firehose 以使用 AWS Lambda 通数分析流数据使用 Kinesis Data Firehose 的默认输出将输出保存到 DynamoD"
+      }, {
+        "option": "D",
+        "content": "连接 Amazon Kinesis Data Firehose 以使用 AWS Lambda 通数分析流数据将数据保存到 Amazon S3.然后按计划运行 AWS Glue 作业以将数据提取到 DynamoDB"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q136.一家公司在AWS 上有一个数据湖，它从多个业务部门提取数据源并使用 Amazon Athena 进行查询．存储层是使用 AWS Glue 数据目录的 Amazon S3.该公司希望将数据提供给其数据科学家和业务分析师，但是，公司首先需要根据用户角色和职责来管理 Athena的数据访问.公司应该怎么做才能以最少的运营开销应用这些访问控制？",
+      "choices": [{
+        "option": "A",
+        "content": "按 AWS Lake Formation 中的角色为用户和应用程序定义基于安全策略的规则"
+      }, {
+        "option": "B",
+        "content": "按 AWS Identity and Access Management（IAM）中的角色为用户和应用程序定义基于安全策略的规则"
+      }, {
+        "option": "C",
+        "content": "在AWS Glue 中按角色为表和列定义基于安全策略的规则"
+      }, {
+        "option": "D",
+        "content": "在AWS Identity and Access Management（IAM）中按角色为表和列定义基于安全策略的规"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q137.一家公司有一个加密的 Amazon Redshift 集群.该公司最近启用了Amazon Redshift审核日志，井需要确保审核日志也经过静态加密，日志保留1年，审计员每月查询一次日志。满足这些要求的最具成本效益的方法是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Key Management Service（AWS KMS）加密存储日志的 Amazon S3 在储桶，每天将数据从 Amazon S3复制到 Amazon Redshift 集群中．根据需要查询数据"
+      }, {
+        "option": "B",
+        "content": "在Amazon Redshift 集群上禁用加密，配置审计日志，并加密 Amazon Redshift 集群.根据需要使用 AmazonRedshift Spectrum 查询数据"
+      }, {
+        "option": "C",
+        "content": "使用 AES-256 加密在存储日志的 Amazon S3存储桶上启用默认加密，每天将数据从 Amazon S3 复制到Amazon Redshift 集群中，根据需要查询数据"
+      }, {
+        "option": "D",
+        "content": "使用 AES-256 加密在存储日志的 Amazon S3 存储桶上启用默认加密．根据需要使用 Amazon RedshiftSpectrum 查询数"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q138.一位数据分析专家正在为 Amazon Redshift 环境以手动模式设置工作负载管理，数据分析专家正在定义查询监控规则，以管理 Amazon Redshint 集群的系统性能和用户体验.每个查询监控规则必须包含哪些元素？",
+      "choices": [{
+        "option": "A",
+        "content": "唯一的规则名称、查询运行时条件和AWS Lambda 函数，用于在非工作时间重新提交任何失败的查询"
+      }, {
+        "option": "B",
+        "content": "队列名称，唯一规则名称和基于谓词的停止条"
+      }, {
+        "option": "C",
+        "content": "唯一的规则名称、一到三个谓词和一个动"
+      }, {
+        "option": "D",
+        "content": "工作负载名称、唯一规则名称和基于查询运行时的条"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q139.一家市场数据公司聚合外部数据源，以创建不同国家／地区产品消费的详细视围，该公司希望通过订间将这些数据出售给外部各方，为了实现这一目标，该公司需要将其数据安全地提供给同时也是 AWS 用户的外部各方。公司应该怎么做才能以最少的运营开销满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": ".将数据存储在 Amazon S3 中.使用预签名 URL 共享数据以确保安全"
+      }, {
+        "option": "B",
+        "content": ".将数据存储在 Amazon S3 中.使用 S3 存储桶 ACL 共享数据"
+      }, {
+        "option": "C",
+        "content": ".将数据上传到 AWS Data Exchange 进行存储，使用预签名 URL 共享数据以确保安全"
+      }, {
+        "option": "D",
+        "content": ".将数据上传到 AWS Data Exchange 进行存储.使用 AWS Data Exchange 共享向导共享数据"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q140.一家公司有营销部和财务部，这些部门将 Amazon S3中的数据存储在他们自己在AWS Organizations 中的AWS 账户中，两个部门都使用 AWS Lake Formation 来编目和保护他们的数据，这些部门有一些共享通用名称的数据库和表营销部门需要安全地访问财务部门的一些表，这个过程需要哪两个步骤？（选择两项.）",
+      "choices": [{
+        "option": "A",
+        "content": "财务部门将表的 Lake Formation 权限授予营销部门的外部账户"
+      }, {
+        "option": "B",
+        "content": "财务部门为营销部门角色创建对表的跨账户 IAM 权"
+      }, {
+        "option": "C",
+        "content": "营销部门创建了一个对 Lake Formation 表具有权限的IAM 角"
+      }],
+      "answer": ["A", "B"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q141.一家人力资源公司维护着一个10节点的 Amazon Redshift 集群，用于对公司的数据运行分析查询．AmazonRedshift 集群包含一个 product 表和一个 transactions 表，并且这两个表都有一个 product_sku 列.这些表的大小超过 100 GB.大多数查询都在两个表上运行。公司应该对这两个表使用哪种分配方式来实现最佳查询性能？",
+      "choices": [{
+        "option": "A",
+        "content": "两个表的 EVEN分配方"
+      }, {
+        "option": "B",
+        "content": "两个表的 KEY分配方"
+      }, {
+        "option": "C",
+        "content": "产品表的ALL分配方式和交易表的 EVEN 分配方"
+      }, {
+        "option": "D",
+        "content": "产品表的EVEN分配方式和交易表的KEY分配方"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q142.公司从其供应商处以JSON 格式接收数据，文件名中带有时间截，供应商将数据上传到 Amazon S3 存储桶，然后将数据注册到公司的数据湖中以进行分析和报告，该公司已配置S3 生会周期策略，以在5天后将所有文件存桥到 S3 Glacier.该公司希望确保其 AWS Glue 网程序仅对米自 S3 标准存储的数据进行编目，而忽略存档文件，数据分析专家必额在不更改当前S3 存储桶配置的情况下实施解决方案来实现此目标哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue 的排除模式功能来识别爬虫要排除的S3 Glacier文件"
+      }, {
+        "option": "B",
+        "content": "安持一个自动化作业，使用 AWS Lambda 将文件从原始S3存储桶移动到新的S3存储桶以进行 S3 Glacier存"
+      }, {
+        "option": "C",
+        "content": "使用 AWS Glue 数据目录表中的 excludeStoragoClasses 属性排除 S3 Glacier 存储上的文件"
+      }, {
+        "option": "D",
+        "content": "使用 AWS Glue 的包含模式功能来识别底虫要包含的S3标准文件。答案:A解析"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q143.一家公司分析历史数据井需要查询存储在Amazon S3 中的数据，每天都会以 cav文件的形式生成新数据，这些文件存储在 Amazon S3 中，该公司的分析师正在使用 Amazon Athena 对最近的整体数据子集执行 SQL 查询，随着时间的推移，引入 Amazon S3的数据量大幅增加，查询延退也增加了。公司可以实施哪些解决方案来提高查询性能？（选择两项）",
+      "choices": [{
+        "option": "A",
+        "content": "在Amazon EC2 实例上使用 MySQL Workbench，并使用JDBC或ODBC 连接器连接到 Athena.直接从MySQL Workbench 而不是 Athena 运行查"
+      }, {
+        "option": "B",
+        "content": "每天使用 Athena 提取数据并以 Apache Parquet 格式存储，查询提取的数据"
+      }, {
+        "option": "C",
+        "content": "每天运行 AWS Glue ETL 作业以将数据文件转换为 Apache Parquet 并对转换后的文件进行分区.创建定期AWS Glue 爬网程序以每天自动爬取分区数据"
+      }, {
+        "option": "D",
+        "content": "每天运行 AWS Glue ETL 作业以使用.gzip 格式压缩数据文件，查询压缩数据，"
+      },{
+        "option": "E",
+        "content": "每天运行 AWS Glue ETL 作业以使用 .lzo 格式压缩数据文件，查询压缩数据．"
+      }],
+      "answer": ["C", "D"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q144.一家公司将历史数据集发送到 Amazon S3 进行存储，该公司的一名数据工程师希望使用 Amazon Athena 使这些数据集可用于分析，该工程师还希望通过使用 AWS 加密解决方案来加密 S3结果位置中的 Athena 查询结果查询结果加密要求如下:使用自定义密钥对主数据集查询结果进行加密。对所有其他查询结果使用通用加密。为主要数据集查询提供审计跟踪，显示密钥的使用时间和使用者。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "对主数据集使用带有S3 托管加密密钥（SSE-S3）的服务器端加密，对其他数据集使用 SSE-S3"
+      }, {
+        "option": "B",
+        "content": "对主数据集使用带有客户提供的加密密钥（SSE-C）的服务器端加密对其他数据集使用带有S3托管加密密钥（SSE-S3）的服务器端加密"
+      }, {
+        "option": "C",
+        "content": "将服务器端加密与 AWS KMS 托管的客户主密钥（SSE-KMS CMK）用于主数据集，对其他数据集使用带有S3托管加密密钥（SSE-S3）的服务器端加"
+      }, {
+        "option": "D",
+        "content": "将客户端加密与AWS Key Management Service（AWS KMS）客户管理的密钥用于主数据集对其他数据集使用带有客户端密铜的 S3 客户端加密"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q145.一家大型电信公司正计划为在AWS上运行的多个数据源设置数据目录和元数据管理，该目录将用于维护存储在数据存储中的所有对象的元数据，数据存储由结构化源（如Amazon RDS 和Amazon Redshift）和半结构化源（如存储在 Amazon S3 中的 JSON 和XML 文件）组成，日录必须定期更新，能够检测到对象元数据的更改，并且需要尽可能少的管理。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Aurora 作为数据日录，创建 AWS Lambda 通数，用于连接和收集来自多个源的元数据信息并更新Aurora 中的数据目录.定期安排 Lambda 通"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 数据日录作为中央元数据存储库，使用 AWS Glue 爬网程序连接到多个数据存储并使用元数据更改更新数据目录，定期安排爬网程序以更新元数据目录"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon DynamoDB 作为数据日录，创建 AWS Lambda 语数，用于连接和收集来自多个源的元数据信息并更新 DynamoDB 日录.定期安排 Lambda 函"
+      }, {
+        "option": "D",
+        "content": "使用 AWS Glue 数据目录作为中央元数据存储库，提取 RDS 和Amazon Redahift 源的架构并构建数据目录，对有储在 Amazon S3中的数据使用 AWS 实网程序来推断架构并自动更新数据目"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q146.一家电子商务公司正在将其商业智能环境从本地迁移到 AWS云.该公司将在公共子网和 Amazon Quick Sight中使用 Amazon Redshift.这些表已经加载到 Amazon Redahift中，并且可以通过 SQL 工具进行访问该公司首次启动 QuickSight，在创建数据源期间，数据分析专家输入所有信息并会试验证连接，出现以下消息的错误:“创建与数据源的连接超时:数据分析专家应该如何解决这个错误?",
+      "choices": [{
+        "option": "A",
+        "content": "授子对 Amazon Redshift 表的 SELECT 权限"
+      }, {
+        "option": "B",
+        "content": "将 QuickSight IP 地址范围添加到 Amazon Redshift 安全组中"
+      }, {
+        "option": "C",
+        "content": "为 QuickSight 创建一个 IAM 角色以访问 Amazon Redshif"
+      }, {
+        "option": "D",
+        "content": "使用 QuickSight 管理员用户创建数据集"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q147.一家电力公司正在部署数千个智能电表，以获取有关电力消耗的实时更新，该公司正在使用 Amazon KinesisData Streams 从智能仪表收集数据流.使用者应用程序使用 Kinesis 客户端库（KCL）来检索流数据，该公司只有一个消费者应用程序。该公司观察到从记录写入流的那一刻到消费者应用程序读取记录的平均延迟为1秒公司必须将此延退减少到 500 毫秒哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "在Kinesis Data Streams 中使用增强型扇出"
+      }, {
+        "option": "B",
+        "content": "增加 Kinesis 数据流的分片数量"
+      }, {
+        "option": "C",
+        "content": "通过覆盖 KCL默认设置来减少传播延迟"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 开发消费"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q148.公司需要从多个来源收集流数据并将数据存储在AWS 云中，数据集结构严密，但分析师需要执行多个复杂的SQL 查询并需要一致的性能，某些数据的查询频率高于其他数据，该公司需要一种以具有成本效益的方式满足其性続要求的解决方案哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Managed Streaming for Apache Kafka 提取数据以将其保存到 Amazon S3.使用 Amazon Athena对摄取的数据执行 SQL 查询"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Managed Streaming for Apache Kafka 提取数据以将其保存到 Amazon Redshift启用 Amazon Redshift 工作负载管理（WLM）来确定工作负载的优先"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Firehose 提取数据以将其保存到 Amazon Redshift启用 Amazon Redshint 工作负载管理（WLM）来确定工作负载的优先"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 摄取数据以将其保存到 Amazon S3.使用 COPY 命令将经常查询的数量加载到 Amazon Redshift将 Amazon Redshift Spectrum 用于不常查询的数"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q149.一家制造公司使用 Amazon Connect 来管理其联络中心，并使用 Salesforce 来管理其客户关系管理（CRM）数据．数据工程团队必须构建一条管道，将来自联络中心和CRM系统的数据提取到构建在Amazon S3上的数据湖中在数据湖中以最少的运营开销收集数据的最有效方法是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Streams 摄取 Amazon Connect 数据，使用 Amazon AppFlow 摄取 Salesforce 数"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Kinesis Data Firehose 摄取 Amazon Connect 数据，使用 Amazon Kinesis Data Streams 摄取 Salesforce 数据"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Firehose 摄取 Amazon Connect 数据，使用 Amazon AppFlow 摄取 Salesforce数"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon AppFlow 摄取 Amazon Connect 数据，使用 Amazon Kinesis Data Firehose 摄取 Salesforce数"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q150.一家制造公司希望创建一个运营分析仪表板，以近乎实时地可视化设备的指标，该公司使用 Amazon KinesisData Streams 将数据流式传输到其他应用程序，仪表板必须每5秒自动刷新一次，数据分析专家公须设计一个需要最少实施工作的解决方案。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Firehose 将数据存储在 Amazon S3 中.使用 Amazon QuickSight 构建控制面板。"
+      }, {
+        "option": "B",
+        "content": "在Amazon EMR 上使用 Apache Spark Streaming 近乎实时地读取数据.使用 D3.ja为仪表板开发自定义应用 程"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Firehose 将数据撑送到 Amazon Elasticsearch Service（Amazon ES）集群.使用Kibana 仪表板可视化数据"
+      },{
+        "option": "D",
+        "content": "使用 AWS Glue 流ETL 将数据存储在 Amazon S3 中.使用 Amazon QuickSight 构建控制面"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q151.一位数据分析师正在使用 Amazon Redshift中的集中销售数据设计 Amazon QuickSight 控制面板，仪表根必须受到限制，以便澳大利亚悉尼的销售人员只能看到澳大利亚视图，面纽约的销售人员只能看到美国（US）数据数据分析师应该做什么来确保适当的数据安全到位？",
+      "choices": [{
+        "option": "A",
+        "content": "将澳大利亚和美国的数据源放入单独的 SPICE 容量池中"
+      }, {
+        "option": "B",
+        "content": "为澳大利亚和美国设置 Amazon Redshift VPC 安全"
+      }, {
+        "option": "C",
+        "content": "部署 QuickSight 企业版，对 sales 表实施行级安全（RLS)"
+      }, {
+        "option": "D",
+        "content": "部署 QuickSight Enterprise 版，并为澳大利亚和美国设置不同的VPC 安全"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q152.一家公司想要对其存储在Amazon S3 中的 Elastic Load Balancing 日志运行分析，数据分析师需要检够查所需年、月或日的所有数据，数据分析师还应该能够查询列的子集，该公司需要最少的运营开销和最具成本效益的解决方案哪种方式可以满是这些优化和查询日志数据的要求？",
+      "choices": [{
+        "option": "A",
+        "content": "每晚使用 AWS Glue 作业将新日志文件转换为.csv 格式并按年、月和日进行分区.使用 AWS Glue 网程序检测新分区.使用 Amazon Athena 查询数据"
+      }, {
+        "option": "B",
+        "content": "启动一个长期运行的 Amazon EMR 集群，不断地将新的日志文件从 Amazon S3 转换到其 Hadoop 分布式文件系统（HDFS）存储和按年、月和日划分的分区.使用 Apache Presto 查询优化后的格"
+      }, {
+        "option": "C",
+        "content": "每晚启动一个临时 Amazon EMR 集群，将新日志文件转换为Apache ORC 格式并按年、月和日进行分区.使用Amazon Redshift Spectrum 查询数据"
+      }, {
+        "option": "D",
+        "content": "每晚使用 AWS Glue 作业将新日志文件转换为 Apache Parquet 格式并按年、月和日进行分区.使用 AWS Glue爬网程序检测新分区.使用 Amazon Athena 查询数据"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q153.教育提供商的学习管理系统（LMS）托管在基于 Amazon S3 构建的100 TB 数据湖中，提供商的LMS 支持数百所学校，该提供商希望使用 Amazon Redshint 构建一个高级分析报告平台，以最佳性能处理复杂查询，系统用户将在95％的时间内查询最近4个月的数据，而5％的查询将利用前12个月的数据。哪种解决方案以最具成本效益的方式满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将最近4个月的数据存储在 Amazon Redshit 集群中.使用 Amazon Redshift Spectrum 查询数据湖中的数据。使用S3 生命周期管理规则将过去12个月的数据存储在Amazon S3Glacier 存储"
+      }, {
+        "option": "B",
+        "content": "为Amazon Redshift 集群利用 DS2 节点，将所有数据从 Amazon S3 迁移到 Amazon Redshift.停用数据湖."
+      }, {
+        "option": "C",
+        "content": "在Amazon Redshift 集群中存储最近4个月的数据，使用 Amazon Redshitt Spectrum 查询数据湖中的数据，确保 S3 标准存储类与数据湖中的对象一起使用"
+      }, {
+        "option": "D",
+        "content": "在Amazon Redshift 集群中存储最近4个月的数据.使用 Amazon Redshint 联合查询将集群数据与数据湖连接起来以降低成本，确保 S3 标准存储类与数据湖中的对象一起使用"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q154.一家公司正在使用 Amazon Redshift 托管企业报告解决方案，该应用程序为三个主要组提供报告功能；访问财务报告的执行组、运行长时间运行的即席查询的数据分析师组以及运行存储过程和ETL过程的数据工程组，执行团队要求查询以最佳性能运行，数据工程团队预计查询需要几分钟时间哪个 Amazon Redshift 功能满足此任务的要求？",
+      "choices": [{
+        "option": "A",
+        "content": "并发扩展"
+      }, {
+        "option": "B",
+        "content": "短查询加速（SQA）"
+      }, {
+        "option": "C",
+        "content": "工作负载管理（WLM）"
+      }, {
+        "option": "D",
+        "content": "物化视图"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q155.一家全球制药公司从世界各地的各种测试机构收到新药的测试结果结果以数百万个 1KB大小的 JSON对象发送到公司拥有的 Amazon S3存储桶.数据工程团队需要处理这些文件，将它们转换为 Apache Parquet 格式并将它们加载到 Amazon Redshint 中以供数据分析师执行仪表板报告，工程团队使用AWS Glue 处理对象，使用AWS Step Functions 进行流程编排，使用 Amazon CloudWatch 进行作业调度最近添加了更多测试设施，处理文件的时间也在增加。什么将最有效地减少数据处理时间？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Lambda 将小文件分组为大文件，将文件写回 Amazon S3.使用 AWS Glue 处理文件并将它们加载到 Amazon Redshit 表中"
+      }, {
+        "option": "B",
+        "content": "在摄取原始输入文件时使用 AWS Glue 动态帧文件分组选项，处理文件并将它们加钱到 Amazon Redshin 表中"
+      }, {
+        "option": "C",
+        "content": "使用Amazon Redshift COPY命令将文件从Amazon S3直接移动到Amazon Redshift表中，在Amazon Redshift中处理文件"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon EMR 而不是 AWS Glue 对小输入文件进行分组。在Amazon EMR中处理文件并将它们加载到 Amazon Redshift 表中"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q156．一家公司在全国范围内为高速公路提供收费服务，并收集用于了解使用模式的数据，分析师要求能够近平实时地运行交通报告，该公司有兴题构建一个摄取管道，将所有数据加载到 Amazon Redshift 集群中，并在特定收费站的收费流量未达到指定阈值时向运营人员发出警报，站点数据和相应的阈值存储在Amazon S3中，哪种方法是满是这些要求的最有效方法？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Firehose 收集数据并将其同时传输到 Amazon Redshint 和 Amazon Kinesis DataAnalytics．在Kinesis Data Analytics 中创建参考数据源以临时存储来自 Amazon S3 的调值，并将特定收费站的车辆计数与其对应的阅值进行比较，如果未达到调值，请使用 AWS Lambda 发布 Amazon Simple Notification Service （Amazon SNS）通知"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Kinesis Data Streams 从收费站收集所有数据，在Kinesis Data Streams 中创建一个流以临时存储来自 Amazon S3的阈值。将两个流发送到 Amazon Kinesis Data Anatytics，以将特定收费结的车辆计数与其对应的网值进行比较，如果未达到阔值，请使用 AWS Lambda 发布 Amazon Simple Notification Service（Amazon SNS） 通知将 Amazon Kinesis Data Firehose 连接到 Kinesis Data Streams 以将数据传验到 Amazon Redshift"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Firehose 收集数据并将其传送到 Amazon Redshift然后，自动触发一个 AWSLambda 函数，该请数查询 Amazon Redshift中的数据，将特定收费站的车辆计数与其从 Amazon S3 读取的相阅值进行比较，并在出现以下情况时发布 Amazon Simple Notfication Service（Amazon SNS）通知未达到阔"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 收集数据并将其同时传输到 Amazon Redshit  Amazon Kinesis DataAnalytics．使用 Kinesis Data Analytics 根据存储在Amazon S3中的信息，将车辆计数与作为应用程序内流存储在表中的站点的调值进行比较将 AWS Lambda 通数配置为应用程序的输出，如果未达到调值，该通数持发布Amazon Simple Queue Service（Amazon SQS）通知以提醒操作人员"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q157．一家在线零售公司使用 Amazon Redshin 来存储历史销售交易，该公司需要对集群中的静态数据进行加密，以符合支付卡行业数据安全标准（PCIDSS）公司治理策略要求使用本地硬件安全模块（HSM）管理加密密销哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS CloudHSM Classic 创建和管理加密密铜在VPC中启动 Amazon Redshit 集，并选择使用CloudHSM Classic 进行密销管"
+      }, {
+        "option": "B",
+        "content": "创建 VPC，并在VPC 和本地网络之间建立 VPN连接为本地 HSM 创建 HSM 连接和客户瑞证书在VPC中启动一个集群，并选择使用本地 HSM 来存储密"
+      }, {
+        "option": "C",
+        "content": "为本地 HSM 创建 HSM 连接和客户端证书通过修改集群在现有的未加密集群上用HSM 加密使用 VPN本地网络连接到 Amazon Redshint 集群所在的 VP"
+      }, {
+        "option": "D",
+        "content": "在AWS CloudHSM 中创建本地 HSM 的副本在VPC中自动集群，井选排使用 CloudHSM 存储密"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q158．一家医院正在构建一个研究数据湖，以从多家医院和诊所的电子健康记录（EHR）系统中提取数据。EHR系统彼此独立，没有共同的患者标识，数据工程团队在机器学习（ML）方面没有经验，并被要求为摄取的记录生成唯一的患者标识符，哪种解决方案将完成此任务？",
+      "choices": [{
+        "option": "A",
+        "content": "带有 FindMatches 转换的 AWS Glue ETL 作业"
+      }, {
+        "option": "B",
+        "content": "亚马逊肯德拉"
+      }, {
+        "option": "C",
+        "content": "Amazon SageMaker Ground Truth"
+      }, {
+        "option": "D",
+        "content": "带有 ResolveChoice 转换的 AWS Glue ETL 作"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q159.一家公司正在 Amazon EMR 集群上运行 Apache Spark.Spark 作业写入 Amazon S3 存储極，作业失败并通HTTP 503＂oeSlow Down＂ AmazonS3Exception 错误哪些操作可以解决此错误？（选择两个.）",
+      "choices": [{
+        "option": "A",
+        "content": "向S3 存储桶添加额外的前缀"
+      }, {
+        "option": "B",
+        "content": "减少 S3 存储杨中的前级数"
+      }, {
+        "option": "C",
+        "content": "增加 EMR 文件系统（EMRFS）重试限制"
+      }, {
+        "option": "D",
+        "content": "在集群的 Spark 配置中禁用动态分区修剪"
+      }, {
+        "option": "E",
+        "content": "在集群的Spark 配置中添加更多分区"
+      }],
+      "answer": ["A", "C"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q160.一家公司最近创建了一个用于开发环境的测试 AWS 账户，该公司还在另一个 AWS 区域创建了一个生产AWS 账户，作为其安全期试的一部分，该公司希望将日志数据从其生产账户中的 Amazon CloudWatch Logs 发运到其测试账户中的 Amazon Kinesis 数据流哪种解决方案可以让公司实现这一目标？",
+      "choices": [{
+        "option": "A",
+        "content": "在生产账户的 CoudWatch Logs 中创建订阅过滤器，以将测试账户中的 Kinesis 数据流作为其目标，在测试账户中，创建一个IAM角色，该角色授于对生产账户中Kinesis 数据流和 CloudWatch Logs 资源的动问权"
+      }, {
+        "option": "B",
+        "content": "在测试账户中，创建授予对 Kinesis 数据流和生产账户中CloudWatch Logs 资源的访同权限的IAM角色，在测试账户的 Kinesis Data Streams 中使用 IAM 角色和允许生产账户中的 CloudWatch Logs 写入测试账户的信任略创建目标数据"
+      }, {
+        "option": "C",
+        "content": "在测试账户中，创建一个IAM角色，该角色授予对生产账户中Kinesis 数据流和 CoudWatch Logs 源的请何权限，在测试账户的 Kinesis Data Streams 中使用IAM 角色和允许生产账产中的 CloudWatch Logs 写入测试账户的信任策略创建目标数据"
+      }, {
+        "option": "D",
+        "content": "在测试账户的 Kinesis Data Streams 中使用IAM角色和允许生产账户中的CloudWatch Logs 写入意试账户的信任策略创建目标数据流在生产账户的 CloudWatch Logs 中创建订阅过滤器，以将测试账户中的Kineais 数器流作为其目"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q161.一位数据架构师正在为一家银行构建一个 Amazon S3 数据湖，目标是为客户数据需求（例如个性化修荐）提供单一数据存储库，该银行使用 Amazon Kinesis Data Firehose 从交易关系数据库中近予实时地提取客户的个人信息银行账户和交易，银行要求对存储在AWS 云中的所有个人身份信息（PU）进行屏级哪种解决方案可以满足这热要求？",
+      "choices": [{
+        "option": "A",
+        "content": "在将数据传输到 Amazon S3之前，从 Kinesis Data Frehose 调用 AWS Lambda 通效来磁 "
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Made，并对其进行配置以发现和屏蔽 PI"
+      }, {
+        "option": "C",
+        "content": "在Amazon S3 中启用服务器端加密（SSE）"
+      }, {
+        "option": "D",
+        "content": "在将数据传输到 Amazon S3之前，从 Kinesis Data Firehose 调用 Amazon Comprehend 以检测和屏蔽 Pll"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q162.分析软件即服务（SaaS）提供商希望为其客户提供自助式商业智能（BI）报告功能．提供商正在使用 AmazonQuickSight 构建这些报告，报告的数据位于多租户数据库中，但每个客户应该只能访问自己的数据.提供商希望为客户提供两个用户角色选项:只需要查看仪表板的个人的只读用户.允许与其他用户创建和共享新仪表板的个人的高级用户.哪些QuickSught功能允许提供商满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "嵌入式仪表板"
+      }, {
+        "option": "B",
+        "content": "表格计算"
+      }, {
+        "option": "C",
+        "content": "隔离的命名空间"
+      }, {
+        "option": "D",
+        "content": "香料(SPICE)"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q163.一家公司正在为其销售和营销部门提供分析服务.这些部门只能通过其商业智能（BI）工具访问数据，这些工具使用 Amazon Redshift 内部用户连接在Amazon Redshift 上运行查询，每个部门都在Amazon Redshift 数据库中分配了一个用户，该用户具有该部门所需的权限.营销数据分析师必须有权直接访问广告表，该表以Apache Parquet格式存储在公司数据湖的营销 S3存储桶中．公司数据湖由 AWS Lake Formation 管理，最后，必须将访问权限限制在表中的三个促销列.哪些步骤组合将满足这些要求？（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": "在Amazon Redshift 中授予权限以允许营销 Amazon Redshift 用户访问广告外部表的三个促销列"
+      }, {
+        "option": "B",
+        "content": "创建具有 Lake Formation 权限的 Amazon Redshift Spectrum IAM 角色.将其附加到 Amazon Redshift"
+      }, {
+        "option": "C",
+        "content": "创建具有营销 S3 存储桶权限的 Amazon Redshift Spectrum IAM 角色.将其附加到 Amazon Redshift 集群."
+      },{
+        "option": "D",
+        "content": "使用 Amazon Redshift Spectrum IAM 角色在Amazon Redshift中创建外部架构向营销 Amazon Redshift 用户授予使用权"
+      },{
+        "option": "E",
+        "content": "在Lake Formation 中授予权限以允许 Amazon Redshift Spectrum 角色访问广告表的三个促销列"
+      }, {
+        "option": "F",
+        "content": "在Lake Formation 中授予权限，以允许营销IAM 组访问广告表的三个促销列"
+      }],
+      "answer": ["B", "D", "E"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q164.一家网络零售公司想要实施一个近乎实时的点击流分析解决方案.该公司希望使用开源软件包分析数据，分析应用程序将只处理一次原始数据，但其他应用程序需要立即访问原始数据长达1年哪种解决方案以最少的运营工作量满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Streams 收集数据.将 Amazon EMR 与Apache Flink 结合使用来使用和处理来自Kinesis 数据流的数据．将 Kinesis 数据流的保留期设置为8.760小时"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Kinesis Data Streams 收集数据.使用 Amazon Kinesis Data Analytics 和Apache Flink 实时处理数据．将 Kinesis 数据流的保留期设置为8，760 小时"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Managed Streaming for Apache Kafka（Amazon MSK）收集数据.将 Amazon EMR与ApacheFlink 结合使用来使用和处理来自 Amazon MSK 流的数据．将日志保留时间设置为8，760"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Streams 收集数据.将 Amazon EMR 与Apache Flink 结合使用来使用和处理来自Kinesis 数据流的数据，创建 Amazon Kinesis Data Firehose 传输流以将数据存储在Amazon S3 中．设置 S3 生命周期策略以在365天后剧除数据"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q165.数据分析师通过将 Amazon Athena 与JDBC 驱动程序结合使用来运行大量数据操作语言（DML）查询．最近，一个查询在运行30分钟后失败，查询返回以下消息:java.sql.SQLException:查询超时数据分析师并不立即需要查询结果.然而，数据分析师需要一个长期的解决方案来解决这个问题.哪种解决方案可以满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将查询拆分为更小的查询以搜索更小的数据子集"
+      }, {
+        "option": "B",
+        "content": "在Athena的设置中，调整 DML 查询超时限"
+      }, {
+        "option": "C",
+        "content": "在Service Quotas控制台中，请求增加 DML 查询超时"
+      }, {
+        "option": "D",
+        "content": "将表格保存为压缩的.csv 文"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q166.一家零售公司正在使用 Amazon S3 存储桶来托管电子商务数据湖.该公司正在使用 AWS Lake Formation 来管理数据湖.数据分析专家必须提供对新业务分析师团队的访问权限，该团队将使用AWS 管理控制台中的 Amazon Athena 从电子商务数据库中现有的 web_sales 和客户表中查询数据.团队需要只读访问权限以及使用名字和姓氏唯一标识客户的能力.但是，团队不得看到任何其他个人身份数据.表结构如下:web_salestxn_numbercustomerorder idcustomeridcustomer_idfirst_nametxn_amountpromotion idlast_nametxn_sku_countemailtxn_taxphonetxn_currencycc_hash数据分析专家应该采取哪些步骤组合来使用最小权限原则提供所需的权限？（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": "在AWS Lake Formation 中，授予 business_analyst 组对 web_sales 表的 SELECT 和ALTER 权限"
+      },{
+        "option": "B",
+        "content": "在AWS Lake Formation 中，授予 business_analyst 组对 web_sales 表的 SELECT 权限"
+      }, {
+        "option": "C",
+        "content": "在AWS Lake Formation 中，授予 business_analyst 组对客户表的 SELECT 权限。在列下，选择过滤器类型“oelnclude columns＂包含 fisrt_name、last_name 和 customer_id"
+      }, {
+        "option": "D",
+        "content": "在AWS Lake Formation 中，授予 business_analyst 组对客户表的 SELECT和ALTER 权限，在列下，选择过 滤器类型“oelnclude columns”与列 fisrt_name 和 last_name."
+      },{
+        "option": "E",
+        "content": "在business_analyst IAM 组下创建用户.创建一个允许 lakeformation:GetDataAccess 操作、athena:*操作和 glue:Get*操作的策略"
+      }, {
+        "option": "F",
+        "content": "在business_analyst IAM 组下创建用户，创建一个允许 lakeformation:GetDataAccess 操作、athena:*操作和glue:Get*操作的策略，此外，允许Athena 查询结果 S3 存储桶的s3:GetObject操作、s3:PutObject操作和 s3:GetBuckelLocation "
+      }],
+      "answer": ["B", "D", "F"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q167.一家公司有多个数据工作流程，用于将其运营数据库中的数据提取到 Amazon S3 上的数据湖中，这些工作流使用AWS Glue 和 Amazon EMR 进行数据处理和ETL.该公司希望增强其架构以提供自动化编排并最大限度地减少人工干预.公司应使用哪种解决方案来管理数据工作流以满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "AWS Glue 工作流程"
+      }, {
+        "option": "B",
+        "content": "AWS Step Function"
+      }, {
+        "option": "C",
+        "content": "AWS Lambda"
+      }, {
+        "option": "D",
+        "content": "AWS 批次"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q168.一家在线零售公司正在使用 Amazon Redshift 对客户购物行为进行查询和分析.当集群上运行多个查询时，小查询的运行时间会显着增加，该公司的数据分析团队通过在大型查询之前优先考虑这些小型查询来减少这些小型查询的运行时间.哪种解决方案可以满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Redshift Spectrum 进行小型查"
+      }, {
+        "option": "B",
+        "content": "增加工作负载管理（WLM）中的并发限"
+      }, {
+        "option": "C",
+        "content": "在工作负载管理（WLM）中配置短查询加"
+      }, {
+        "option": "D",
+        "content": "为小查询添加专用计算节"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q169.一家公司使用 Amazon Redshift 作为其数据仓库，新表包括一些包含敏感数据的列和一些包含非敏感数据的列。表中的数据最终将被每天运行多次的几个现有查询引用，数据分析专家必须确保只有公司审计团队的成员才能读取包含敏感数据的列，所有其他用户必须对包含非敏感数据的列具有只读访问权限，哪种解决方案将以最少的运营开销满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "授予审计团队从表中读取的权限，将包含非敏感数据的列加载到第二个表中，授予相应用户对第二个表的只读权限"
+      }, {
+        "option": "B",
+        "content": "授予所有用户对包含非敏感数据的列的只读权限.使用 GRANT SELECT 命令允许审计团队访问包含敏感数据的"
+      }, {
+        "option": "C",
+        "content": "授予所有用户对包含非敏感数据的列的只读权限.使用是式将IAM策略附加到审计团队，允许授予对包含敏感数据的列的访问权限的操作"
+      }, {
+        "option": "D",
+        "content": "授予审计团队从表中读取的权限，创建包含包含非敏感数据的列的表视图，授予相应用户对该视图的只读权限"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q170.一家公司在本地托管 Apache Flink 应用程序.该应用程序处理来自多个 Apache Kafka 集群的数据，数据来源于各种来源，例如 Web 应用程序、移动应用程序和操作数据库，该公司已将其中一些源迁移到AWS，现在想要迁移Flink 应用程序，公司必须确保驻留在VPC内的数据库中的数据不会通过 Intemet.该应用程序必须能够处理来自公司的AWS 解决方案，本地资源和公共互联网的所有数据，哪种解决方案将以最少的运营开销满足这要求？",
+      "choices": [{
+        "option": "A",
+        "content": "在公司的VPC内实施 Flink on Amazon EC2.在VPC 中为 Apache Kafka（Amazon MSK）集群创建 AmazonManaged Streaming，以收集来自 VPC内的应用程序和数据库的数据.使用 Amazon Kinesis Data Streams 收集来自公共互联网的数据.使用 AWS Client VPN或AWS DirectConnect 将Flink 配置为具有来自 Kinesis DataStreams Amazon MSK 和任何本地 Kafka 集群的源"
+      }, {
+        "option": "B",
+        "content": "在公司的VPC 内实施 Flink on Amazon EC2.使用 Amazon Kinesis Data Streams 收集来自 VPC和公共互联网内的应用程序和数据库的数据.使用 AWS Client VPN 或 AWS Direct Connect 将Flink 配置为具有来自 Kinesis Data Streams 和任何本地Kafka 集群的源"
+      }, {
+        "option": "C",
+        "content": "通过上传已编译的 Flink.jar 文件创建 Amazon Kinesis Data Analytics 应用程序.使用 Amazon Kinesis DataStreams 收集来自 VPC和公共互联网内的应用程序和数据库的数据，使用 AWS Client VPN 或 AWS Direct Connect将 Kinesis Data Analytics 应用程序配置为具有来自 Kinesis Data Streams 和任何本地 Kafka 集群的源"
+      }, {
+        "option": "D",
+        "content": ".通过上传已编译的Flink.jar 文件创建 Amazon Kinesis Data Analytics 应用程序.在公司的VPC 中为 ApacheKafka（Amazon MSK）集群创建 Amazon Managed Streaming，以收集来自 VPC内的应用程序和数据库的数据，使用 Amazon Kinesis Data Streams 收集来自公共互联网的数据.使用 AWS Client VPN 或AWS Direct Connect 将源Kinesis Data Analytics 应用程序配置为具有来自 Kinesis Data Streams、Amazon MSK 和任何本地 Kafka 集群的源"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    },{
+      "stem": "Q171.一家科技公司的应用程序每天都有数百万活跃用户，该公司使用 Amazon Athena 查询日常使用数据，以了解用户如何与应用程序交互，数据包括日期和时间、位置 ID 和使用的服务.该公司希望使用 Athena 运行查询，以尽可能低的延迟分析数据。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "以Apache Avro 格式存储数据，以日期和时间为分区，数据按位置 ID排序"
+      }, {
+        "option": "B",
+        "content": "以 Apache Parquet 格式存储数据，以日期和时间为分区，数据按位置 ID 接序"
+      }, {
+        "option": "C",
+        "content": "以Apache ORC 格式存储数据，以位置 ID为分区，数据按日期和时间排序"
+      }, {
+        "option": "D",
+        "content": "以.csv 格式存储数据，以位置ID为分区，数据按日期和时间排序。"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q172.一家房地产公司维护有关市场中列出的所有房产的数据，该公司从供应商那里接收有关新房产列表的数据，这些供应商每天将数据作为压缩文件上传到 Amazon S3.该公司的领导团队希望在数据上传到 Amazon S3 居立即看到最新的列表，数据分析团队必须自动化和编排列表的数据处理工作流程以提供仪表板，团队还必须提供以可扩展方式执行一次性查询和分析报告的能力.哪种解决方案最经济高效地满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon EMR 处理传入数据.使用 AWS Step Functions 进行工作流程编排使用 Apache Hive 进行一次性查询和分析报告，在Amazon OpenSearch Service（Amazon Elasticsoarch Service）中批量摄取数据.使用 Amazon OpenSearch Service（Amazon Elasticsearch Service）上的 OpenSearchDashboards（Kibana）作为仪表板"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon EMR 处理传入数据.使用 AWS Step Functions 进行工作流程编排使用 Amazon Athena 进行一次性查询和分析报告，使用 Amazon QuickSight 作为控制面"
+      }, {
+        "option": "C",
+        "content": "使用 AWS Glue 处理传入数据.使用 AWS Step Functions 进行工作流程编掉使用 Amazon Redshift Spectrum进行一次性查询和分析报告.使用 Amazon OpenSearch Service（Amazon Elasticsearch Service）上的OpenSearch Dashboards（Kibana）作为仪表"
+      }, {
+        "option": "D",
+        "content": "使用 AWS Gue 处理传入数据.使用 AWS Lambda 和S3 事件通知进行工作流程编律，使用 Amazon Athona进行一次性查询和分析报告.使用 Amazon QuickSight 作为控制面板"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q173.一家营销公司从第三方提供商处收集数据，并使用瞬态 Amazon EMR 集群来处理这些数据．该公司希望托管一个持久、可靠且可以由 EMR 集群和多个AWS 服务和账户同时访问的 Apache Hive 元存储，元存储也必须始终可 用.",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue 数据目录作为元存储"
+      }, {
+        "option": "B",
+        "content": "使用运行 MySQL 作为元存储的外部 Amazon EC2 实例"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon RDS for MySQL 作为元存储"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon S3 作为元存储"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    },{
+      "stem": "Q174.一位数据工程师正在使用 AWS Glue ETL 作业频繁处理数据.然后将处理后的数据复制到 Amazon S3中.ETL 作业每15分钟运行一次AWS Glue 数据目录分区需要在每个作业完成后自动更新，哪种解决方案能够以最具成本效益的方式满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue 数据目录来管理数据目录.为ETL 流程定义 AWS Glue 工作流程.在工作流中定义一个触发器，该触发器可以在ETL 作业运行完成时启动爬网程序"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 数据目录来管理数据目录.使用 AWS Glue Studio 管理 ETL 作业.使用支持在作业运行期间更新 AWS Glue 数据日录的 AWS Glue Studio 功"
+      }, {
+        "option": "C",
+        "content": "使用 Apache Hive 元存储来管理数据目录.更新 AWS Glue ETL 代码以包含 enableUpdateCatalog 和partitionKeys 参数"
+      }, {
+        "option": "D",
+        "content": "使用 AWS Glue 数据日录来管理数据目录，更新 AWS Glue ETL 代码以包含 enableUpdateCatalog 和partitionKeys 参数"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q175.拥有数千个AWS 账户的经销商会在Amazon S3 存储桶中接收 AWS 成本和使用情况报告，报告按以下格式传送到 S3 存储桶:<example-report-prefix>/<example-report-name>/yyyymmdd-yyyymmdd/<example-roport-name>parquet AWSGlue 爬网程序会肥取 S3 存储桶并使用表填充 AWS Glue 数据目录，业务分析师使用 Amazon Athena 查询表并为AWS 账户创建月度摘要报告，由于过去5年的报告积累，业务分析师的查询速度很慢，业务分析师希望运营团队进行更改以提高查询性能，运营团队应采取哪些行动来满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将文件格式更改为.csv.zip"
+      }, {
+        "option": "B",
+        "content": "按日期和账户 ID 对数据进行分"
+      }, {
+        "option": "C",
+        "content": "按月份和账户 ID 对数据进行分"
+      }, {
+        "option": "D",
+        "content": "按账户 ID、年份和月份对数据进行分"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q176.使用 Amazon QuickSight 企业版的公司拥有数千个仪表板，分析和数据集，该公司努力管理和分配权限，以授予用户访网 QuickSight 中各种项目的权限，该公司希望更轻松地实施共享和权限管理公司应该实施哪种解决方案来简化权限管理?",
+      "choices": [{
+        "option": "A",
+        "content": "使用 QuickSight 文件夹来组织仪表板、分析和数据集.为各个用户分配对这些文件夹的权限"
+      }, {
+        "option": "B",
+        "content": "使用 QuickSight 文件夹来组织仪表板、分析和数据集.使用这些文件夹分配组权限"
+      }, {
+        "option": "C",
+        "content": "使用 AWS IAM 基于资源的策略将组权限分配给 QuickSight 项目"
+      }, {
+        "option": "D",
+        "content": "使用 QuickSight 用户管理 API 根据仪表板命名约定配置组权限"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q177.Athena 作为一次性查询引擎，该公司希望转换数据以优化查询运行时间和存储成本．哪种数据格式和压缩选项满足这些要求?",
+      "choices": [{
+        "option": "A",
+        "content": "用zip 压缩的 CSV"
+      }, {
+        "option": "B",
+        "content": "用 bzip2 压缩的 JSON"
+      }, {
+        "option": "C",
+        "content": "使用 Snappy 压缩的 Apache Parquet"
+      }, {
+        "option": "D",
+        "content": "用 LZO 压缩的 Apache Avro"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q178.一家公司使用 Amazon Redshift 存储其数据.报告团队运行临时查询以从 Amazon Redshift 数据库生成报告.报告团队最近开始遇到报告生成不一致的问题，用于生成通常需要几分钟才能运行的报告的临时查询可能需要几个小时才能运行，调试该问题的数据分析专家发现，即席查询卡在长时间运行的查询后面的队列中，数据分析专家应该如何解决这个问题？",
+      "choices": [{
+        "option": "A",
+        "content": "在临时查询中查询的表中创建分区"
+      }, {
+        "option": "B",
+        "content": "从 Amazon Redshift 控制台配置自动工作负载管理（WLM）"
+      }, {
+        "option": "C",
+        "content": "创建具有不同优先级的 Amazon Simple Queue Sorvice（Amazon SQS）队列，根据优先级将查询分配给队列"
+      }, {
+        "option": "D",
+        "content": "对数据库中的所有表运行 VACUUM 命令"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q179.公司为身体活跃的用户提供激励，该公司希望通过在他们的移动设备上使用应用程序来跟踪他们每天所走的步数来确定用户的活跃程度，该公司需要对实时数据进行近乎实时的分析，处理后的数据必须存储并且必项保持可用1年以用于分析目的，哪种解决方案将以最少的运营开销满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": ".使用 Amazon Cognito 将数据从应用程序写入 Amazon DynamoDB.使用 AWS Step Functions 工作流程每小时创建一个临时 Amazon EMR 集群井处理来自 DynamoDB的新数据.将处理后的数据输出到 Amazon Rodshift 进行分析．1年后存档来自 Amazon Redshift 的数据"
+      }, {
+        "option": "B",
+        "content": ".使用 Amazon API Gateway API 作为 DynamoDB 代理将数据摄取到 Amazon DynamoDB.使用 AWS Step Functions 工作流程每小时创建一个临时 Amazon EMR 集群并处理来自 DynamoDB的新数据.将处理后的数据输出到 Amazon Redshift 以运行分析计算．1年后存档米自 Amazon Redshift 的数"
+      }, {
+        "option": "C",
+        "content": ".使用 Amazon API Gateway API 作为Kinesis 代理将数据摄取到 Amazon Kinesis Data Streams.对流数据运行Amazon Kinesis Data Analytics.使用 Amazon Kinesis Data Firehose 将处理后的数据输出到 Amazon S3.使用Amazon Athena 运行分析计算.使用S3 生命周期规则在1年后将对象转换到 S3 Glacier"
+      }, {
+        "option": "D",
+        "content": ".使用 Amazon Kinesis Data Firehose 将应用程序中的数据写入 Amazon S3.使用 Amazon Athena 对Amazon S3 中的数据运行分析.使用 S3 生命周期规则在1年后将对象转换到 S3 Glacier"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q180.一家公司需要为酒店库存实施一个近乎实时的消息传递系统，这些消息是从1.000个数据源收集的，并包含酒店库存数据．然后处理数据并将其分发到20个HTTP端点目的地.消息的数据大小范围为2-500 KB.消息必须按顺序传送到每个目的地.单个目标HTTP 端点的性能不应影响其他目标的交付性能.哪种解决方案能够以最低的从消息摄取到传递的延迟满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "创建一个 Amazon Kinesis 数据流，并将每个源的数据提取到流中．创建30个AWS Lambda 函数来读取这些消息并将消息发送到每个目标终端节点"
+      }, {
+        "option": "B",
+        "content": "创建 Amazon Kinesis 数据流，并将每个源的数据提取到流中.创建一个增强型扇出 AWS Lambda 函数来读取这些消息并将消息发送到每个目标终端节点，将该函数注册为增强型扇出使用者"
+      }, {
+        "option": "C",
+        "content": "创建 Amazon Kinesis Data Firehose 传输流，并将每个源的数据提取到流中.配置 Kinesis Data Firehose 以将数据传送到 Amazon S3 存储桶．使用 S3 事件通知调用 AWS Lambda 函数以读取这些消息并将消息发送到每个目标终端节"
+      }, {
+        "option": "D",
+        "content": "创建一个 Amazon Kinesis 数据流，并将每个源的数据提取到流中，创建20个增强型扇出 AWS Lambda 函数来读取这些消息并将消息发送到每个目标终端节点将20个函数注册为增强型扇出消费者"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q181.一家零售公司将订单发票存储在 Amazon OpenSearch Service（Amazon Elasticsearch Service）集群中 集群上的索引每月创建一次，新月份开始后，不会对前几个月的任何索引进行新的写入.该公司一直在扩展 AmazonOpenSearch Service（Amazon Elasticsearch Service）集群上的存储，以避免空间不足，但该公司希望降低成本，集群上的大多数搜索都是最近3个月的数据，而审计团队需要不经常访问旧数据以生成定期报告，最近3个月的数据必须快速可用于查询，但如果解决方案节省了集群成本，审计团队可以容忍较慢的查询以下哪项是满足这些要求的最有效的运营解决方案？",
+      "choices": [{
+        "option": "A",
+        "content": "通过使用索引状态管理（ISM）创建策略以将索引存储在 Amazon S3 Glacier中，归档超过3个月的索引．当审计团队需要存档数据时，将存档索引恢复回 Amazon OpenSearch Service（Amazon Elasticsearch Service）集群"
+      }, {
+        "option": "B",
+        "content": "通过手动拍摄快照并将快照存储在Amazon S3中来归档超过3个月的索引，当审计团队需要存档数据时，将存档索引恢复回 Amazon OpenSearch Service（Amazon Elasticsearch Service）集"
+      }, {
+        "option": "C",
+        "content": "通过使用索引状态管理（ISM）创建将索引迁移到 Amazon OpenSearch Service（Amazon Elasticsearch Service）UltraWarm 存储的策略来归档3个月以前的索引"
+      }, {
+        "option": "D",
+        "content": "通过使用索引状态管理（ISM）创建策略将索引迁移到 Amazon OpenSearch Service（Amazon ElasticsearchService）UltraWarm 存储，归档超过3个月的索引。当审计团队需要旧数据时，将UtraWarm 存储中的索引迁移回热存储"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q182.一家金融服务公司正在Amazon S3 上构建数据湖解决方案.该公司计划使用 AWS的分析产品来满足用户对一次性查询和商业智能报告的需求，部分列将包含个人身份信息（PI）只有授权用户才能看到纯文本PlI 数据满足这些要求的最具运营效率的解决方案是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "为数据湖的每个 S3存储桶定义存储桶策略，以允许有权查看 PII 数据的用户访问，使用 AWS Glue 对数据进行编目.创建两个IAM 角色.将有权访问 PII列的权限策略附加到一个角色，将没有这些权限的策略附加到其他角色。"
+      }, {
+        "option": "B",
+        "content": "向AWS Lake Formation 注册 S3位置.创建两个 IAM 角色.使用 Lake Formation 数据权限向一个角色的所有列授予 Select 权限，仅向包含其他角色的非PII 数据的列授予 Select权限"
+      },{
+        "option": "C",
+        "content": "向 AWS Lake Formation 注册 S3 位置.创建 AWS Glue 作业以创建 ETL 工作流程，该工作流程从数据中刷除PII 列井在另一个数据湖S3存储桶中创建数据的单独副本，向 Lake Formation 注册新的 S3 位置，根据用户是否有权查看 PII 数据，授予用户对每个数据湖数据的权限"
+      }, {
+        "option": "D",
+        "content": "向AWS Lake Formation 注册 S3 位置.创建两个IAM角色将有权访问PI列的权限策略附加到一个角色，将没有这些权限的策略附加到其他角色。对于每个下游分析服务，使用其本机安全功能和IAM 角色来保护 PII 数据"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q183.一家游戏公司正在构建一个无服务器数据湖，该公司正在将流数据提取到 Amazon Kinesis Data Streams 中，并通过 Amazon Kinesis Data Firehose 将数据写入 Amazon S3.该公司使用 10 MB 作为S3缓冲区大小，并使用90秒作为缓冲间隔．该公司运行 AWS Glue ETL 作业以合并数据并将其转换为不同的格式，然后再将数据写回Amazon S3.最近，该公司的数据量大幅增长AWS Glue ETL 作业经常显示 OutOlMemoryError 错误哪些解决方案可以在不产生额外费用的情况下解决此问题？（选择两个.）",
+      "choices": [{
+        "option": "A",
+        "content": "将小文件放入一个S3文件夹中，为AWS Glue 数据目录中的小型 S3 文件定义一个表针对此AWS Glue 表重新运行 AWS Glue ETL 作业"
+      }, {
+        "option": "B",
+        "content": "创建一个 AWS Lambda 函数来合并小型S3 文件并定期调用它们.在成功完成 Lambda 函数后运行 AWSGlue ETL 作业"
+      }, {
+        "option": "C",
+        "content": "在运行 AWS Glue ETL作业之前，在Amazon EMR 中运行 S3DistCp 实用程序以合并大量小型S3文件"
+      }, {
+        "option": "D",
+        "content": "使用 AWS GlueETL 作业中的 groupFlles 设置来合并小型 S3 文件并重新运行 AWS Glue ETL 作业"
+      },{
+        "option": "E",
+        "content": "将 Kinesis Data Firehose S3 缓冲区大小更新为128 MB.将缓冲间隔更新为900"
+      }],
+      "answer": ["A", "D"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q184.一家医疗保健公司从多个数据源提取患者数据并将其存储在 Amazon S3 暂存桶中 AWS Glue ETL 作业会转换数据，这些数据会写入基于S3的数据湖，以便使用 Amazon Athena 进行查询，即使记录没有共同的唯一标设费。该公司也希望匹配患者记录哪种解决方案满足此要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Macie 模式匹配作为 ETLjob 的一部分"
+      }, {
+        "option": "B",
+        "content": "在ETLjob 中训练和使用 AWS Glue PySpark 过滤器"
+      }, {
+        "option": "C",
+        "content": "分区表并使用 ETL 作业对患者姓名数据进行分区"
+      }, {
+        "option": "D",
+        "content": "在ETLjob 中训练和使用 AWS Glue FindMatches ML 转换"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q185.一家社交媒体公司正在使用商业智能工具来分析其数据以进行预测，该公司正在使用 Apache Kaha实地摄取低速数据该公司希望构建具有机器学习（ML）润察力的动态仪表板，以预测关键业务趋势，控制面板必须提供来自 Amazon S3 中数据的每小时更新，公司的各个团队都心望通过使用带有 ML见解的 Amazon QuickSigt仪表板，该解决方案还必须纠正公司在使用其当前架构摄取数据时遇到的可扩展性问题。哪种解决方案最经济有效地满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将 Kafka 曾换为 Amazon Managed Streaming for Apache Kaka.使用 AWS Lambda 损取数据、开有数在Amazon S3 中使用 QuickSight 标准版每小时从 Amazon S3 刷新 SPICE 中的数据，并创有见解的动态控制面"
+      }, {
+        "option": "B",
+        "content": "将 Kafka 特换为Amazon Kinesis 数据流使用 Amazon Kiness Data Firehose 流数储在 Amazon S3 中使用 QuickSight 企业版每小时从 Amazon S3 刷新 SPICE 中的数，创建具有预测和ML见解的动态控制面板"
+      }, {
+        "option": "C",
+        "content": "配置 Kafka-Kinesis-Connector 以府数据发布到置为将数存在 Amazon S3中 Amazon Kinesis Data Firehose 传验流 使用 Quick Sight 企业版每小时从 Amaton S3 新 SPICE 中的数，创建具有预测和ML见解的动态控制面板"
+      }, {
+        "option": "D",
+        "content": "配置 Kafka-Kinesis-Connector 以将数据发布到配置为将数据存储在Amazon S3 中的 Amazon Kinesis Data Firehose 传输流.配置 AWS Glue 爬虫来爬取数据.使用带有 QuickSight 标准版的 Amazon Athena 数据源每小时刷新 SPICE 中的数据，并创建具有预测和ML 洞察力的动态仪表板"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q186.一家制造公司正在将来自其操作系统的数据存储在Amazon S3中.该公司的业务分析师需要使用 AmazonAthena 对 Amazon S3 中的数据执行一次性查询.公司需要使用 JDBC 连接从本地网络访问 Athena 网络.该公司创建了一项 VPC 安全策略要求，要求对 AWS 服务的请求不能通过 Internet.数据分析专家应采取哪些步骤组合来满足这些要求？（选择两个.）",
+      "choices": [{
+        "option": "A",
+        "content": "在本地网络和VPC 之间建立 AWS Direct Connect 连接"
+      }, {
+        "option": "B",
+        "content": "配置 JDBC 连接以通过 Amazon API Gateway 连接到 Athena"
+      }, {
+        "option": "C",
+        "content": "配置 JDBC 连接以使用 Amazon S3的网关 VPC终端节"
+      }, {
+        "option": "D",
+        "content": "配置 JDBC 连接以使用 Athena的接口 VPC 终端节"
+      }, {
+        "option": "E",
+        "content": "在私有子网中部署 Athena"
+      }],
+      "answer": ["A", "E"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q187.一家公司将收入数据存储在Amazon Redshift 中数据分析师需要创建仪表板，以便公司的销售团队可以可视化历史收入并准确预测未来几个月的收入。哪种解决方案最经济有效地满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用Amazon Redshift中的数据创建Amazon QuickSight分析。在QuickSight中添加一个将线性回归函数应用于数据的自定义字段。将分析发布为仪表板"
+      }, {
+        "option": "B",
+        "content": "使用 D3.js 图表和 Amazon Redshift 中的数据创建 JavaScript 控制面板．将数据导出到 Amazon SageMaker.运行 Python 脚本以运行回归模型来预测收入，将数据导回 Amazon Redshit将新的预测信息添加到仪表板"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Redshift 中的数据创建 Amazon QuickSight分析，添加预测小部件 将分析发布为仪表板，"
+      }, {
+        "option": "D",
+        "content": "创建一个用于预测的 Amazon SageMaker 模型.将模型与Amazon QuickSight 数据集集成，为数据集创建一个小部件，将分析发布为仪表板"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q188.一家公司正在使用 AWS Lambda 函数针对跨账户 AWS Glue 数据日录运行 Amazon Athena 查询.查询退回以下错误:HIVE_METASTORE_ERROR错误消息指出响应负载大小超过了允许的最大大小，查询的表已经分区，数据以 Apache Hive 分区格式存储在 Amazon S3 存储桶中．哪种解决方案可以解决此错误?",
+      "choices": [{
+        "option": "A",
+        "content": "修改 Lambda 函数以将查询响应负载作为对象上传到 S3 存储桶中在Lambda 函数响应中包含一个 S3 对象预签名 URL 作为负载"
+      }, {
+        "option": "B",
+        "content": "在查询表上运行 MSCK REPAIR TABLE 命令"
+      }, {
+        "option": "C",
+        "content": "在S3 存储桶中创建一个单独的文件夹，将需要查询的数据文件移动到该文件夹 中创建指向文件夹而不是 S3 存储桶的 AWS Glue 爬网程序"
+      }, {
+        "option": "D",
+        "content": "检查查询表的架构中是否存在Athena 不支持的字符，将任何不受支持的字符替换为Athena 支持的字符"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q189.一家机械公司想要从传感器收集数据.数据分析专家需要实施一种解决方案，以近乎实时的方式聚合数据并将数据保存到持久数据存储中、数据必须以嵌套JSON 格式存储，并且必须以个位数毫秒的延迟从数据存储中查询。哪种解决方案可以满足这",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Streams 从传感器接收数据，使用 Amazon Kinesis Data Analytics 读取流、聚合数据并将数据发送到 AWS Lambda 函数配置 Lambda 通数以将数据存储在 Amazon DynamoDB 中"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon Kinesis Data Firehose 从传感器接收数据.使用 Amazon Kinesis Data Analytics 聚合数据.使用AWS Lambda 函数从 Kinesis Data Analytics 读取数据并将数据存储在 Amazon S3中"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Firehose 从传感器接收数据，使用 AWS Lambda 函数在捕获期间聚合数据，将来自 Kinesis Data Firehose 的数据存储在Amazon DynamoDB 中"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 从传感器接收数据.使用 AWS Lambda 函数在捕获期间聚合数据，将数据 存储在 Amazon S3"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q190.一家电子商务公司以JSON 格式摄取大量点击流数据，并将数据存储在Amazon S3 中，来自多个产品部门的业务分析师需要使用 Amazon Athena 米分析数据.公司的分析团队必须设计一个解决方案来监控每个产品部门对Athena的日常数据使用情况，当一个部门超出其配额时，该解决方案还必须产生警告，哪种解决方案将以最少的运营开销满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 CREATE TABLE AS SELECT（CTAS）语句为每个产品部门创建单验的表使用 AWS 预算来跟踪Athena 的使用情况，为预算配置阈值，使用 Amazon Simple Notification Service（AmazonSNS）在超出阔值时发送通"
+      }, {
+        "option": "B",
+        "content": "为每个部门创建一个 AWS 账户，为所有账户提供对 AWS Glue 数据目录的跨账户访问，设置 AmazonCloudWatch 警报以监控 Athena的使用情况，使用 Amazon Simple Notifcation Service（Amazon SNS）发送通知"
+      }, {
+        "option": "C",
+        "content": "为每个部门创建一个Athena 工作组，为每个工作组配置数据使用控制，时间段为1天配置操作以将通知发送到 Amazon Simple Notification Service（Amazon SNS）主题"
+      }, {
+        "option": "D",
+        "content": "为每个部门创建一个 AWS账户，在每个账户中配置一个AWS Glue 数据目录设置 Amazon CloudWatch 警报以监控 Athena 的使用情况.使用 Amazon Simple Notification Service（Amazon SNS）发送通知"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q191.一家银行公司目前正在使用 Amazon Redshift 处理敏感数据，审计发现当前集群未加密，合规性要求必须使用借有客户管理密明的硬件安全模块（HSM）对包含敏感数据的数据库进行加密，集群中需要进行哪核修改以确保合规性？",
+      "choices": [{
+        "option": "A",
+        "content": "创建一个新的 HSM 加密的 Amazon Redshift 集群并将数据迁移到新集集"
+      }, {
+        "option": "B",
+        "content": "使用适当的加密设置修改数据库参数组，然后重新启动集群"
+      }, {
+        "option": "C",
+        "content": "使用命令行在 Amazon Redshift 中启用 HSM 加"
+      }, {
+        "option": "D",
+        "content": "从控制台修改 Amazon Redshift 集群并使用 HSM 选项启用加"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q192.一家广告公司有一个基于 Amazon S3 构建的数据湖.该公司使用 AWS Glue 数据目录来维护元数据.数据湖已有数年历史，随着更多数据源和元数据存储在数据湖中，其整体规模呈指数级增长.数据湖管理员希望实施一种机制来简化 Amazon S3 和数据日录之间的权限管理，以使它们保持同步。哪种解决方案可以以最少的开发工作简化权限管理？",
+      "choices": [{
+        "option": "A",
+        "content": "为AWS Glue 设置 AWS Identity and Access Management（IAM）权限"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Lake Formation 权限"
+      }, {
+        "option": "C",
+        "content": "使用存储桶策略管理 AWS Glue 和S3 权限"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Cognito 用户池"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q193.一家游戏公司正在将点击流数据收集到多个 Amazon Kinesis 数据流中，该公司使用 Amazon Kinesis DataFirehose 传输流将数据以 JSON 格式存储在Amazon S3中数据科学家使用 Amazon Athena 查询最新数据并获得业务见解，该公司希望在无需重新创建数据管道的情况下降低其 Athena 成本，该公司更喜欢需要较少管理工作的解决方案数据科学家可以立即采取哪些措施来降低成本？",
+      "choices": [{
+        "option": "A",
+        "content": "将 Kinesis Data Firehose 输出格式更改为 Apache Parquet 提供自定义 S3 对象 YYYYMMDD 前级表达式井指定大缓冲区大小对于现有数据，运行 AWS Glue ETL 作业以合并小型 JSON 文件并将其转换为大型 Parquet 文件并添加 YYYYMMDD 前缀使用 ALTER TABLE ADD PARTITON 反映现有 Athena 表上的分区"
+      },{
+        "option": "B",
+        "content": "创建一个 Apache Spark 作业，将JSON 文件组合井转换为 Apache Parquet 文件 每天启动一个 AmazonEMR 临时集群以运行 Spark 作业以在不同的S3 位置创建新 Parquet 文件 使用 ALTER TABLE SETLOCATION 以反映现有 Athena 表上的新S3位置"
+      }, {
+        "option": "C",
+        "content": "创建 Kinesis 数据流作为Kinesis Data Firehose 的交付目标，在流上运行 Amazon Kinesis Data Analytics 上的Apache Fink 以读取流数据，将其聚合并将其保存为带有自定义 S3 对象 YYYYMMDD 前缀的AmazoS3nApache Parquet 格式．使用 ALTER TABLE ADD PARTITON 反映现有 Athena 表上的分区"
+      },{
+        "option": "D",
+        "content": "将 AWS Lambda 函数与 Kinesis Data Firehose 集成以将源记录转换为 Apache Parquet 并将它们写入Amazon S3 并行运行 AWS Glue ETL 作业以组合现有JSON 文件并将其转换为大型 Parquet 文件创建自定义 S3 对象 YYYYMMDD 前级使用 ALTER TABLE ADD PARTITON 反映现有 Athena 表上的分"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q194.一位数据工程师正在使用 AWS Glue ETL 作业频繁处理数据.然后将处理后的数据复制到 Amazon S3中.ETL 作业每15分钟运行一次AWS Glue 数据日录分区需要在每个作业完成后自动更新，哪种解决方案能够以最具成本效益的方式满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue 数据目录来管理数据日录，为ETL 流程定义 AWS Glue 工作流程在工作流中定义一个触发器，该触发器可以在 ETL 作业运行完成时启动爬网程序"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 数据目录来管理数据目录.使用 AWS Glue Studio 管理 ETL 作业.使用支持在作业运行期间更新 AWS Glue 数据日录的 AWS Glue Studio 功"
+      }, {
+        "option": "C",
+        "content": "使用 Apache Hive 元存储来管理数据目录.更新 AWS Glue ETL 代码以包言 enableUpdateCatalog 和partitionKeys 参"
+      }, {
+        "option": "D",
+        "content": "使用 AWS Glue 数据目录来管理数据目录.更新 AWS Glue ETL 代码以包含 enableUpdateCatalog 和partitionKeys 参"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q195.一家公司有一个收集设备日志数据的生产者应用程序.生产者应用程序写入 Amazon Kinesis Data Firehose 传输流，该传输流将数据传输到 Amazon S3存储桶．该公司需要构建一系列仪表板来显示日志数据中指标的实时趋势。哪种解决方案可以满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "更新 Kinesis Data Firehose 传输流以添加 Amazon OpenSearch Service（Amazon Elasticsearch Service）集群作为另一个目标.使用 OpenSearch Dashboards（Kibana）进行日志数据可视化"
+      },{
+        "option": "B",
+        "content": "更新 Kinesis Data Firehose 传输流以添加 Amazon Kinesis Data Analytics 应用程序作为额外目标.使用Amazon QuickSight显示Kinesis Data Analytics 应用程序的输出"
+      }, {
+        "option": "C",
+        "content": "创建另一个 Kinesis Data Firehose 传输流，更新生产者应用程序以将日志数据的副本写入新的交付流，设置新的传输流以将数据传输到 Amazon QuickSight 控制面板"
+      }, {
+        "option": "D",
+        "content": "更新生产者应用程序以将日志数据写入 Amazon Kinesis 数据流。将此数据流传输到原始 Kinesis Data Firehose 传输流和新的 Kinesis Data Firehose 传输流.设置 newdelivery 流以将数据传送到 Amazon OpenSearch Service（Amazon Elasticsearch Service）集群.使用 OpenSearch Dashboards（Kibana）进行日志数据可视化"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q196.一家公司使用具有50个节点的Amazon EMR 集群来处理运营数据并使数据可供数据分析师使用，这些作业每晚运行，使用 Apache Hive 和Apache Tez 框架作为处理模型，并将结果写入 Hadoop 分布式文件系统（HDFS）2024.0在过去几周，作业失败并产生以下错误消息:＊文件只能复制到O节点而不是1.”数据分析专家检查 DataNode 日志、NameNode 日志和网络连接是否存在可能阻止 HDFS 复制数据的潜在问题。数据分析专家将这些因素排除在问题的原因之外。哪种解决方案可以防止作业失败？",
+      "choices": [{
+        "option": "A",
+        "content": "监控 HDFSUtilization 指标，如果该值超过用户定义的调值，则将任务节点添加到 EMR 集"
+      }, {
+        "option": "B",
+        "content": "监控 HDFSUtilization 指标，如果该值超过用户定义的调值，则将核心节点添加到 EMR 集"
+      }, {
+        "option": "C",
+        "content": "监控 MemoryAllocatedMB 指标，如果该值超过用户定义的阅值，则将任务节点添加到 EMR 集群"
+      }, {
+        "option": "D",
+        "content": "监控 MemoryAllocatedMB 指标:如果该值超过用户定义的阈值，则将核心节点添加到 EMR集"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q197.一家软件公司希望使用检测数据来检测和解决错误，以缩短应用程序恢复时间，该公司要求以近实时（NRT）的方式检测 API 使用异常，例如错误率和响应时间峰值，该公司还要求数据分析师可以访问仪表板以在NRT 中进行日志分析哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Kinesis Data Firohose 作为记录数据的数据传输层.使用 Amazon Kinesis Data Analytics 发现NRTAPI 使用异常.使用 Kinesis Data Firehose 将日志数据传送到 Amazon OpenSearch Service（Amazon Elasticsearch Service）用于搜索、日志分析和应用程序监控将 Amazon OpenSearch Service（AmazonElasticsearch Service）中的 OpenSearch Dashboards（Kibana）用于仪表板"
+      },{
+        "option": "B",
+        "content": "使用 Amazon Kinesis Data Analytics 作为记录数据的数据传输层，使用 Amazon Kinesis Data Streams 发现NRT 监控指标（Amazon Elasticsearch Service）用于搜索、日志分析和应用程序监控将 Amazon QuickSight用于控制面板"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Analytics 作为数据传输层来记录数据和发现 NRTmonitoring 指标.使用 AmazonKinesis Data Firehose 将日志数据传送到 Amazon OpenSearch Service（Amazon Elasticsearch Service） 搜索、日志分析和应用程序监控.使用 Amazon OpenSearch Service（Amazon Elasticsearch Service）中的 OpenSearch Dashboards（Kibana）作为仪表"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Firehose 作为记录数据的数据传输层.使用 Amazon Kinesis Data Analytics 发现NRT 监控指标 使用 Amazon Kinesis Data Streams 将日志数据传送到 Amazon OpenSearch Service（Amazon Elasticsearch Service）用于搜索、日志分析和应用程序监控，将 Amazon QuickSight用于控制面板"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q198.一家公司有几个 Amazon EC2 实例位于应用程序负载均衡器（ALB）后面，该公司希望其IT 基础架构团队分析进入公司ALB的IP地址ALB 配置为在Amazon S3 中存储访问日志，访问日志每天会创建大约 1TB的数据。并且访问数据的频率会很低，公司需要一种可扩展、经济高效且维护要求最低的解决方案。哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将数据复制到 Amazon Redshift 并查询数据"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon EMR 和Apache Hive 查询 S3 数据"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Athena 查询 S3 数据"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Redshift Spectrum 查询 S3 数数据"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q199.一家银行正在使用 Amazon Managed Streaming for Apache Kafka（Amazon MSK）将实时数据填充到数据湖中数据湖建立在Amazon S3之上，必须在24小时内从数据湖中访问数据 不同的微服务向集群中的不同主题产生消息．该集群使用 8 TB的Amazon Elastic Block Store（Amazon EBS）存储和7天的保留期创建，客户交易量最近增加了两倍，磁盘监控提供了集群存储容量即将用完的警报。数据分析专家应该如何防止集群磁盘空间不足？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon MSK控制台将代理存储增加三倍并重新启动集群"
+      }, {
+        "option": "B",
+        "content": "创建监控 KafkaDataLogsDiskUsed 指标的 Amazon CloudWatch 警报，当该指标的值超过85％时自动刷新最旧的消"
+      }, {
+        "option": "C",
+        "content": "创建自定义 Amazon MSK 配置.将 log.retention.hours 参数设置为48.使用新的配置文件更新集群"
+      }, {
+        "option": "D",
+        "content": "消费者数量增加三倍，确保数据一加入主题就被消"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q200.一家银行想要将 Teradata 数据仓库迁移到 AWS 云该银行需要一种用于读取大量数据的解决方案，并且需要厚可能高的性能，该解决方案还必须保持存储和计算的分离哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Athena 查询 Amazon S3 中的数据"
+      }, {
+        "option": "B",
+        "content": "使用具有密集计算节点的 Amazon Redshift 来查询 Amazon Redshift 托管存储中的数据"
+      }, {
+        "option": "C",
+        "content": "使用带有 RA3 节点的 Amazon Redshift 查询 Amazon Redshift 托管存储中的数据"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon EMR 上的 PrestoDB 查询 Amazon S3中的数据"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q201.一家制造公司在世界各地的不同设施中拥有许多物联网设备，该公司正在使用 Amazon Kinesis Data Streams从设备收集数据，该公司的运营团队已经开始观察到许多 Write ThroughputExceeded 异常，运营团队确定原因是正在写入某些分片的记录数 数据包含设备 ID.捕获日期、测量类型、测量值和设施 ID 设施 ID 用作分区键哪个操作将解决此问题？",
+      "choices": [{
+        "option": "A",
+        "content": "将分区键从设施 ID更改为随机生成的键"
+      }, {
+        "option": "B",
+        "content": "增加分片数量"
+      }, {
+        "option": "C",
+        "content": "将生产者端的数据归档"
+      }, {
+        "option": "D",
+        "content": "将分区键从设施 ID 更改为捕获日期"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q202.医院使用电子健康记录（EHR）系统收集两种类型的数据·患者信息，包括患者的姓名和地址，一进行的诊断测试和这些测试的结果，预计患者信息会定期更改 现有诊断测试数据永不更改，只添加新记录 医院运行具有四个dc2large 节点的Amazon Redshift除尘器，并希望自动将患者信息和诊断测试数据摄取到各自的 Amazon Redshift表中以进行分析 EHR 系统将数据导出为CSV每天将文件发送到 Amazon S3 存储桶，生成两组 csv 文件 一组文件是更新的患者信息.剩除和插入 另一组文件仅用于新的诊断测试数据。",
+      "choices": [{
+        "option": "A",
+        "content": "将 Amazon EMR 与Apache Hudi 结合使用 使用 Apache Spark 和Amazon Redshift JDBC 驱动程序运行日常ETL 作"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 爬虫对 Amazon S3中的数据进行分类 使用 Amazon Redshift Spectrum对Amazon S3中的数据执行计划查询，并将数据提取到患者信息表和诊断测试表"
+      }, {
+        "option": "C",
+        "content": "使用 AWS Lambda 函数运行复制命令，将新的诊断制试数据附加到诊断测试表 运行另一个复制命令，将专利信息数据加载到暂存表中 使用存储过程来处理创建，更新，专利信息表的刷除操"
+      }, {
+        "option": "D",
+        "content": "使用 AWS Database Migration Service （AWS DMS）收集和处理变更数据铺获（CDC）记录 使用 COPY 命令将患者信息数据加载到暂存表 使用存储过程来处理创建、更新和副除操作专利信息"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q203.一家营销公司收集点击流数据 该公司将数据发送到 Amazon Kinesis Data Firehose 并将数据存储在Amazon S3 中，该公司希望构建一系列仪表板，供不同部门的数百名用户使用．公司将使用 Amazon QuickSight 开发这些仪表板，该公司资源有限，需要一种可以扩展并提供有关点击流活动的每日更新的解决方案。哪种选项组合将提供最具成本效益的解决方案？（选择两个）",
+      "choices": [{
+        "option": "A",
+        "content": "使用 Amazon Redshift 存储和查询点击流数据"
+      }, {
+        "option": "B",
+        "content": "通过直接 SQL 查询使用 Quick Sight"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Athena 查询 Amazon S3中的点击流数据"
+      }, {
+        "option": "D",
+        "content": "使用S3分析查询点击流数据"
+      }, {
+        "option": "E",
+        "content": "使用 QuickSight SPICE 引擎并每天刷新"
+      }],
+      "answer": ["C", "E"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q204.一家公司正在 Amazon Redshift 中存储数百万条销售交易记录，数据分析师必须对销售数据进行分析，分析取决于驻留在Salesforce 应用程序中的客户记录数据子集，公司希望以尽可能少的基础设施设置、编码和运营工作从Salesforce 传输数据.哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue 和 SpringML 库将 Apache Spark与Salesforce 连接，并将数据作为表格提取为 ApacheParquet 格式的 Amazon S3.使用 Amazon Redshift Spectrum 查询数据"
+      }, {
+        "option": "B",
+        "content": "使用 Amazon AppFlow 创建流建立连接和流触发器以将客户记录数据从 Salesforce 传输到 Amazon Redshift"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon API Gateway 配置 Salesforce 客户数据流订阅 AWS Lambda 事件并以 Apache Parquet 格式创建 Amazon S3表 使用 Amazon Redshift Spectrum 查询数"
+      }, {
+        "option": "D",
+        "content": "使用 Salesforce Data Loader 将 Salesforce 客户数据导出为.csv 文件并将其加载到 Amazon S3.使用Amazon Redshift Spectrum 查询数"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q205.一家拥有视频流媒体网站的公司希望分析用户行为以实时向用户推荐，点击流数据被发送到 Amazon KinesisData Streams，参考数据存储在Amazon S3中．公司需要一个可以使用标准sql 查询的解决方案，该解决方案还必须提供一种在提出建议时查找预先计算的参考数据的方法。哪种解决方案滴足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue Python Shell 作业处理来自 Kinesis Data Streams 的传入数据 使用 Boto3ibrary 将数据写入Amazon Redshift"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 流式传输和Scala 处理来自 Kinesis Data Streams 的传入数据，使用 AWS Glue 连接器将数据写入 Amazon Redshift"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Kinesis Data Analytics 根据参考数据创建应用程序内表。处理来自 Kinesis Data Streams 的传入数据 使用数据流将结果写入 Amazon Redshift"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Kinesis Data Analytics 根据参考数据创建应用程序内表处理来自 Kinesis Data Streams 的传入数据 使用 Amazon Kinesis Data Firehose 传输流将结果写入 Amazon Redshift"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q206.一家媒体公司有一个流媒体播放应用程序，该公司需要收集和分析数据，以使在30 秒内就播放问题提供近予实时的反馈，该公司需要消费者应用程序来识别播放问题，例如在指定时间范围内质量下降，数据将以JSON格式流式传输，架构会随着时间而改变哪种解决方案可以满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "将数据发送到 Amazon Kinesis Data Firehose，并传送到 Amazon S3. 配置S3事件以调用 AWS Lambda函数来处理和分析数据"
+      }, {
+        "option": "B",
+        "content": "将数据发送到 Amazon Managed Streaming for Apache Kafka. 将Amazon Kinesis Data Analytics for SQL 应用程序配置为消费者应用程序以处理和分析数据"
+      }, {
+        "option": "C",
+        "content": "将数据发送到 Amazon Kinesis Data Firehose 并传送到 Amazon S3.配置 Amazon S3 以启动事件以供 AWSLambda 处理和分析数据"
+      }, {
+        "option": "D",
+        "content": "将数据发送到 Amazon Kinesis Data Streams 将Amazon Kinesis Data Anatytios tor Apache Flnk 应用程序配置为消费者应用程序以处理和分析数据"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q207.一家公用事业公司希望每天在Amazon QuickSight中可视化能源使用数据，该公司的一名数据分析专家建立了一个数据管道，用于收集数据并将其提取到 Amazon S3中，每天，数据都存储在个人中S3存储橘中的csv 文件这是命名结构的示例:20210707 数据.csv20210708 数据.csv为了允许通过 Amazon Athena 在QuickSight 中查询数据，专家使用 AWS Glue 爬网程序创建了一个路径为 s3:/Apowertransformer/20210707_data.csv＇的表，但是，当查询数据时，它返回零行,如何解决这个问题？",
+      "choices": [{
+        "option": "A",
+        "content": "修改 AWS Glue 爬虫访问 Amazon S3的IAM策略"
+      }, {
+        "option": "B",
+        "content": "再次摄取文件"
+      }, {
+        "option": "C",
+        "content": "以 Apache Parquet格式存储文件"
+      }, {
+        "option": "D",
+        "content": "更新表路径为s3://powertransfommer/"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q208.一家公司计划在VPC 中配置日志传输流.公司将 VPC 流日志配置为发布到 Amazon CloudWatch 日志，公司需要以近乎实时的速率将流日志发送到 Splunk 以进行进一步分析。哪种解决方案将以最少的运营开销满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "配置以Splunk 作为目标的Amazon Kinesis 数据流.创建 CloudWatch Logs 订阅过滤器以将日志事件发送到数据流"
+      },{
+        "option": "B",
+        "content": "创建以Splunk 作为目标的 Amazon Kinesis Data Firehose 传输流 创建 CloudWatch Loga 订阅过滤器以将日志事件发送到传输流"
+      }, {
+        "option": "C",
+        "content": "创建一个以Splunk 作为日标的 Amazon Kinesis Data Firehose 传输流创建. AWS Lambda 请数以将流日志从CloudWatch Logs 发送到传输流"
+      }, {
+        "option": "D",
+        "content": "配置以 Splunk 作为目标的 Amazon Kinesis 数据流，创建AWS Lambda函数以将流日志从 CloudWatch Logs发送到数据流"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q209.一家公司正在构建一个分析解决方案，其中包括作为数据湖存储的 Amazon S3 和用于数据仓库的 AmazonRedshift 该公司希望使用 Amazon Redshift Spectrum 来查询存储在 Amazon S3 中的数据当公司使用 Amazon Redshift Spectrum 查询S3数据文件时，公司应采取哪经步理来提高性能？（选择三个）",
+      "choices": [{
+        "option": "A",
+        "content": "使用 gzip 压缩，单个文件大小为 1-5G"
+      }, {
+        "option": "B",
+        "content": "使用列式存储文件格式"
+      }, {
+        "option": "C",
+        "content": "根据最常见的查询请词对数据进行分区"
+      }, {
+        "option": "D",
+        "content": "将数据拆分为KB大小的文件"
+      }, {
+        "option": "E",
+        "content": "保持所有文件大小相同"
+      },{
+        "option": "F",
+        "content": "使用不可分割的文件格式"
+      }],
+      "answer": ["A", "B", "C"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q210.一家大型能源公司正在使用 Amazon QuickSight 构建仪表板并报告其客户的历史使用数据，此数据托管在Amazon Redshitt中，报告需要访问所有事实表的数十亿条记录，以创建按多维实时分组的聚合数据分析师使用 SQL查询而不是 SPICE 在QuickSight 中创建了数据集，业务用户注意到响应时间不够快，无法满足他们的需求 哪种操作会以最少的实施工作来加快报告的响应时间？",
+      "choices": [{
+        "option": "A",
+        "content": "使用 QuickSight 修改当前数据集以使用 SPICE"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 创建一个 Apache Sparkjob，将事实表与维度连接起来，将数据加载到新表中"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon Redshift 创建将事实表与维度连接起来的物化视图"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon Redshift 创建一个将事实表与维度连接起来的存储过程，将数据加载到新表中"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q211.一家物联网公司正在从多个传感器收集数据，并将数据流式传输到 Amazon Managed Streaming for ApacheKafka（Amazon MSK）.每种传感器类型都有自己的主题，并且每个主题都有相同数量的分区该公司正计划开启更多传感器，但是，该公司希望评估哪些传感器类型产生的数据最多，以便公司可以相应地扩展，公可需要知道哪些传感器类型具有以下指标的最大值:BytesinPerSec 和MessagesinPerSecAmazon MSK的哪个级别的监控将满足这些要求?",
+      "choices": [{
+        "option": "A",
+        "content": "DEFAULT leve"
+      }, {
+        "option": "B",
+        "content": "PER_TOPIC PER_BROKER leve"
+      }, {
+        "option": "C",
+        "content": "PER_BROKER leve"
+      }, {
+        "option": "D",
+        "content": "PER_TOPIC leve"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q212.某公司的系统运维人员和安全工程师需要分析 AWS CloudTral 日志特定日期范围内的活动所有日志文件都存储在一个 Amazon S3 存储桶中，日志大小超过 5TB.该解决方案必须具有成本效益井最大限度地提高查询性流哪种解决方案满足这些要求?",
+      "choices": [{
+        "option": "A",
+        "content": "将日志复制到具有前级结构的新 S3 存储極，使用日期列作为分区键根据新存储極中的对象在Amazon Athena 上创建一个表.在Athena 中使用 MSCK REPAIR TABLE 命令自动添加元数据分区使用 Athena 查询表和分"
+      }, {
+        "option": "B",
+        "content": "在Amazon Athena 上创建一个表，使用 ALTER TABLE ADD PARTITION 语句于动添加元数据分区，并为分区键使用多个列，使用 Athena 查询表和分"
+      }, {
+        "option": "C",
+        "content": "启动 Amazon EMR 集群并将 Amazon S3 用作 Apache HBase 的数据存储，将日志从S3存储植加载到Amazon EMR 上的 HBase 表.使用 Amazon Athena 查询表和分"
+      }, {
+        "option": "D",
+        "content": "创建 AWS Glue 作业以将日志从 S3源存储桶复制到新的S3 存储橘，并使用 Apache Parquet 文件格式Snappy 作为压缩编解码器并按日期分区创建表，使用 Amazon Athena 查询表和分"
+      }],
+      "answer": ["A"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q213.一家公司希望通过分析客户订单和购买趋势找到扩展其网站业务的方法，要执行数据分析，管道必须支持将日常数据从生产数据库摄取到基于 Amazon S3 构建的数据湖中，该网站使用 Amazon DynamoDB 存储产品详细信息，使用 Amazon Aurora PostgreSQL 存储生产中的订单详细信息，哪种解决方案可用于以最少的运营开实现这费目标？",
+      "choices": [{
+        "option": "A",
+        "content": "利用 AWS Database Migration Service（AWS DMS）运行两个从 Aurora PostgreSQL 和DynamoDB到Amazon S3的连续数据复制作业，利用 AWS Glue 进行数据编"
+      }, {
+        "option": "B",
+        "content": "使用 Aurora PostgreSQL的蓝图和DynamoDB的AWS Glue ETL 作业设置 AWS Lake Formation 工作流程，以将数据摄取到 Amazon S3 利用 AWS Glue 进行数据编"
+      }, {
+        "option": "C",
+        "content": "创建自定义 Python 脚本以使用 AWS SDK for Python（Boto3）库将数据从 Aurora PostgreSQL和 AmazonDynamoDB 摄取到 Amazon S3.在Amazon EC2 实例上部署脚本并使用 cron 作业安排作业每天运行，利用 AWSGlue 进行数据编"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon EMR 将数据从 Aurora PostgreSQL 和DynamoDB 摄取到 Amazon S3.在同一EMR 集群上利用 Apache Hive 进行数据编目"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q214.一家公司正在设计一个数据仓库来支持商业智能报告.用户将在每周一和周五早上大量访问执行仪表板1小时，这些只读查询将在活动的Amazon Redshift 集群上运行，该集群每周7天，每天24小时在dc2.8xlarge 计算节点上运行，在工作负载管理仪表板、ETI和系统中设置了三个队列.Amazon Redshint 集群需要在没有等待时间的情况下处理查询，确保集群处理这些查询的最具成本效益的方法是什么？",
+      "choices": [{
+        "option": "A",
+        "content": "执行经典调整大小以将集群置于只读模式，同时将其他节点添加到集群"
+      }, {
+        "option": "B",
+        "content": "启用自动工作负载管"
+      }, {
+        "option": "C",
+        "content": "执行弹性调整大小以向集群添加额外的节点"
+      }, {
+        "option": "D",
+        "content": "为仪表板工作负载队列启用并发扩展"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q215.一家公司拥有一个包含患者数据的电子医疗保健系统，数据从多个系统整合并以，csv 格式存储在 Amazon S3存储桶中，该公司创建了一个AWS Glue 数据日录，该数据集包含重复数据，并且不存在用于识别患者的唯一键，字段在系统中不完全匹配数据分析专家必须设计一种解决方案来识别和副除重复项，该解决方案必须最大限度地减少所需的人工干预和代码量数据分析专家首先使用标记数据来教授 FindMatches 机器学习（ML）转换数据分析专家接下来必须做什么才能满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "使用带有 Spark distinct（）的AWS Glue ETL 作业识别数据集中的匹配项，使用 Amazon Redshift Spectrum看输出"
+      }, {
+        "option": "B",
+        "content": "使用带有 Spark distinct（）的AWS Glue ETL 作业识别数据集中的匹配境，创建转换结果的数据目录，使用Amazon Athena 查看输出"
+      }, {
+        "option": "C",
+        "content": "使用转换类型为“查找匹配记录”的AWS Glue ETL 作业识别数据集中的匹配项，创建转换结果的数据目录，使用Amazon Athena 查看输出"
+      }, {
+        "option": "D",
+        "content": "使用转换类型为查找匹配记录”的 AWS Glue ETL 作业识别数据集中的匹配项使用 Amazon Redshint Spectrum查看输出"
+      }],
+      "answer": ["C"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q216.一家公司从不同来源以嵌套 JSON 格式摄取大量传感器数据，并将其存储在Amazon S3存储中，传感总数据务须与当前存储在 Amazon Redshift 集群中的性能数据相结合，具有基本SQL 技能的业务分析师必须构建仪表板并在Amazon QuickSight 中分析此数据.数据工程师需要构建一个解决方案来准备数据以供业务分析师使用，数据工程师不知道 JSON 文件的结构，公司需要一个实施工作最少的解决方案哪些步骤组合将创建满足这些要求的解决方案？（选择三个.）",
+      "choices": [{
+        "option": "A",
+        "content": "使用 AWS Glue ETL 作业将数据转换为 Apache Parquet 格式井写入 Amazon S3"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 爬虫对数据进行分类"
+      }, {
+        "option": "C",
+        "content": "使用带有 ApplyMapping 类的 AWS Glue ETL 作业来取消嵌套数据并写入 Amazon Redshift表"
+      }, {
+        "option": "D",
+        "content": "使用带有 Relationalize 类的 AWS Glue ETL 作业来取消嵌套数据并写入 Amazon Redshift表"
+      }, {
+        "option": "E",
+        "content": "使用QucikSight创建Amazon Athena 数据源以读取Amazon S3中的Apache Parquet文件"
+      },{
+        "option": "F",
+        "content": "使用 QuickSight 创建 Amazon Redshift 数据源以读取本机Amazon Redshift表"
+      }],
+      "answer": ["B", "C", "F"],
+      "is_multiple": true,
+      "is_confirm": true
+    }, {
+      "stem": "Q217.网络管理员需要创建一个仪表板来可视化公司AWS 账户中随时间推移的连续网络模式，目输，该公司已启用VPC 流日志并将此数据发布到 Amazon CloudWatch Logs.为了快速解决网络问题，仅表板需要近予实时地显示新数据哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "创建 CloudWatch Logs 订闽以将 CloudWatch Logs 数据流式传输到 AWS Lambda函数，该函数将数据写入 Amazon S3存储桶．创建 Amazon QuickSight 控制面板以可视化数据"
+      }, {
+        "option": "B",
+        "content": "创建从 CloudWatch Logs 到 Amazon S3 存储桶的导出任务，创建 Amazon QuickSight 控制面板以可视化数据"
+      }, {
+        "option": "C",
+        "content": "创建使用 AWS Lambda 函数将 CloudWatch Logs 数据直接流式传验到 Amazon Elasticsearch Service（Amazon ES）集群的CloudWatch Logs 订间.使用 Kibana 创建仪表"
+      }, {
+        "option": "D",
+        "content": "创建 CloudWatch Logs 订阅以将 CloudWatch Logs 数据流式传验到 AWS Lambda 函数，该函数写入Amazon Kinesis 数据流以将数据传送到 Amazon Elasticsearch Service（Amazon ES）集群.使用 Kibana 创建仪表板"
+      }],
+      "answer": ["D"],
+      "is_multiple": false,
+      "is_confirm": true
+    }, {
+      "stem": "Q218.一家公司正在为当前在AWS 上运行的各种数据存储构建数据目录和元数据管理环境，数据存储由存储在Amazon S3 中的 Amazon RDS 数据库、Amazon Redshift 和JSON 文件组成，该目录应按每日计划填充，需要最 少的管理，并为 Amazon EMR.Amazon Athena 和Amazon Redshint Spectrum 等AWS 服务提供支持哪种解决方案满足这些要求？",
+      "choices": [{
+        "option": "A",
+        "content": "在Amazon EMR中设置和配置 Apache Hive Metastore，并运行连接到数据源的计划 bash 脚本以填充Metastore"
+      }, {
+        "option": "B",
+        "content": "使用 AWS Glue 数据目录作为数据日录，并安排连接到数据源的AWS Glue 来填充目录"
+      }, {
+        "option": "C",
+        "content": "使用 Amazon RDS 表作为数据日录并运行连接到数据源的计划 AWS Lambda 通数以填充表"
+      }, {
+        "option": "D",
+        "content": "使用 Amazon DynamoDB 表作为数据日录并运行计划的AWS Lambda 通数，该函数连接到数据源以填充表"
+      }],
+      "answer": ["B"],
+      "is_multiple": false,
+      "is_confirm": true
+    }
+	]
+}
+
+
+
+
+
+
+
+
+
